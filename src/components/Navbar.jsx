@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.css';
-import { Phone } from 'lucide-react'; // 如果使用lucide-react，需要安装
+import { Phone } from 'lucide-react'; 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   const handleCallNow = () => {
-    window.location.href = 'tel:+1234567890'; // 替换为实际电话号码
+    window.location.href = 'tel:+1234567890'; 
   };
 
   return (
