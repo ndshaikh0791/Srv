@@ -1,50 +1,82 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "../styles/Navbar.css";
+// src/components/Navbar.jsx
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import '../styles/Navbar.css';
+import { Phone } from 'lucide-react'; // 如果使用lucide-react，需要安装
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const navItems = [
+    { id: 'home', label: 'Home', path: '/' },
+    { id: 'about', label: 'About Us', path: '/about' },
+    { id: 'services', label: 'Services', path: '/services' },
+    { id: 'projects', label: 'Projects', path: '/projects' },
+    { id: 'contact', label: 'Contact', path: '/contact' }
+  ];
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleCallNow = () => {
+    window.location.href = 'tel:+1234567890'; // 替换为实际电话号码
+  };
+
   return (
-    <>
-      {/* Top Bar - Contact Info */}
-      <div className="top-bar">
-        <div className="top-bar-container">
-          <div className="contact-info">
-            <span>📞 +971 50 123 4567</span>
-            <span>✉️ info@srvinteriors.ae</span>
-            <span>📍 Dubai, UAE</span>
-          </div>
-          <div className="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-          </div>
+    <nav className="navbar">
+      <div className="nav-container">
+        {/* Logo Section */}
+        <div className="nav-logo">
+          <Link to="/" className="logo-link">
+            <span className="logo-text">SRV-</span>
+            <span className="logo-dot">interior</span>
+          </Link>
+        </div>
+
+        {/* Navigation Menu */}
+        <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+          <ul className="nav-links">
+            {navItems.map((item) => (
+              <li key={item.id} className="nav-item">
+                <Link
+                  to={item.path}
+                  className={`nav-link ${
+                    location.pathname === item.path ? 'active' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Call Now Button - Desktop */}
+          <button className="call-now-btn desktop-only" onClick={handleCallNow}>
+            <Phone size={18} />
+            <span>Call Now</span>
+          </button>
+        </div>
+
+        {/* Call Now Button - Mobile (outside menu) */}
+        <button className="call-now-btn mobile-call" onClick={handleCallNow}>
+          <Phone size={18} />
+        </button>
+
+        {/* Hamburger Menu */}
+        <div 
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
       </div>
-
-      {/* Main Navbar */}
-      <nav className="main-nav">
-        <div className="nav-container">
-          {/* Logo - Left */}
-          <Link to="/" className="logo">
-            SRV <span>Interiors</span>
-          </Link>
-
-          {/* Menu - Right */}
-          <div className="nav-menu">
-            <Link to="/" className="nav-link">HOME</Link>
-            <Link to="/about" className="nav-link">ABOUT</Link>
-            <Link to="/services" className="nav-link">SERVICES</Link>
-            <Link to="/gallery" className="nav-link">GALLERY</Link>
-            <Link to="/contact" className="nav-link">CONTACT</Link>
-            
-            {/* CTA Button */}
-            <Link to="/contact" className="cta-button">
-              GET A QUOTE
-            </Link>
-          </div>
-        </div>
-      </nav>
-    </>
+    </nav>
   );
 };
 
