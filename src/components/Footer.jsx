@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Footer.css';
-
-// Icons (simple)
-const FaHome = () => <i>🏠</i>;
-const FaPhone = () => <i>📞</i>;
-const FaEnvelope = () => <i>✉️</i>;
-const FaArrowRight = () => <i>→</i>;
-const FaArrowUp = () => <i>↑</i>;
-
-// Social
-const FaWhatsapp = () => <i>🟢</i>;
-const FaInstagram = () => <i>📸</i>;
-const FaFacebook = () => <i>📘</i>;
-const FaCall = () => <i>📞</i>;
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faHome, 
+  faPhone, 
+  faEnvelope, 
+  faArrowRight, 
+  faArrowUp,
+  faUtensils,
+  faBed,
+  faCouch,
+  faBuilding,
+  faBath,
+  faHammer
+} from '@fortawesome/free-solid-svg-icons';
+import { 
+  faWhatsapp, 
+  faInstagram, 
+  faFacebook 
+} from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -29,8 +35,18 @@ const Footer = () => {
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
+    alert(`Thank you for subscribing with ${email}!`);
     setEmail('');
   };
+
+  const services = [
+    { name: 'Modular Kitchen', icon: faUtensils },
+    { name: 'Bedroom Interiors', icon: faBed },
+    { name: 'Living Room Design', icon: faCouch },
+    { name: 'Office Interiors', icon: faBuilding },
+    { name: 'Bathroom Renovation', icon: faBath },
+    { name: 'Civil Work', icon: faHammer }
+  ];
 
   return (
     <>
@@ -38,20 +54,34 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-grid">
 
-            {/* Brand */}
+            {/* Brand Section */}
             <div className="footer-brand">
-              <a href="/" className="footer-logo">
-                <FaHome /> SRV Interiors
-              </a>
+             <a href="/" className="footer-logo">
+  <span className="logo-text">
+    <span className="logo-srv">SRV</span>
+    <span className="logo-interiors"> Interiors</span>
+  </span>
+</a>
+              <p className="footer-tagline">
+                Crafting beautiful interiors from generations to generations. Your dream, our creation.
+              </p>
               <p className="footer-description">
-                Premium interior solutions with elegant design and flawless execution.
+                Premium interior solutions with elegant design and flawless execution since 2019.
               </p>
 
               <div className="footer-social">
-                <a href="#" className="social-icon"><FaWhatsapp /></a>
-                <a href="#" className="social-icon"><FaInstagram /></a>
-                <a href="#" className="social-icon"><FaFacebook /></a>
-                <a href="tel:+919876543210" className="social-icon"><FaCall /></a>
+                <a href="https://wa.me/918796932990" className="social-icon" title="WhatsApp">
+                  <FontAwesomeIcon icon={faWhatsapp} />
+                </a>
+                <a href="#" className="social-icon" title="Instagram">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a href="#" className="social-icon" title="Facebook">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
+                <a href="tel:+918796932990" className="social-icon" title="Call">
+                  <FontAwesomeIcon icon={faPhone} />
+                </a>
               </div>
             </div>
 
@@ -59,35 +89,52 @@ const Footer = () => {
             <div>
               <h4 className="footer-heading">Quick Links</h4>
               <ul className="footer-links">
-                <li><a href="/"><FaArrowRight /> Home</a></li>
-                <li><a href="/about"><FaArrowRight /> About</a></li>
-                <li><a href="/services"><FaArrowRight /> Services</a></li>
-                <li><a href="/projects"><FaArrowRight /> Projects</a></li>
-                <li><a href="/contact"><FaArrowRight /> Contact</a></li>
+                <li><a href="/"><FontAwesomeIcon icon={faArrowRight} /> Home</a></li>
+                <li><a href="/about"><FontAwesomeIcon icon={faArrowRight} /> About Us</a></li>
+                <li><a href="/services"><FontAwesomeIcon icon={faArrowRight} /> Services</a></li>
+                <li><a href="/gallery"><FontAwesomeIcon icon={faArrowRight} /> Gallery</a></li>
+                <li><a href="/contact"><FontAwesomeIcon icon={faArrowRight} /> Contact</a></li>
               </ul>
             </div>
 
-            {/* Contact + Newsletter */}
+            {/* Our Services */}
+            <div>
+              <h4 className="footer-heading">Our Services</h4>
+              <ul className="services-list">
+                {services.map((service, index) => (
+                  <li key={index}>
+                    {/* <FontAwesomeIcon icon={service.icon} className="service-icon" /> */}
+                    {service.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact & Newsletter */}
             <div>
               <h4 className="footer-heading">Contact Info</h4>
               <ul className="contact-info-list">
                 <li>
-                  <FaPhone />
-                  <div>
-                    <a href="tel:+919876543210">+91 98765 43210</a><br />
-                    <a href="tel:+911234567890">+91 12345 67890</a>
+                  <FontAwesomeIcon icon={faPhone} />
+                  <div className="contact-details">
+                    <a href="tel:+918796932990">+91 87969 32990</a>
+                    <a href="tel:+919623037137">+91 96230 37137</a>
                   </div>
                 </li>
                 <li>
-                  <FaEnvelope />
-                  <div>
-                    <a href="mailto:info@srvinteriors.com">info@srvinteriors.com</a><br />
-                    <a href="mailto:support@srvinteriors.com">support@srvinteriors.com</a>
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  <div className="contact-details">
+                    <a href="mailto:srvinteriorspune@gmail.com">srvinteriorspune@gmail.com</a>
                   </div>
                 </li>
               </ul>
 
-              <h4 className="footer-heading">Newsletter</h4>
+              <h4 className="footer-heading">Locations</h4>
+              <p className="locations-text">
+                Pune • Mumbai • Navi Mumbai
+              </p>
+
+              {/* <h4 className="footer-heading">Newsletter</h4>
               <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
                 <input
                   type="email"
@@ -98,24 +145,25 @@ const Footer = () => {
                   required
                 />
                 <button className="newsletter-btn">Subscribe</button>
-              </form>
+              </form> */}
             </div>
 
           </div>
 
-          {/* Bottom */}
+          {/* Bottom Section */}
           <div className="footer-bottom">
-            © 2025 SRV Interiors. All Rights Reserved.
+            © 2019 - 2025 SRV Interiors. All Rights Reserved.
           </div>
         </div>
       </footer>
 
-      <button
+      {/* <button
         className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
         onClick={scrollToTop}
+        aria-label="Back to top"
       >
-        <FaArrowUp />
-      </button>
+        <FontAwesomeIcon icon={faArrowUp} />
+      </button> */}
     </>
   );
 };
