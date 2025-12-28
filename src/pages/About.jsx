@@ -22,37 +22,44 @@ const About = () => {
           </p>
         </div>
       </section>
+{/* STATS BAR */}
+<section className="about-stats">
+  <div className="stats-container">
 
-      {/* STATS BAR */}
-      <section className="about-stats">
-        <div className="stats-container">
+    <div className="stat-box">
+      <div className="stat-icon-wrapper">
+        <Home size={32} strokeWidth={1.5} />
+      </div>
+      <h3>100+</h3>
+      <p>Projects Completed</p>
+    </div>
 
-          <div className="stat-box">
-            <Home size={32} strokeWidth={1.5} />
-            <h3>100+</h3>
-            <p>Projects Completed</p>
-          </div>
+    <div className="stat-box">
+      <div className="stat-icon-wrapper">
+        <Users size={32} strokeWidth={1.5} />
+      </div>
+      <h3>100+</h3>
+      <p>Happy Clients</p>
+    </div>
 
-          <div className="stat-box">
-            <Users size={32} strokeWidth={1.5} />
-            <h3>100+</h3>
-            <p>Happy Clients</p>
-          </div>
+    <div className="stat-box">
+      <div className="stat-icon-wrapper">
+        <Calendar size={32} strokeWidth={1.5} />
+      </div>
+      <h3>5+</h3>
+      <p>Years Experience</p>
+    </div>
 
-          <div className="stat-box">
-            <Calendar size={32} strokeWidth={1.5} />
-            <h3>5+</h3>
-            <p>Years Experience</p>
-          </div>
+    <div className="stat-box">
+      <div className="stat-icon-wrapper">
+        <Award size={32} strokeWidth={1.5} />
+      </div>
+      <h3>3</h3>
+      <p>Locations</p>
+    </div>
 
-          <div className="stat-box">
-            <Award size={32} strokeWidth={1.5} />
-            <h3>3</h3>
-            <p>Locations</p>
-          </div>
-
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* HERITAGE SECTION */}
       <section className="heritage-section">
@@ -116,6 +123,8 @@ const About = () => {
 
         </div>
       </section>
+
+
       {/* CORE VALUES SECTION */}
       <section className="core-values-section">
         <div className="core-values-header">
