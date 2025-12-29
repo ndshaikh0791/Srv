@@ -39,7 +39,7 @@ const Services = () => {
         "Pull-out Systems",
         "Waterproofing"
       ],
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "src/assets/Elina_living/IMG_8126.JPG",
       icon: faHome
     },
     {
@@ -54,7 +54,7 @@ const Services = () => {
         "Wall Paneling",
         "Color Schemes"
       ],
-      image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "src/assets/Mantra Monarch/IMG_7880.JPG",
       icon: faBed
     },
     {
@@ -69,7 +69,7 @@ const Services = () => {
         "False Ceiling",
         "Wall Paneling"
       ],
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "src/assets/Kharghar/IMG_7905.PNG  ",
       icon: faCouch
     },
     {
@@ -84,7 +84,7 @@ const Services = () => {
         "Lighting Solutions",
         "Acoustic Treatment"
       ],
-      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "src/assets/Our_Office/IMG_6925.PNG",
       icon: faBuilding
     }
   ];

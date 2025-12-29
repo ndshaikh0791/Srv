@@ -173,7 +173,7 @@
 
 .section-badge {
     display: inline-block;
-    background: var(--accent-gold);
+    background: #7A1F2B;
     color: var(--white);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
@@ -299,7 +299,7 @@
     position: absolute;
     top: 20px;
     left: 20px;
-    background: var(--accent-gold);
+    background: #7A1F2B;
     color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 50px;
@@ -326,7 +326,7 @@
 .service-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--accent-gold), var(--light-gold));
+    background: linear-gradient(135deg, #7A1F2B, #7A1F2B);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -384,7 +384,7 @@
 }
 
 .btn-inquiry {
-    background: var(--primary-brown);
+    background: #7A1F2B;
     color: var(--white);
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
@@ -408,7 +408,7 @@
 
 .btn-call {
     background: transparent;
-    color: var(--primary-brown);
+    color: #7A1F2B;
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     border: 2px solid var(--primary-brown);
@@ -424,7 +424,7 @@
 }
 
 .btn-call:hover {
-    background: var(--primary-brown);
+    background: #7A1F2B;
     color: var(--white);
     transform: translateX(5px);
 }
@@ -505,7 +505,7 @@
 
 .btn-learn-more {
     background: transparent;
-    color: var(--primary-brown);
+    color: #7A1F2B;
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     border: 2px solid var(--primary-brown);
@@ -523,7 +523,7 @@
 }
 
 .btn-learn-more:hover {
-    background: var(--primary-brown);
+    background: #7A1F2B;
     color: var(--white);
     transform: translateY(-2px);
 }

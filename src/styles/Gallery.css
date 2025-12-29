@@ -26,6 +26,7 @@
     --bg-light: #f9fafb;
     --white: #ffffff;
     --gray-light: #f3f4f6;
+    --maroon:#7A1F2B
 }
 
 /* Hero Banner */
@@ -86,7 +87,7 @@
 }
 
 .gallery-hero .hero-highlight {
-    color: var(--accent-gold);
+    color:#7A1F2B;
     position: relative;
     display: inline-block;
 }
