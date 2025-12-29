@@ -54,54 +54,63 @@
   max-width: 700px;
   margin: 0 auto;
 }
-
-/* STATS SECTION */
+/* STATS SECTION - UPDATED FOR IMAGE ACCURACY */
 .about-stats {
-  background: #7A1F2B;
-  padding: 90px 20px;
-  /* Taller bar like image */
+  background: #7A1F2B; /* Maroon background from image */
+  padding: 60px 20px;  /* Reduced height for a more elegant bar look */
+  color: #ffffff;
 }
 
 .stats-container {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   text-align: center;
-  align-items: center;
 }
 
-/* Each stat */
 .stat-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
 }
 
-/* Icons */
-.stat-icon {
-  font-size: 34px;
-  color: #ffffff;
-  opacity: 0.9;
+/* Icon Styling */
+.stat-icon-wrapper {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Numbers */
+/* serif-style large numbers to match Image 5 */
 .stat-box h3 {
-  font-size: 40px;
+  font-family: 'Playfair Display', serif; /* Use a serif font for that elegant look */
+  font-size: 44px;
   font-weight: 700;
-  color: #ffffff;
   margin: 0;
+  letter-spacing: 1px;
 }
 
-/* Labels */
+/* Labels below numbers */
 .stat-box p {
-  font-size: 15px;
-  color: #ffffff;
-  opacity: 0.9;
-  margin: 0;
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-top: 4px;
+  opacity: 0.85;
+  font-weight: 400;
 }
 
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 992px) {
+  .stats-container {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid for tablets */
+    gap: 40px;
+  }
+}
 /* HERITAGE SECTION */
 
 .heritage-title {
@@ -213,6 +222,7 @@
 .heritage-image img {
   width: 100%;
   max-width: 420px;
+  height: 600px;
   /* MATCH FIRST IMAGE */
   border-radius: 16px;
   display: block;
@@ -223,15 +233,18 @@
 
 /* EXPERIENCE BADGE */
 .experience-badge {
-  position: absolute;
-  bottom: 24px;
-  left: -24px;
+  position: absolute;/* Vertical position */
+  right: 300px;   /* The Overlap into the center gap */
   background: #7A1F2B;
-  color: #fff;
-  padding: 24px 26px;
-  border-radius: 14px;
+  color: #ffffff;
+  padding: 20px 35px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(122, 31, 43, 0.3);
+  z-index: 5;
+  min-width:200px;
+  
+  text-align: center;
 }
-
 
 .experience-badge h3 {
   font-size: 28px;
@@ -482,130 +495,94 @@
     gap: 24px;
   }
 }
-
-/* MOBILE */
+/* ===========================
+   MOBILE RESPONSIVE (768px)
+   =========================== */
 @media (max-width: 768px) {
+  /* HERO SECTION */
   .about-overlay h1 {
-    font-size: 36px;
+    font-size: 38px;
+  }
+
+  /* STATS SECTION - Matches Image/Video */
+  .about-stats {
+    padding: 50px 15px;
   }
 
   .stats-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* 2x2 grid for stats */
+    gap: 30px;
   }
 
-  .heritage-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .stat-box h3 {
+    font-size: 34px; /* Scaled down serif numbers */
   }
 
-  .heritage-content h2 {
-    font-size: 32px;
-    max-width: 100%;
-  }
-
-  .experience-badge {
-    position: static;
-    margin-top: 16px;
-  }
-
+  /* HERITAGE SECTION */
   .heritage-section {
     padding: 60px 20px;
   }
 
-  .heritage-image img {
-    margin: 0 auto;
+  .heritage-container {
+    grid-template-columns: 1fr; /* Stacks image below text */
+    gap: 50px;
   }
 
-  .core-values-section {
-    padding: 60px 20px;
-  }
-
-  .core-values-title {
+  .heritage-content h2 {
     font-size: 32px;
   }
 
-  /* 🔥 FIX: ONE CARD PER ROW */
-  .core-values-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .heritage-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 40px; /* Space for badge overlap */
   }
 
-  .core-value-card {
-    padding: 26px 22px;
+  .heritage-image img {
+    max-width: 100%;
+    height: 450px; /* Adjusted height for mobile */
+    margin: 0;
   }
 
-  .core-icon {
-    width: 42px;
-    height: 42px;
+  /* EXPERIENCE BADGE - Overlaps image bottom-left like video */
+  .experience-badge {
+    position: absolute;
+    top: auto;
+    bottom: -10px; 
+    left: 10px;
+    right: auto;
+    padding: 0px 25px; /* Keeps the rectangular vertical look */
+    min-width: 0px;
+    text-align: left;
+    margin-top: 0;
+    box-shadow: 0 10px 30px rgba(122, 31, 43, 0.2);
+  }
+
+  .experience-badge h3 {
     font-size: 20px;
   }
 
-   
-
-}
-/* ===========================
-   TIMELINE MOBILE – FINAL FIX
-=========================== */
-@media (max-width: 768px) {
-
-  /* Timeline container */
-  .timeline {
-    padding-left: 0;
-    padding-right: 0;
+  /* CORE VALUES SECTION */
+  .core-values-grid {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 20px;
   }
 
-  /* Vertical line */
+  /* TIMELINE SECTION */
   .timeline::before {
     left: 18px;
   }
 
-  /* Timeline item wrapper */
   .timeline-item {
     width: 100%;
     left: 0 !important;
-    padding-left: 56px;      /* reduced from 72px */
-    padding-right: 16px;
-    margin-bottom: 48px;
-    box-sizing: border-box;
+    padding-left: 56px;
+    padding-right: 15px;
+    text-align: left !important;
   }
 
-  /* Dot */
   .timeline-item::before {
     left: 12px;
-    top: 28px;
-    width: 12px;
-    height: 12px;
-  }
-
-  /* Card */
-  .timeline-content {
-    width: 100%;             /* 🔥 KEY FIX */
-    max-width: 100%;
-    padding: 20px 18px;
-    border-radius: 14px;
-    box-sizing: border-box;
-  }
-
-  /* Year */
-  .timeline-content .year {
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
-
-  /* Title */
-  .timeline-content h4 {
-    font-size: 17px;
-    line-height: 1.3;
-  }
-
-  /* Description */
-  .timeline-content p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  /* Section title */
-  .timeline-title {
-    font-size: 28px;
   }
 }

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faArrowRight, 
-  faTimes, 
-  faChevronLeft, 
+import {
+  faArrowRight,
+  faTimes,
+  faChevronLeft,
   faChevronRight,
   faHeart,
   faUsers,
@@ -37,43 +37,90 @@ const Gallery = () => {
   // Gallery images data
   const galleryImages = [
     // Living Room Images
-    { 
-      id: 1, 
+    {
+      id: 1,
       category: 'living',
-      title: 'Modern Luxury Living Room',
+      title: 'Mantra Monarch',
       type: 'Residential',
       location: 'Pune',
       area: '450 sq.ft',
       description: 'A stunning contemporary living room with custom furniture and elegant lighting design.',
-      image: 'https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      // MAIN IMAGE for the grid
+      image: 'src/assets/Mantra Monarch/IMG_7871.JPG',
+      // SUB-IMAGES for the modal slider
+      projectImages: [
+        'src/assets/Mantra Monarch/IMG_7871.JPG',
+        'src/assets/Mantra Monarch/IMG_7872.JPG', 
+        'src/assets/Mantra Monarch/IMG_7873.JPG', 
+        'src/assets/Mantra Monarch/IMG_7874.JPG', 
+        'src/assets/Mantra Monarch/IMG_7875.JPG', 
+        'src/assets/Mantra Monarch/IMG_7876.JPG', 
+        'src/assets/Mantra Monarch/IMG_7877.JPG', 
+        'src/assets/Mantra Monarch/IMG_7878.JPG', 
+        'src/assets/Mantra Monarch/IMG_7879.JPG', 
+        'src/assets/Mantra Monarch/IMG_7880.JPG', 
+        'src/assets/Mantra Monarch/IMG_7881.JPG', 
+        'src/assets/Mantra Monarch/IMG_7882.JPG', 
+        'src/assets/Mantra Monarch/IMG_7883.JPG', 
+        'src/assets/Mantra Monarch/IMG_7884.JPG', 
+        'src/assets/Mantra Monarch/IMG_7885.JPG', 
+        'src/assets/Mantra Monarch/IMG_7886.JPG', 
+        'src/assets/Mantra Monarch/IMG_7887.JPG', 
+        'src/assets/Mantra Monarch/IMG_7888.JPG', 
+        'src/assets/Mantra Monarch/IMG_7889.JPG', 
+        'src/assets/Mantra Monarch/IMG_7890.JPG', 
+        'src/assets/Mantra Monarch/IMG_7890.JPG', 
+        'src/assets/Mantra Monarch/IMG_7891.JPG'
+      ],
       features: ['Custom TV Unit', 'False Ceiling', 'Modern Lighting', 'Premium Furniture']
     },
-    { 
-      id: 2, 
+    {
+      id: 2,
       category: 'living',
-      title: 'Minimalist Living Space',
+      title: 'Amanora Neo Towers',
       type: 'Residential',
       location: 'Mumbai',
       area: '380 sq.ft',
       description: 'Clean lines and minimal design create a peaceful living environment.',
-      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      features: ['Minimal Design', 'Smart Storage', 'Natural Lighting', 'Neutral Palette']
+      image: 'src/assets/Amanora_neo_towers/IMG_4023.jpg',
+      features: ['Minimal Design', 'Smart Storage', 'Natural Lighting', 'Neutral Palette'],
+      projectImages: [
+        'src/assets/Amanora_neo_towers/IMG_3974.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3975.jpg', 
+        'src/assets/Amanora_neo_towers/IMG_3980.jpg', 
+        'src/assets/Amanora_neo_towers/IMG_3996.jpg', 
+        'src/assets/Amanora_neo_towers/IMG_3999.jpg', 
+        'src/assets/Amanora_neo_towers/IMG_4003.jpg', 
+        // 'src/assets/Amanora_neo_towers/IMG_4006.jpg', 
+        'src/assets/Amanora_neo_towers/IMG_4020.jpg', 
+        'src/assets/Amanora_neo_towers/IMG_4023.jpg', 
+        'src/assets/Amanora_neo_towers/IMG_4030.jpg', 
+        'src/assets/Amanora_neo_towers/IMG_4031.jpg', 
+        'src/assets/Amanora_neo_towers/IMG_8176.JPG', 
+
+      ],
     },
-    { 
-      id: 3, 
+    {
+      id: 3,
       category: 'living',
-      title: 'Contemporary Lounge',
+      title: 'Majestic Signature Towers',
       type: 'Residential',
       location: 'Navi Mumbai',
       area: '520 sq.ft',
       description: 'Elegant living area with bespoke furniture and artistic elements.',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      features: ['Bespoke Furniture', 'Art Display', 'Accent Wall', 'Ambient Lighting']
+      image: 'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
+      features: ['Bespoke Furniture', 'Art Display', 'Accent Wall', 'Ambient Lighting'],
+      projectImages: [
+        'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_3981.jpg'
+      ],
     },
 
     // Kitchen Images
-    { 
-      id: 4, 
+    {
+      id: 4,
       category: 'kitchen',
       title: 'Modular Kitchen Design',
       type: 'Residential',
@@ -83,8 +130,8 @@ const Gallery = () => {
       image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       features: ['Modular Cabinets', 'Granite Counter', 'Smart Storage', 'Chimney Hood']
     },
-    { 
-      id: 5, 
+    {
+      id: 5,
       category: 'kitchen',
       title: 'Modern Kitchen Setup',
       type: 'Residential',
@@ -94,8 +141,8 @@ const Gallery = () => {
       image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       features: ['Island Counter', 'Modern Appliances', 'Pull-out Drawers', 'Task Lighting']
     },
-    { 
-      id: 6, 
+    {
+      id: 6,
       category: 'kitchen',
       title: 'Compact Modular Kitchen',
       type: 'Residential',
@@ -107,8 +154,8 @@ const Gallery = () => {
     },
 
     // Bedroom Images
-    { 
-      id: 7, 
+    {
+      id: 7,
       category: 'bedroom',
       title: 'Master Bedroom Suite',
       type: 'Residential',
@@ -118,8 +165,8 @@ const Gallery = () => {
       image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       features: ['Walk-in Wardrobe', 'False Ceiling', 'Study Corner', 'Dressing Area']
     },
-    { 
-      id: 8, 
+    {
+      id: 8,
       category: 'bedroom',
       title: 'Kids Bedroom',
       type: 'Residential',
@@ -129,8 +176,8 @@ const Gallery = () => {
       image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       features: ['Study Desk', 'Storage Beds', 'Colorful Theme', 'Play Area']
     },
-    { 
-      id: 9, 
+    {
+      id: 9,
       category: 'bedroom',
       title: 'Contemporary Bedroom',
       type: 'Residential',
@@ -142,8 +189,8 @@ const Gallery = () => {
     },
 
     // Office Images
-    { 
-      id: 10, 
+    {
+      id: 10,
       category: 'office',
       title: 'Corporate Office Space',
       type: 'Commercial',
@@ -153,8 +200,8 @@ const Gallery = () => {
       image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       features: ['Workstations', 'Conference Room', 'Reception', 'Cafeteria']
     },
-    { 
-      id: 11, 
+    {
+      id: 11,
       category: 'office',
       title: 'Startup Office',
       type: 'Commercial',
@@ -166,8 +213,8 @@ const Gallery = () => {
     },
 
     // Bathroom Images
-    { 
-      id: 12, 
+    {
+      id: 12,
       category: 'bathroom',
       title: 'Luxury Bathroom',
       type: 'Residential',
@@ -179,8 +226,8 @@ const Gallery = () => {
     },
 
     // Commercial Images
-    { 
-      id: 13, 
+    {
+      id: 13,
       category: 'commercial',
       title: 'Restaurant Interiors',
       type: 'Commercial',
@@ -190,8 +237,8 @@ const Gallery = () => {
       image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       features: ['Dining Area', 'Bar Counter', 'Kitchen', 'Private Dining']
     },
-    { 
-      id: 14, 
+    {
+      id: 14,
       category: 'commercial',
       title: 'Showroom Design',
       type: 'Commercial',
@@ -203,15 +250,17 @@ const Gallery = () => {
     }
   ];
 
+  const [activeSubImageIndex, setActiveSubImageIndex] = useState(0);
   // Filter images based on active filter
-  const filteredImages = activeFilter === 'all' 
-    ? galleryImages 
+  const filteredImages = activeFilter === 'all'
+    ? galleryImages
     : galleryImages.filter(img => img.category === activeFilter);
 
   // Open modal with image details
   const openModal = (image, index) => {
     setSelectedImage(image);
     setCurrentIndex(index);
+    setActiveSubImageIndex(0); // Reset to first sub-image
   };
 
   // Close modal
@@ -219,20 +268,36 @@ const Gallery = () => {
     setSelectedImage(null);
   };
 
-  // Navigate to next image
-  const nextImage = () => {
-    const nextIndex = (currentIndex + 1) % filteredImages.length;
-    setSelectedImage(filteredImages[nextIndex]);
-    setCurrentIndex(nextIndex);
+  // Navigate to next sub-image WITHIN the current project
+  const nextSubImage = (e) => {
+    if (e) e.stopPropagation();
+    if (selectedImage.projectImages && selectedImage.projectImages.length > 0) {
+      const nextIdx = (activeSubImageIndex + 1) % selectedImage.projectImages.length;
+      setActiveSubImageIndex(nextIdx);
+    }
   };
 
-  // Navigate to previous image
-  const prevImage = () => {
-    const prevIndex = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
-    setSelectedImage(filteredImages[prevIndex]);
-    setCurrentIndex(prevIndex);
+  // Navigate to previous sub-image WITHIN the current project
+  const prevSubImage = (e) => {
+    if (e) e.stopPropagation();
+    if (selectedImage.projectImages && selectedImage.projectImages.length > 0) {
+      const prevIdx = (activeSubImageIndex - 1 + selectedImage.projectImages.length) % selectedImage.projectImages.length;
+      setActiveSubImageIndex(prevIdx);
+    }
   };
+  //   // Navigate to next image
+  //   const nextSubImage = (e) => {
+  //   e.stopPropagation();
+  //   const nextIdx = (activeSubImageIndex + 1) % selectedImage.projectImages.length;
+  //   setActiveSubImageIndex(nextIdx);
+  // };
 
+  //   // Navigate to previous image
+  //   const prevSubImage = (e) => {
+  //   e.stopPropagation();
+  //   const prevIdx = (activeSubImageIndex - 1 + selectedImage.projectImages.length) % selectedImage.projectImages.length;
+  //   setActiveSubImageIndex(prevIdx);
+  // };
   // Statistics data
   const stats = [
     { number: "500+", label: "Projects Completed", icon: faTrophy },
@@ -269,12 +334,12 @@ const Gallery = () => {
       <section className="gallery-hero">
         <div className="hero-bg">
           <div className="hero-overlay"></div>
-          <img 
-            src="https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-            alt="Gallery Banner" 
+          <img
+            src="https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Gallery Banner"
           />
         </div>
-        
+
         <div className="hero-content">
           <div className="hero-badge">
             <span>Our Portfolio</span>
@@ -283,7 +348,7 @@ const Gallery = () => {
             Explore Our <span className="hero-highlight">Stunning</span> Work
           </h1>
           <p className="hero-subtitle">
-            Browse through our collection of beautifully designed spaces that showcase 
+            Browse through our collection of beautifully designed spaces that showcase
             our expertise in interior design and execution.
           </p>
         </div>
@@ -304,7 +369,7 @@ const Gallery = () => {
                 </button>
               ))}
             </div>
-            
+
             <div className="filter-info">
               <p>
                 Showing <span className="count">{filteredImages.length}</span> projects
@@ -320,14 +385,14 @@ const Gallery = () => {
         <div className="container">
           <div className="gallery-grid">
             {filteredImages.map((image, index) => (
-              <div 
-                key={image.id} 
+              <div
+                key={image.id}
                 className="gallery-item"
                 onClick={() => openModal(image, index)}
               >
                 <div className="image-container">
-                  <img 
-                    src={image.image} 
+                  <img
+                    src={image.image}
                     alt={image.title}
                     loading="lazy"
                   />
@@ -365,7 +430,7 @@ const Gallery = () => {
               Building beautiful spaces and lasting relationships since 2019
             </p>
           </div>
-          
+
           <div className="stats-grid">
             {stats.map((stat, index) => (
               <div key={index} className="stat-card">
@@ -396,7 +461,7 @@ const Gallery = () => {
               Hear from homeowners and businesses who trusted us with their spaces
             </p>
           </div>
-          
+
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-card">
@@ -446,6 +511,7 @@ const Gallery = () => {
       </section>
 
       {/* Image Modal */}
+      {/* Image Modal */}
       <Modal
         isOpen={!!selectedImage}
         onRequestClose={closeModal}
@@ -457,24 +523,37 @@ const Gallery = () => {
             <button className="close-btn" onClick={closeModal}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
-            
-            <div className="modal-nav">
-              <button className="nav-btn prev-btn" onClick={prevImage}>
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </button>
-              <button className="nav-btn next-btn" onClick={nextImage}>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
-            </div>
-            
+
+            {/* Navigation specifically for the project's internal images */}
+            {selectedImage.projectImages && selectedImage.projectImages.length > 1 && (
+              <div className="modal-nav">
+                <button className="nav-btn prev-btn" onClick={prevSubImage}>
+                  <FontAwesomeIcon icon={faChevronLeft} />
+                </button>
+                <button className="nav-btn next-btn" onClick={nextSubImage}>
+                  <FontAwesomeIcon icon={faChevronRight} />
+                </button>
+              </div>
+            )}
+
             <div className="modal-body">
               <div className="modal-image">
-                <img 
-                  src={selectedImage.image} 
-                  alt={selectedImage.title}
+                <img
+                  src={
+                    selectedImage.projectImages && selectedImage.projectImages.length > 0
+                      ? selectedImage.projectImages[activeSubImageIndex]
+                      : selectedImage.image
+                  }
+                  alt={`${selectedImage.title} view ${activeSubImageIndex + 1}`}
                 />
+
+                {selectedImage.projectImages && selectedImage.projectImages.length > 1 && (
+                  <div className="image-counter">
+                    {activeSubImageIndex + 1} / {selectedImage.projectImages.length}
+                  </div>
+                )}
               </div>
-              
+
               <div className="modal-info">
                 <div className="project-header">
                   <span className="project-category">
@@ -482,7 +561,7 @@ const Gallery = () => {
                   </span>
                   <h2 className="project-title">{selectedImage.title}</h2>
                 </div>
-                
+
                 <div className="project-meta-grid">
                   <div className="meta-item">
                     <span className="meta-label">Project Type</span>
@@ -501,12 +580,12 @@ const Gallery = () => {
                     <span className="meta-value status-completed">Completed</span>
                   </div>
                 </div>
-                
+
                 <div className="project-description">
                   <h3>Project Description</h3>
                   <p>{selectedImage.description}</p>
                 </div>
-                
+
                 <div className="project-features">
                   <h3>Key Features</h3>
                   <div className="features-grid">
@@ -518,7 +597,7 @@ const Gallery = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="project-actions">
                   <button className="action-btn primary" onClick={() => window.location.href = '/contact'}>
                     Start Similar Project <FontAwesomeIcon icon={faArrowRight} />
