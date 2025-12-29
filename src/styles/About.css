@@ -233,8 +233,7 @@
 
 /* EXPERIENCE BADGE */
 .experience-badge {
-  position: absolute;
-  top: 500px;  /* Vertical position */
+  position: absolute;/* Vertical position */
   right: 300px;   /* The Overlap into the center gap */
   background: #7A1F2B;
   color: #ffffff;
@@ -553,15 +552,15 @@
     bottom: -10px; 
     left: 10px;
     right: auto;
-    padding: 30px 25px; /* Keeps the rectangular vertical look */
-    min-width: 140px;
+    padding: 0px 25px; /* Keeps the rectangular vertical look */
+    min-width: 0px;
     text-align: left;
     margin-top: 0;
     box-shadow: 0 10px 30px rgba(122, 31, 43, 0.2);
   }
 
   .experience-badge h3 {
-    font-size: 32px;
+    font-size: 20px;
   }
 
   /* CORE VALUES SECTION */
