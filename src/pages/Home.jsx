@@ -27,6 +27,7 @@ import {
   faWhatsapp
 } from '@fortawesome/free-brands-svg-icons';
 
+
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [activeService, setActiveService] = useState(null);
@@ -209,12 +210,12 @@ const Home = () => {
         }
     ];
 
-    const stats = [
-        { number: "500+", label: "Projects Completed", icon: faTrophy },
-        { number: "98%", label: "Client Satisfaction", icon: faHeart },
-        { number: "15+", label: "Years Experience", icon: faCalendarAlt },
-        { number: "50+", label: "Expert Designers", icon: faUsers }
-    ];
+    // const stats = [
+        // { number: "500+", label: "Projects Completed", icon: faTrophy },
+        // { number: "98%", label: "Client Satisfaction", icon: faHeart },
+        // { number: "15+", label: "Years Experience", icon: faCalendarAlt },
+        // { number: "50+", label: "Expert Designers", icon: faUsers }
+    // ];
 
     return (
         <div className="page-container">
@@ -232,12 +233,11 @@ const Home = () => {
                     <div className="hero-badge">
                         <span>Since 2019</span>
                     </div>
-                    <h1 className="hero-title">
-                        Crafting <span className="hero-highlight">Dream</span> Spaces
-                    </h1>
+                    <h3 className="hero-title">
+                        Transform Your Space with <span className="hero-highlight">SRV Interiors</span>
+                    </h3>
                     <p className="hero-subtitle">
-                        Premium interior solutions with elegant design and flawless execution. 
-                        Your dream, our creation.
+                      From generations to generations, we bring the art of Vishwakarma craftsmanship to transform your house into a home with end-to-end interior solutions.
                     </p>
                     <div className="hero-buttons">
                         <button 
@@ -248,50 +248,10 @@ const Home = () => {
                         </button>
                         <button 
                             onClick={handleWhatsApp}
-                            className="btn btn-whatsapp"
+                            className="btn btn-whatsapp" 
                         >
                             <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp Now
                         </button>
-                    </div>
-                    
-                    {/* <div className="hero-features">
-                        <div className="feature-item">
-                            <FontAwesomeIcon icon={faCheckCircle} />
-                            <span>15+ Years Experience</span>
-                        </div>
-                        <div className="feature-item">
-                            <FontAwesomeIcon icon={faCheckCircle} />
-                            <span>500+ Projects</span>
-                        </div>
-                        <div className="feature-item">
-                            <FontAwesomeIcon icon={faCheckCircle} />
-                            <span>Premium Quality</span>
-                        </div>
-                    </div> */}
-                </div>
-
-                {/* <div className="scroll-indicator">
-                    <div className="scroll-circle">
-                        <div className="scroll-dot"></div>
-                    </div>
-                </div> */}
-            </section>
-
-            {/* Stats Section */}
-            <section className="stats-section">
-                <div className="container">
-                    <div className="stats-grid">
-                        {stats.map((stat, index) => (
-                            <div key={index} className="stat-card fade-in">
-                                <div className="stat-icon">
-                                    <FontAwesomeIcon icon={stat.icon} />
-                                </div>
-                                <div className="stat-content">
-                                    <h3 className="stat-number">{stat.number}</h3>
-                                    <p className="stat-label">{stat.label}</p>
-                                </div>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </section>
