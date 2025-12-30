@@ -45,12 +45,13 @@
 }
 
 .logo-interiors {
-  color: #7A1F2B; 
+  color: #45151b; 
   font-weight: 700;
   font-family: 'Georgia', serif;
   letter-spacing: 0.3px;
   padding: 0 0.125rem;
 }
+
 
 /* Navigation Menu */
 .nav-menu {

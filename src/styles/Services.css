@@ -19,7 +19,7 @@
     --primary-brown: #8b4513;
     --dark-brown: #5d2906;
     --light-brown: #a0522d;
-    --accent-gold: #d4af37;
+    --primary-burgundy: #7A1F2B;
     --light-gold: #f4d03f;
     --text-dark: #1f2937;
     --text-light: #6b7280;
@@ -36,7 +36,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(31, 41, 55, 0.9), rgba(91, 33, 18, 0.8));
+       background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
 }
 
 .services-hero .hero-bg {
@@ -54,21 +54,22 @@
 .services-hero .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(91, 33, 18, 0.85), rgba(139, 69, 19, 0.6));
+       background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
 }
 
 .services-hero .hero-content {
     position: relative;
     z-index: 10;
     color: var(--white);
-    padding: 0 20px;
+    padding: 90px 20px;
     text-align: center;
     max-width: 800px;
+    height: 85vh;
 }
 
 .services-hero .hero-badge {
     display: inline-block;
-    background: var(--accent-gold);
+    background: var(--primary-burgundy);
     color: var(--white);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
@@ -97,7 +98,7 @@
 }
 
 .services-hero .hero-highlight {
-    color: var(--accent-gold);
+    color: var(--primary-burgundy);
     position: relative;
     display: inline-block;
 }
@@ -192,7 +193,7 @@
 }
 
 .section-title .text-highlight {
-    color: var(--primary-brown);
+    color:#7A1F2B;
 }
 
 .section-subtitle {
@@ -241,7 +242,7 @@
 }
 
 .tab-btn.active {
-    background: var(--primary-brown);
+    background: #7A1F2B;
     color: var(--white);
     border-color: var(--primary-brown);
     box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
@@ -373,7 +374,7 @@
 }
 
 .feature-item svg {
-    color: var(--accent-gold);
+    color:#7A1F2B;
     font-size: 0.9rem;
 }
 
@@ -457,7 +458,7 @@
 .additional-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: var(--accent-gold);
+    border-color: var(--primary-burgundy);
 }
 
 .additional-icon {
@@ -531,12 +532,15 @@
 /* Design Process */
 .design-process {
     padding: 6rem 0;
-    background: linear-gradient(135deg, var(--primary-brown), var(--dark-brown));
+    background: rgb(94, 39, 39);
     color: var(--white);
+}
+.text{
+    color: skyblue;
 }
 
 .design-process .section-badge {
-    background: var(--accent-gold);
+    background: var(--primary-burgundy);
 }
 
 .design-process .section-title,
@@ -563,7 +567,7 @@
 
 .process-step:hover {
     background: rgba(255, 255, 255, 0.15);
-    border-color: var(--accent-gold);
+    border-color: var(--primary-burgundy);
     transform: translateY(-5px);
 }
 
@@ -573,7 +577,7 @@
     left: 20px;
     width: 30px;
     height: 30px;
-    background: var(--accent-gold);
+    background: var(--primary-burgundy);
     color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -594,7 +598,7 @@
 .step-icon {
     width: 60px;
     height: 60px;
-    background: var(--accent-gold);
+    background: var(--primary-burgundy);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -645,13 +649,13 @@
 .benefit-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    border-color: var(--accent-gold);
+    border-color: var(--primary-burgundy);
 }
 
 .benefit-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--accent-gold), var(--light-gold));
+    background: var(--primary-burgundy);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -677,7 +681,7 @@
 /* CTA Section */
 .services-cta {
     padding: 6rem 0;
-    background: linear-gradient(135deg, var(--primary-brown), var(--dark-brown));
+        background: linear-gradient(135deg, var(--primary-burgundy), var(--dark-burgundy));
     color: var(--white);
     text-align: center;
 }
@@ -729,11 +733,11 @@
 }
 
 .btn-cta-secondary {
-    background: var(--accent-gold);
-    color: var(--dark-brown);
+    background: var(--primary-burgundy);
+    color: var(--white);
     padding: 1rem 2rem;
     border-radius: 50px;
-    border: 2px solid var(--accent-gold);
+    border: 2px solid var(--primary-burgundy);
     font-weight: 600;
     display: inline-flex;
     align-items: center;
@@ -748,6 +752,7 @@
 .btn-cta-secondary:hover {
     background: var(--white);
     border-color: var(--white);
+    color: var(--primary-burgundy);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

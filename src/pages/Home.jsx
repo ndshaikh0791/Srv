@@ -1,48 +1,46 @@
 import React, { useState, useEffect } from "react";
 import '../styles/Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faPhone, 
-  faArrowRight, 
-  faStar,
-  faCheckCircle,
-  faTrophy,
-  faUsers,
-  faClock,
-  faShieldAlt,
-  faThumbsUp,
-  faHome,
-  faCouch,
-  faKitchenSet,
-  faBath,
-  faPaintRoller,
-  faRulerCombined,
-  faBuilding,
-  faMapMarkerAlt,
-  faCalendarAlt,
-  faRocket,
-  faHeart
+import {
+    faPhone,
+    faArrowRight,
+    faStar,
+    faCheckCircle,
+    faTrophy,
+    faUsers,
+    faClock,
+    faShieldAlt,
+    faThumbsUp,
+    faHome,
+    faCouch,
+    faKitchenSet,
+    faBath,
+    faPaintRoller,
+    faRulerCombined,
+    faBuilding,
+    faMapMarkerAlt,
+    faCalendarAlt,
+    faRocket,
+    faHeart
 } from '@fortawesome/free-solid-svg-icons';
-import { 
-  faWhatsapp
+import {
+    faWhatsapp
 } from '@fortawesome/free-brands-svg-icons';
-
 
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const [activeService, setActiveService] = useState(null);
     const [activeProject, setActiveProject] = useState(null);
 
     useEffect(() => {
         setIsVisible(true);
-        
+
         // Add scroll animation
         const handleScroll = () => {
             const elements = document.querySelectorAll('.fade-in');
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const elementVisible = 150;
-                
+
                 if (elementTop < window.innerHeight - elementVisible) {
                     element.classList.add('active');
                 }
@@ -51,7 +49,7 @@ const Home = () => {
 
         window.addEventListener('scroll', handleScroll);
         handleScroll(); // Initial check
-        
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -61,10 +59,6 @@ const Home = () => {
 
     const handleWhatsApp = () => {
         window.open('https://wa.me/918796932990', '_blank');
-    };
-
-    const handleServiceClick = (index) => {
-        setActiveService(activeService === index ? null : index);
     };
 
     const handleProjectHover = (index) => {
@@ -172,50 +166,43 @@ const Home = () => {
     ];
 
     const testimonials = [
-        { 
-            name: "Rahul Sharma", 
-            location: "Pune", 
+        {
+            name: "Rahul Sharma",
+            location: "Pune",
             rating: 5,
             comment: "SRV Interiors transformed our 3BHK apartment beautifully. Their attention to detail and professionalism was outstanding!"
         },
-        { 
-            name: "Priya Patel", 
-            location: "Mumbai", 
+        {
+            name: "Priya Patel",
+            location: "Mumbai",
             rating: 5,
             comment: "Our modular kitchen turned out exactly as we imagined. The team was very responsive and delivered on time."
         },
-        { 
-            name: "Amit Verma", 
-            location: "Navi Mumbai", 
+        {
+            name: "Amit Verma",
+            location: "Navi Mumbai",
             rating: 5,
             comment: "Excellent work on our office interiors. The design boosted employee productivity and impressed our clients."
         },
-        { 
-            name: "Sneha Kapoor", 
-            location: "Pune", 
+        {
+            name: "Sneha Kapoor",
+            location: "Pune",
             rating: 5,
             comment: "The bedroom interiors are stunning! SRV Interiors understood our requirements perfectly."
         },
-        { 
-            name: "Vikram Singh", 
-            location: "Mumbai", 
+        {
+            name: "Vikram Singh",
+            location: "Mumbai",
             rating: 5,
             comment: "Complete home renovation done flawlessly. Quality materials and skilled workers."
         },
-        { 
-            name: "Anjali Reddy", 
-            location: "Navi Mumbai", 
+        {
+            name: "Anjali Reddy",
+            location: "Navi Mumbai",
             rating: 5,
             comment: "Best interior designers in Pune! They completed our project within budget and timeline."
         }
     ];
-
-    // const stats = [
-        // { number: "500+", label: "Projects Completed", icon: faTrophy },
-        // { number: "98%", label: "Client Satisfaction", icon: faHeart },
-        // { number: "15+", label: "Years Experience", icon: faCalendarAlt },
-        // { number: "50+", label: "Expert Designers", icon: faUsers }
-    // ];
 
     return (
         <div className="page-container">
@@ -223,12 +210,8 @@ const Home = () => {
             <section className="hero-banner">
                 <div className="hero-bg">
                     <div className="hero-overlay"></div>
-                    <img 
-                        src="https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-                        alt="Luxury Interior Design" 
-                    />
                 </div>
-                
+
                 <div className="hero-content fade-in">
                     <div className="hero-badge">
                         <span>Since 2019</span>
@@ -237,18 +220,18 @@ const Home = () => {
                         Transform Your Space with <span className="hero-highlight">SRV Interiors</span>
                     </h3>
                     <p className="hero-subtitle">
-                      From generations to generations, we bring the art of Vishwakarma craftsmanship to transform your house into a home with end-to-end interior solutions.
+                        From generations to generations, we bring the art of Vishwakarma to transform your house a home with end-to-end interior solutions.
                     </p>
                     <div className="hero-buttons">
-                        <button 
+                        <button
                             onClick={scrollToForm}
                             className="btn btn-primary"
                         >
                             Get Free Quote <FontAwesomeIcon icon={faArrowRight} />
                         </button>
-                        <button 
+                        <button
                             onClick={handleWhatsApp}
-                            className="btn btn-whatsapp" 
+                            className="btn btn-whatsapp"
                         >
                             <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp Now
                         </button>
@@ -261,19 +244,19 @@ const Home = () => {
                 <div className="container">
                     <div className="about-grid fade-in">
                         <div className="about-content">
-                            <div className="section-badge">
+                            <div className="hero-badge">
                                 About Us
                             </div>
                             <h2 className="section-title">
-                                Crafting Beautiful Interiors from 
-                                <span className="text-highlight"> Generations to Generations</span>
+                                Crafting Beautiful Interiors from
+                                <span className="text-highlight1"> Generations to Generations</span>
                             </h2>
                             <p className="section-description">
-                                At SRV Interiors, we blend traditional craftsmanship with modern aesthetics 
-                                to create spaces that tell your unique story. Established in 2019, we have 
+                                At SRV Interiors, we blend traditional craftsmanship with modern aesthetics
+                                to create spaces that tell your unique story. Established in 2019, we have
                                 been transforming homes and offices across Pune, Mumbai, and Navi Mumbai.
                             </p>
-                            
+
                             <div className="about-points">
                                 <div className="point">
                                     <FontAwesomeIcon icon={faCheckCircle} className="point-icon" />
@@ -297,7 +280,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div className="about-buttons">
                                 <button className="btn-about" onClick={scrollToForm}>
                                     <FontAwesomeIcon icon={faArrowRight} /> Get Free Consultation
@@ -307,12 +290,12 @@ const Home = () => {
                                 </button>
                             </div>
                         </div>
-                        
+
                         <div className="about-image">
                             <div className="image-wrapper">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                    alt="Modern Interior Design" 
+                                <img
+                                    src="http://localhost:5173/src/assets/lodha_woods_kandivali/IMG_2446.jpg"
+                                    alt="Modern Interior Design"
                                 />
                                 <div className="experience-badge">
                                     <span>15+</span>
@@ -325,59 +308,43 @@ const Home = () => {
             </section>
 
             {/* Our Services */}
+            {/* Services - Better Centered Design */}
+            {/* Services - Simple Design */}
             <section className="services-section" id="services">
                 <div className="container">
-                    <div className="section-header fade-in">
-                        <div className="section-badge">
-                            What We Do
-                        </div>
+                    <div className="section-header">
                         <h2 className="section-title">
-                            Our <span className="text-highlight">Premium Services</span>
+                            Our Premium <span className="title">Services</span>
                         </h2>
                         <p className="section-subtitle">
                             Comprehensive interior solutions for residential and commercial spaces
                         </p>
                     </div>
-                    
+
                     <div className="services-grid">
                         {services.map((service, index) => (
-                            <div 
+                            <div
                                 key={index}
-                                className={`service-card fade-in ${activeService === index ? 'active' : ''}`}
-                                onClick={() => handleServiceClick(index)}
-                                onMouseEnter={() => handleServiceClick(index)}
-                                onMouseLeave={() => setActiveService(null)}
+                                className="service-card"
                             >
-                                <div className="service-header">
-                                    <div className="service-icon">
-                                        <FontAwesomeIcon icon={service.icon} />
-                                    </div>
-                                    <h3 className="service-title">{service.title}</h3>
-                                </div>
+                                <FontAwesomeIcon icon={service.icon} className="service-icon" />
+                                <h3 className="service-title">{service.title}</h3>
                                 <p className="service-description">{service.description}</p>
-                                
-                                <div className={`service-details ${activeService === index ? 'expanded' : ''}`}>
-                                    <p className="service-long-description">{service.longDescription}</p>
-                                    
-                                    <div className="service-features">
-                                        {service.features.map((feature, idx) => (
-                                            <div key={idx} className="feature-tag">
-                                                <FontAwesomeIcon icon={faCheckCircle} /> {feature}
-                                            </div>
-                                        ))}
-                                    </div>
-                                    
-                                    <button className="service-action-btn">
-                                        Get Quote <FontAwesomeIcon icon={faArrowRight} />
-                                    </button>
+                                <div className="service-features">
+                                    {service.features.map((feature, idx) => (
+                                        <div key={idx} className="service-feature">
+                                            <FontAwesomeIcon icon={faCheckCircle} className="feature-icon" />
+                                            <span>{feature}</span>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         ))}
                     </div>
-                    
-                    <div className="text-center fade-in">
+
+                    <div className="text-center">
                         <button className="btn-view-all" onClick={scrollToForm}>
-                            View All Services <FontAwesomeIcon icon={faArrowRight} />
+                            View All Services
                         </button>
                     </div>
                 </div>
@@ -387,43 +354,35 @@ const Home = () => {
             <section className="why-choose-section">
                 <div className="container">
                     <div className="section-header fade-in">
-                        <div className="section-badge">
+                        <div className="hero-badge">
                             Why Choose Us
                         </div>
                         <h2 className="section-title">
-                            Why <span className="text-highlight">SRV Interiors</span> Stands Out
+                            Why <span className="text-highlight1">SRV Interiors</span> Stands Out
                         </h2>
                         <p className="section-subtitle">
                             We are committed to delivering excellence in every project
                         </p>
                     </div>
-                    
+
                     <div className="features-grid">
                         <div className="feature-card fade-in">
-                            <div className="feature-icon">
-                                <FontAwesomeIcon icon={faShieldAlt} />
-                            </div>
+                            <FontAwesomeIcon icon={faShieldAlt} className="feature-icon" />
                             <h3 className="feature-title">Premium Quality</h3>
                             <p className="feature-description">Premium materials with 5-year warranty on all work</p>
                         </div>
                         <div className="feature-card fade-in">
-                            <div className="feature-icon">
-                                <FontAwesomeIcon icon={faUsers} />
-                            </div>
+                            <FontAwesomeIcon icon={faUsers} className="feature-icon" />
                             <h3 className="feature-title">Expert Team</h3>
                             <p className="feature-description">Certified designers & skilled craftsmen</p>
                         </div>
                         <div className="feature-card fade-in">
-                            <div className="feature-icon">
-                                <FontAwesomeIcon icon={faClock} />
-                            </div>
+                            <FontAwesomeIcon icon={faClock} className="feature-icon" />
                             <h3 className="feature-title">On-Time Delivery</h3>
                             <p className="feature-description">Strict timeline adherence guaranteed</p>
                         </div>
                         <div className="feature-card fade-in">
-                            <div className="feature-icon">
-                                <FontAwesomeIcon icon={faRocket} />
-                            </div>
+                            <FontAwesomeIcon icon={faRocket} className="feature-icon" />
                             <h3 className="feature-title">End-to-End Service</h3>
                             <p className="feature-description">Complete service from concept to completion</p>
                         </div>
@@ -432,54 +391,59 @@ const Home = () => {
             </section>
 
             {/* Our Projects */}
+            {/* Our Projects - Simpler Cards */}
             <section className="projects-section">
                 <div className="container">
                     <div className="section-header fade-in">
-                        <div className="section-badge">
+                        <div className="hero-badge">
                             Our Portfolio
                         </div>
                         <h2 className="section-title">
-                            Featured <span className="text-highlight">Projects</span>
+                            Featured <span className="text-highlight1">Projects</span>
                         </h2>
                         <p className="section-subtitle">
                             Explore our portfolio of stunning interior transformations
                         </p>
                     </div>
-                    
+
                     <div className="projects-grid">
                         {projects.map((project, index) => (
-                            <div 
+                            <div
                                 key={project.id}
-                                className={`project-card fade-in ${activeProject === index ? 'active' : ''}`}
-                                onMouseEnter={() => handleProjectHover(index)}
-                                onMouseLeave={handleProjectLeave}
+                                className="project-card fade-in"
                             >
                                 <div className="project-image">
-                                    <img 
-                                        src={project.image} 
+                                    <img
+                                        src={project.image}
                                         alt={project.title}
                                     />
-                                    <div className="project-overlay">
-                                        <div className="project-content">
-                                            <h3>{project.title}</h3>
-                                            <div className="project-meta">
-                                                <span><FontAwesomeIcon icon={faMapMarkerAlt} /> {project.location}</span>
-                                                <span>{project.area}</span>
-                                            </div>
-                                            <button className="view-project-btn">
-                                                View Project <FontAwesomeIcon icon={faArrowRight} />
-                                            </button>
-                                        </div>
+                                    <div className="project-badge">
+                                        {project.type}
                                     </div>
                                 </div>
-                                <div className="project-info">
-                                    <span className="project-type">{project.type}</span>
-                                    <h3>{project.title}</h3>
+                                <div className="project-content">
+                                    <div className="project-details">
+                                        <h3 className="project-title">{project.title}</h3>
+                                        <div className="project-meta">
+                                            <span className="project-location">
+                                                <FontAwesomeIcon icon={faMapMarkerAlt} /> {project.location}
+                                            </span>
+                                            <span className="project-area">
+                                                {project.area}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="project-footer">
+                                        <div className="project-tags">
+                                            <span className="project-tag">{project.type}</span>
+                                            <span className="project-tag">Interior Design</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    
+
                     <div className="text-center fade-in">
                         <button className="btn-view-all" onClick={() => window.location.href = '/projects'}>
                             View All Projects <FontAwesomeIcon icon={faArrowRight} />
@@ -492,20 +456,20 @@ const Home = () => {
             <section className="testimonials-section">
                 <div className="container">
                     <div className="section-header fade-in">
-                        <div className="section-badge">
+                        <div className="hero-badge">
                             Testimonials
                         </div>
                         <h2 className="section-title">
-                            What Our <span className="text-highlight">Clients Say</span>
+                            What Our <span className="text-highlight1">Clients Say</span>
                         </h2>
                         <p className="section-subtitle">
                             Hear from our satisfied customers across Pune, Mumbai & Navi Mumbai
                         </p>
                     </div>
-                    
+
                     <div className="testimonials-grid">
                         {testimonials.map((testimonial, index) => (
-                            <div 
+                            <div
                                 key={index}
                                 className="testimonial-card fade-in"
                             >
@@ -559,7 +523,7 @@ const Home = () => {
                 <div className="container">
                     <div className="form-container fade-in">
                         <div className="form-header">
-                            <div className="section-badge">
+                            <div className="hero-badge">
                                 Get Free Quote
                             </div>
                             <h2 className="form-title">
@@ -569,29 +533,29 @@ const Home = () => {
                                 Fill out the form and our design expert will contact you within 24 hours
                             </p>
                         </div>
-                        
+
                         <form className="form">
                             <div className="form-grid">
                                 <div className="form-group">
-                                    <input 
-                                        type="text" 
-                                        placeholder="Full Name" 
+                                    <input
+                                        type="text"
+                                        placeholder="Full Name"
                                         className="form-input"
                                         required
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <input 
-                                        type="email" 
-                                        placeholder="Email Address" 
+                                    <input
+                                        type="email"
+                                        placeholder="Email Address"
                                         className="form-input"
                                         required
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <input 
-                                        type="tel" 
-                                        placeholder="Phone Number" 
+                                    <input
+                                        type="tel"
+                                        placeholder="Phone Number"
                                         className="form-input"
                                         required
                                     />
@@ -609,18 +573,18 @@ const Home = () => {
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div className="form-group">
-                                <textarea 
-                                    placeholder="Your Requirements & Budget" 
+                                <textarea
+                                    placeholder="Your Requirements & Budget"
                                     rows="4"
                                     className="form-textarea"
                                     required
                                 ></textarea>
                             </div>
-                            
+
                             <div className="form-footer">
-                                <button 
+                                <button
                                     type="submit"
                                     className="submit-btn"
                                 >

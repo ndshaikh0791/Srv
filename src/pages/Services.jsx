@@ -97,7 +97,7 @@ const Services = () => {
       description: "Modern bathroom design with premium fixtures and finishes. Transform your bathroom into a luxurious spa-like retreat.",
       features: ["Premium Fittings", "Tiling Work", "Waterproofing", "Vanity Units"],
       icon: faBath,
-      color: "#8b4513"
+      color: "#7A1F2B"
     },
     {
       id: 6,
@@ -105,7 +105,7 @@ const Services = () => {
       description: "Professional painting services with designer textures and finishes. Enhance your walls with beautiful colors and effects.",
       features: ["Textured Walls", "Premium Paints", "Color Consultation", "Wallpaper"],
       icon: faPaintRoller,
-      color: "#a0522d"
+      color: "#7A1F2B"
     },
     {
       id: 7,
@@ -113,7 +113,7 @@ const Services = () => {
       description: "Ambient and task lighting design for every space. Create the perfect mood with strategic lighting arrangements.",
       features: ["LED Lighting", "False Ceiling", "Dimmer Systems", "Spot Lights"],
       icon: faLightbulb,
-      color: "#d4af37"
+      color: "#7A1F2B"
     },
     {
       id: 8,
@@ -121,7 +121,7 @@ const Services = () => {
       description: "Complete civil construction and renovation services. Structural changes and building work with precision.",
       features: ["Structural Work", "Plumbing", "Electrical", "Finishing"],
       icon: faHammer,
-      color: "#5d2906"
+      color: "#7A1F2B"
     }
   ];
 
@@ -191,7 +191,7 @@ const Services = () => {
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img 
-            src="https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0" 
             alt="Services Banner" 
           />
         </div>
@@ -227,13 +227,13 @@ const Services = () => {
       <section className="core-services" id="core-services">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">
+            <div className="hero-badge">
               Premium Solutions
             </div>
             <h2 className="section-title">
-              Complete <span className="text-highlight">Interior Solutions</span>
+              Complete <span className="text-highlight1">Interior Solutions</span>
             </h2>
-            <p className="section-subtitle">
+            <p className="section-subtitle1">
               We provide comprehensive interior design services that transform your space into a masterpiece
             </p>
           </div>
@@ -320,13 +320,13 @@ const Services = () => {
       <section className="additional-services">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">
+            <div className="hero-badge">
               More Services
             </div>
             <h2 className="section-title">
-              Additional <span className="text-highlight">Offerings</span>
+              Additional <span className="text-highlight1">Offerings</span>
             </h2>
-            <p className="section-subtitle">
+            <p className="section-subtitle1">
               Comprehensive solutions for all your interior and construction needs
             </p>
           </div>
@@ -369,7 +369,7 @@ const Services = () => {
               Our Methodology
             </div>
             <h2 className="section-title">
-              Our <span className="text-highlight">Design Process</span>
+              Our <span className="text-highlight1">Design Process</span>
             </h2>
             <p className="section-subtitle">
               A systematic approach to ensure perfection in every project
@@ -400,11 +400,11 @@ const Services = () => {
       <section className="why-choose-services">
         <div className="container">
           <div className="section-header">
-            <div className="section-badge">
+            <div className="hero-badge">
               Why Choose Us
             </div>
             <h2 className="section-title">
-              Why <span className="text-highlight">SRV Interiors</span>
+              Why <span className="text-highlight1">SRV Interiors</span>
             </h2>
             <p className="section-subtitle">
               We stand out with our commitment to quality and customer satisfaction
@@ -449,7 +449,7 @@ const Services = () => {
         <div className="container">
           <div className="cta-content">
             <h2 className="cta-title">
-              Ready to Start Your Project?
+              Ready to Start Your <span className="text">Project?</span>
             </h2>
             <p className="cta-subtitle">
               Contact us today for a free consultation and quote

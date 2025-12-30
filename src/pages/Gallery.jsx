@@ -439,7 +439,7 @@ const Gallery = () => {
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img
-            src="https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0" 
             alt="Gallery Banner"
           />
         </div>
@@ -528,7 +528,7 @@ const Gallery = () => {
               Our Journey
             </div>
             <h2 className="section-title">
-              Years of <span className="text-highlight">Excellence</span>
+              Years of <span className="text-highlight1">Excellence</span>
             </h2>
             <p className="section-subtitle">
               Building beautiful spaces and lasting relationships since 2019
