@@ -145,7 +145,7 @@ const Gallery = () => {
         'src/assets/Amanora_neo_towers/IMG_3974.jpg',
         'src/assets/Amanora_neo_towers/IMG_3975.jpg',
         'src/assets/Amanora_neo_towers/IMG_3999.jpg',
-        'src/assets/Amanora_neo_towers/IMG_4003.jpg',
+        // 'src/assets/Amanora_neo_towers/IMG_4003.jpg',
       ],
     },
     {
@@ -177,7 +177,7 @@ const Gallery = () => {
       image: 'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
       features: ['Bespoke Furniture', 'Art Display', 'Accent Wall', 'Ambient Lighting'],
       projectImages: [
-        'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
+        // 'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
         'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
         'src/assets/Majestic_Signature_Towers/IMG_3981.jpg',
         'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
@@ -400,7 +400,7 @@ const Gallery = () => {
       features: ['Modular Design', 'Smart Storage', 'Granite Counter', 'Appliances'],
       projectImages: [
         'src/assets/Kharghar/IMG_2544.JPG',
-        'src/assets/Kharghar/IMG_2545.JPG',
+        // 'src/assets/Kharghar/IMG_2545.JPG',
       ],
     },
     {
@@ -446,7 +446,7 @@ const Gallery = () => {
       features: ['Modern Design', 'Reception Desk', 'Lighting', 'Branding'],
       projectImages: [
         'src/assets/Our_Office/IMG_6924.PNG',
-        'src/assets/Our_Office/IMG_6925.PNG',
+        // 'src/assets/Our_Office/IMG_6925.PNG',
       ],
     },
     {
@@ -461,7 +461,7 @@ const Gallery = () => {
       features: ['Ergonomic Chairs', 'Workstations', 'Storage', 'Lighting'],
       projectImages: [
         'src/assets/Our_Office/IMG_6926.PNG',
-        'src/assets/Our_Office/IMG_6927.PNG',
+        // 'src/assets/Our_Office/IMG_6927.PNG',
       ],
     },
     {
@@ -476,7 +476,7 @@ const Gallery = () => {
       features: ['Conference Table', 'AV System', 'Whiteboard', 'Lighting'],
       projectImages: [
         'src/assets/Our_Office/IMG_6928.PNG',
-        'src/assets/Our_Office/IMG_6929.PNG',
+        // 'src/assets/Our_Office/IMG_6929.PNG',
       ],
     },
     {
@@ -491,7 +491,7 @@ const Gallery = () => {
       features: ['Private Space', 'Storage', 'Work Desk', 'Lighting'],
       projectImages: [
         'src/assets/Our_Office/IMG_6930.PNG',
-        'src/assets/Our_Office/IMG_6924.PNG',
+        // 'src/assets/Our_Office/IMG_6924.PNG',
       ],
     },
   ];
@@ -836,12 +836,12 @@ const Gallery = () => {
                   </div>
                 </div>
 
-                <div className="project-description">
+                {/* <div className="project-description">
                   <h3>Project Description</h3>
                   <p>{selectedImage.description}</p>
-                </div>
+                </div> */}
 
-                <div className="project-features">
+                {/* <div className="project-features">
                   <h3>Key Features</h3>
                   <div className="features-grid">
                     {selectedImage.features.map((feature, idx) => (
@@ -851,15 +851,15 @@ const Gallery = () => {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 <div className="project-actions">
                   <button className="action-btn primary" onClick={() => window.location.href = '/contact'}>
                     Start Similar Project <FontAwesomeIcon icon={faArrowRight} />
                   </button>
-                  <button className="action-btn secondary" onClick={() => window.open('https://wa.me/918796932990', '_blank')}>
+                  {/* <button className="action-btn secondary" onClick={() => window.open('https://wa.me/918796932990', '_blank')}>
                     <FontAwesomeIcon icon={faStar} /> Get Quote
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
