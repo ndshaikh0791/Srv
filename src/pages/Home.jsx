@@ -214,7 +214,7 @@ const Home = () => {
 
                 <div className="hero-content fade-in">
                     <div className="hero-badge">
-                        <span>Since 2019</span>
+                        <span>Crafting Dreams Since 2019</span>
                     </div>
                     <h3 className="hero-title">
                         Transform Your Space with <span className="hero-highlight">SRV Interiors</span>

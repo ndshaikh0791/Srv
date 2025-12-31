@@ -406,7 +406,7 @@ const Gallery = () => {
   const stats = [
     { number: "500+", label: "Projects Completed", icon: faTrophy },
     { number: "1000+", label: "Happy Customers", icon: faHeart },
-    { number: "15+", label: "Years Experience", icon: faCalendarAlt },
+    { number: "5+", label: "Years Experience", icon: faCalendarAlt },
     { number: "50+", label: "Expert Team Members", icon: faUsers }
   ];
 
