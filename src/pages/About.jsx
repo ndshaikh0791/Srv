@@ -18,7 +18,7 @@ const About = () => {
           </h1>
 
           <p className="about-subtitle">
-            Transforming Dreams Into Reality Since 2019
+            Since 2019, SRV Interiors has created timeless, functional spaces that blend elegant design with precision craftsmanship, reflecting each client’s unique lifestyle.
           </p>
         </div>
       </section>
