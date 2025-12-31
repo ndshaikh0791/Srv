@@ -303,6 +303,13 @@ body {
     display: block;
    
 }
+.fit-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center; /* 👈 SHOW LEFT SIDE MORE */
+}
+
 
 .experience-badge {
     position: absolute;
