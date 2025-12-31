@@ -11,73 +11,101 @@ import {
   faCalendarAlt,
   faTrophy,
   faStar,
-  faCheckCircle
+  faCheckCircle,
+  faPlus
 } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Gallery.css';
 
-// Set app element for accessibility
 Modal.setAppElement('#root');
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeSubImageIndex, setActiveSubImageIndex] = useState(0);
+  const [showMoreAll, setShowMoreAll] = useState(false);
 
-  // Filter categories
-  const filters = [
+  const albumFilters = [
     { id: 'all', label: 'All Projects' },
-    { id: 'living', label: 'Living Room' },
-    { id: 'kitchen', label: 'Modular Kitchen' },
-    { id: 'bedroom', label: 'Bedroom' },
-    { id: 'office', label: 'Office Interiors' },
-    { id: 'bathroom', label: 'Bathroom' },
-    { id: 'commercial', label: 'Commercial' }
+    { id: 'amanora_neo_towers', label: 'Amanora Neo Towers' },
+    { id: 'elina_living', label: 'Elina Living' },
+    { id: 'kharghar', label: 'Kharghar' },
+    { id: 'lodha_woods', label: 'Lodha Woods' },
+    { id: 'majestic_signature_towers', label: 'Majestic Signature Towers' },
+    { id: 'mankhurd', label: 'Mankhurd' },
+    { id: 'mantra_monarch', label: 'Mantra Monarch' },
+    { id: 'our_office', label: 'Our Office' }
   ];
 
-  // Gallery images data
+  // Gallery Images Data
   const galleryImages = [
-    // Living Room Images
+    // Mantra Monarch - 4 cards
     {
       id: 1,
-      category: 'living',
-      title: 'Mantra Monarch',
+      albumId: 'mantra_monarch',
+      title: 'Mantra Monarch Living Room',
       type: 'Residential',
       location: 'Pune',
       area: '450 sq.ft',
       description: 'A stunning contemporary living room with custom furniture and elegant lighting design.',
-      // MAIN IMAGE for the grid
       image: 'src/assets/Mantra Monarch/IMG_7871.JPG',
-      // SUB-IMAGES for the modal slider
       projectImages: [
         'src/assets/Mantra Monarch/IMG_7871.JPG',
-        'src/assets/Mantra Monarch/IMG_7872.JPG', 
-        'src/assets/Mantra Monarch/IMG_7873.JPG', 
-        'src/assets/Mantra Monarch/IMG_7874.JPG', 
-        'src/assets/Mantra Monarch/IMG_7875.JPG', 
-        'src/assets/Mantra Monarch/IMG_7876.JPG', 
-        'src/assets/Mantra Monarch/IMG_7877.JPG', 
-        'src/assets/Mantra Monarch/IMG_7878.JPG', 
-        'src/assets/Mantra Monarch/IMG_7879.JPG', 
-        'src/assets/Mantra Monarch/IMG_7880.JPG', 
-        'src/assets/Mantra Monarch/IMG_7881.JPG', 
-        'src/assets/Mantra Monarch/IMG_7882.JPG', 
-        'src/assets/Mantra Monarch/IMG_7883.JPG', 
-        'src/assets/Mantra Monarch/IMG_7884.JPG', 
-        'src/assets/Mantra Monarch/IMG_7885.JPG', 
-        'src/assets/Mantra Monarch/IMG_7886.JPG', 
-        'src/assets/Mantra Monarch/IMG_7887.JPG', 
-        'src/assets/Mantra Monarch/IMG_7888.JPG', 
-        'src/assets/Mantra Monarch/IMG_7889.JPG', 
-        'src/assets/Mantra Monarch/IMG_7890.JPG', 
-        'src/assets/Mantra Monarch/IMG_7890.JPG', 
-        'src/assets/Mantra Monarch/IMG_7891.JPG'
+        'src/assets/Mantra Monarch/IMG_7872.JPG',
       ],
       features: ['Custom TV Unit', 'False Ceiling', 'Modern Lighting', 'Premium Furniture']
     },
     {
       id: 2,
-      category: 'living',
-      title: 'Amanora Neo Towers',
+      albumId: 'mantra_monarch',
+      title: 'Mantra Monarch Bedroom',
+      type: 'Residential',
+      location: 'Pune',
+      area: '280 sq.ft',
+      description: 'Elegant master bedroom with custom wardrobe and ambient lighting.',
+      image: 'src/assets/Mantra Monarch/IMG_7873.JPG',
+      projectImages: [
+        'src/assets/Mantra Monarch/IMG_7873.JPG',
+        'src/assets/Mantra Monarch/IMG_7874.JPG',
+      ],
+      features: ['Custom Wardrobe', 'False Ceiling', 'Ambient Lighting', 'Premium Finishes']
+    },
+    {
+      id: 3,
+      albumId: 'mantra_monarch',
+      title: 'Mantra Monarch Kitchen',
+      type: 'Residential',
+      location: 'Pune',
+      area: '120 sq.ft',
+      description: 'Modern modular kitchen with smart storage solutions.',
+      image: 'src/assets/Mantra Monarch/IMG_7875.JPG',
+      projectImages: [
+        'src/assets/Mantra Monarch/IMG_7875.JPG',
+        'src/assets/Mantra Monarch/IMG_7876.JPG',
+      ],
+      features: ['Modular Kitchen', 'Smart Storage', 'Granite Counter', 'Chimney Hood']
+    },
+    {
+      id: 4,
+      albumId: 'mantra_monarch',
+      title: 'Mantra Monarch Bathroom',
+      type: 'Residential',
+      location: 'Pune',
+      area: '80 sq.ft',
+      description: 'Luxurious bathroom with modern fixtures and elegant tiles.',
+      image: 'src/assets/Mantra Monarch/IMG_7877.JPG',
+      projectImages: [
+        'src/assets/Mantra Monarch/IMG_7877.JPG',
+        'src/assets/Mantra Monarch/IMG_7878.JPG',
+      ],
+      features: ['Modern Fixtures', 'Premium Tiles', 'Glass Shower', 'Storage']
+    },
+
+    // Amanora Neo Towers - 4 cards
+    {
+      id: 5,
+      albumId: 'amanora_neo_towers',
+      title: 'Amanora Living Area',
       type: 'Residential',
       location: 'Mumbai',
       area: '380 sq.ft',
@@ -86,24 +114,60 @@ const Gallery = () => {
       features: ['Minimal Design', 'Smart Storage', 'Natural Lighting', 'Neutral Palette'],
       projectImages: [
         'src/assets/Amanora_neo_towers/IMG_3974.jpg',
-        'src/assets/Amanora_neo_towers/IMG_3975.jpg', 
-        'src/assets/Amanora_neo_towers/IMG_3980.jpg', 
-        'src/assets/Amanora_neo_towers/IMG_3996.jpg', 
-        'src/assets/Amanora_neo_towers/IMG_3999.jpg', 
-        'src/assets/Amanora_neo_towers/IMG_4003.jpg', 
-        // 'src/assets/Amanora_neo_towers/IMG_4006.jpg', 
-        'src/assets/Amanora_neo_towers/IMG_4020.jpg', 
-        'src/assets/Amanora_neo_towers/IMG_4023.jpg', 
-        'src/assets/Amanora_neo_towers/IMG_4030.jpg', 
-        'src/assets/Amanora_neo_towers/IMG_4031.jpg', 
-        'src/assets/Amanora_neo_towers/IMG_8176.JPG', 
-
+        'src/assets/Amanora_neo_towers/IMG_3975.jpg',
       ],
     },
     {
-      id: 3,
-      category: 'living',
-      title: 'Majestic Signature Towers',
+      id: 6,
+      albumId: 'amanora_neo_towers',
+      title: 'Amanora Kitchen Space',
+      type: 'Residential',
+      location: 'Mumbai',
+      area: '150 sq.ft',
+      description: 'Efficient kitchen design with modern appliances and ample storage.',
+      image: 'src/assets/Amanora_neo_towers/IMG_3980.jpg',
+      features: ['Modern Appliances', 'Ample Storage', 'Granite Counter', 'Task Lighting'],
+      projectImages: [
+        'src/assets/Amanora_neo_towers/IMG_3980.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3996.jpg',
+      ],
+    },
+    {
+      id: 7,
+      albumId: 'amanora_neo_towers',
+      title: 'Amanora Bedroom',
+      type: 'Residential',
+      location: 'Mumbai',
+      area: '220 sq.ft',
+      description: 'Cozy bedroom with custom furniture and warm lighting.',
+      image: 'src/assets/Amanora_neo_towers/IMG_3999.jpg',
+      features: ['Custom Furniture', 'Warm Lighting', 'False Ceiling', 'Storage'],
+      projectImages: [
+        'src/assets/Amanora_neo_towers/IMG_3999.jpg',
+        'src/assets/Amanora_neo_towers/IMG_4003.jpg',
+      ],
+    },
+    {
+      id: 8,
+      albumId: 'amanora_neo_towers',
+      title: 'Amanora Dining Area',
+      type: 'Residential',
+      location: 'Mumbai',
+      area: '180 sq.ft',
+      description: 'Elegant dining space with modern furniture and lighting.',
+      image: 'src/assets/Amanora_neo_towers/IMG_4020.jpg',
+      features: ['Modern Furniture', 'Elegant Lighting', 'Wall Decor', 'Space Efficient'],
+      projectImages: [
+        'src/assets/Amanora_neo_towers/IMG_4020.jpg',
+        'src/assets/Amanora_neo_towers/IMG_4030.jpg',
+      ],
+    },
+
+    // Majestic Signature Towers - 4 cards
+    {
+      id: 9,
+      albumId: 'majestic_signature_towers',
+      title: 'Majestic Living Room',
       type: 'Residential',
       location: 'Navi Mumbai',
       area: '520 sq.ft',
@@ -113,18 +177,61 @@ const Gallery = () => {
       projectImages: [
         'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
         'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
+      ],
+    },
+    {
+      id: 10,
+      albumId: 'majestic_signature_towers',
+      title: 'Majestic Kitchen',
+      type: 'Residential',
+      location: 'Navi Mumbai',
+      area: '180 sq.ft',
+      description: 'Fully equipped kitchen with premium finishes.',
+      image: 'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
+      features: ['Premium Finishes', 'Modular Design', 'Storage Solutions', 'Modern Appliances'],
+      projectImages: [
         'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
-        'src/assets/Majestic_Signature_Towers/IMG_3981.jpg'
+        'src/assets/Majestic_Signature_Towers/IMG_3981.jpg',
+      ],
+    },
+    {
+      id: 11,
+      albumId: 'majestic_signature_towers',
+      title: 'Majestic Bedroom',
+      type: 'Residential',
+      location: 'Navi Mumbai',
+      area: '250 sq.ft',
+      description: 'Luxurious master bedroom with custom wardrobe.',
+      image: 'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
+      features: ['Custom Wardrobe', 'False Ceiling', 'Ambient Lighting', 'Premium Bedding'],
+      projectImages: [
+        'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
+      ],
+    },
+    {
+      id: 12,
+      albumId: 'majestic_signature_towers',
+      title: 'Majestic Balcony',
+      type: 'Residential',
+      location: 'Navi Mumbai',
+      area: '100 sq.ft',
+      description: 'Beautiful balcony space with outdoor seating.',
+      image: 'src/assets/Majestic_Signature_Towers/IMG_3981.jpg',
+      features: ['Outdoor Seating', 'Weatherproof Furniture', 'Lighting', 'Greenery'],
+      projectImages: [
+        'src/assets/Majestic_Signature_Towers/IMG_3981.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
       ],
     },
 
-    // Kitchen Images
+    // Lodha Woods - 4 cards
     {
-      id: 4,
-      category: 'kitchen',
-      title: 'Lodha Woods',
+      id: 13,
+      albumId: 'lodha_woods',
+      title: 'Lodha Woods Kitchen',
       type: 'Residential',
-      location: 'kandivali',
+      location: 'Kandivali',
       area: '180 sq.ft',
       description: 'Fully equipped modular kitchen with smart storage solutions and premium finishes.',
       image: 'src/assets/lodha_woods_kandivali/IMG_2462.jpg',
@@ -132,31 +239,59 @@ const Gallery = () => {
       projectImages: [
         'src/assets/lodha_woods_kandivali/IMG_2056.jpg',
         'src/assets/lodha_woods_kandivali/IMG_2094.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2096.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2416.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2436.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2446.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2460.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2461.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2462.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2463.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_3562.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_4578_(1).jpg',
-        'src/assets/lodha_woods_kandivali/IMG_4578.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9465.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9466.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9468.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9469.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9471.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9487.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9491.jpg',
-        
       ],
     },
     {
-      id: 5,
-      category: 'kitchen',
-      title: 'Mankhurd',
+      id: 14,
+      albumId: 'lodha_woods',
+      title: 'Lodha Woods Living',
+      type: 'Residential',
+      location: 'Kandivali',
+      area: '350 sq.ft',
+      description: 'Spacious living area with modern furniture.',
+      image: 'src/assets/lodha_woods_kandivali/IMG_2096.jpg',
+      features: ['Modern Furniture', 'False Ceiling', 'Entertainment Unit', 'Lighting'],
+      projectImages: [
+        'src/assets/lodha_woods_kandivali/IMG_2096.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2416.jpg',
+      ],
+    },
+    {
+      id: 15,
+      albumId: 'lodha_woods',
+      title: 'Lodha Woods Bedroom',
+      type: 'Residential',
+      location: 'Kandivali',
+      area: '220 sq.ft',
+      description: 'Comfortable bedroom with custom storage.',
+      image: 'src/assets/lodha_woods_kandivali/IMG_2436.jpg',
+      features: ['Custom Storage', 'False Ceiling', 'Study Corner', 'Lighting'],
+      projectImages: [
+        'src/assets/lodha_woods_kandivali/IMG_2436.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2446.jpg',
+      ],
+    },
+    {
+      id: 16,
+      albumId: 'lodha_woods',
+      title: 'Lodha Woods Bathroom',
+      type: 'Residential',
+      location: 'Kandivali',
+      area: '90 sq.ft',
+      description: 'Modern bathroom with premium fixtures.',
+      image: 'src/assets/lodha_woods_kandivali/IMG_2460.jpg',
+      features: ['Premium Fixtures', 'Modern Tiles', 'Storage', 'Lighting'],
+      projectImages: [
+        'src/assets/lodha_woods_kandivali/IMG_2460.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2461.jpg',
+      ],
+    },
+
+    // Mankhurd - 4 cards
+    {
+      id: 17,
+      albumId: 'mankhurd',
+      title: 'Mankhurd Kitchen',
       type: 'Residential',
       location: 'Mumbai',
       area: '220 sq.ft',
@@ -166,25 +301,59 @@ const Gallery = () => {
       projectImages: [
         'src/assets/Mankhurd/IMG_8761.PNG',
         'src/assets/Mankhurd/IMG_8762.PNG',
-        'src/assets/Mankhurd/IMG_8763.PNG',
-        'src/assets/Mankhurd/IMG_8851.PNG',
-        'src/assets/Mankhurd/IMG_8853.PNG',
-        'src/assets/Mankhurd/IMG_8856.PNG',
-        'src/assets/Mankhurd/IMG_8857.PNG',
-        'src/assets/Mankhurd/IMG_8858.PNG',
-        'src/assets/Mankhurd/IMG_9274.PNG',
-        'src/assets/Mankhurd/IMG_9275.PNG',
-        'src/assets/Mankhurd/IMG_9299.PNG',
-        'src/assets/Mankhurd/IMG_9394.PNG',
-        'src/assets/Mankhurd/IMG_9413.PNG',
-        'src/assets/Mankhurd/IMG_9417.PNG',
-        
       ],
     },
     {
-      id: 6,
-      category: 'living',
-      title: 'Elina Living',
+      id: 18,
+      albumId: 'mankhurd',
+      title: 'Mankhurd Living',
+      type: 'Residential',
+      location: 'Mumbai',
+      area: '300 sq.ft',
+      description: 'Modern living space with elegant furniture.',
+      image: 'src/assets/Mankhurd/IMG_8851.PNG',
+      features: ['Elegant Furniture', 'False Ceiling', 'TV Unit', 'Lighting'],
+      projectImages: [
+        'src/assets/Mankhurd/IMG_8851.PNG',
+        'src/assets/Mankhurd/IMG_8853.PNG',
+      ],
+    },
+    {
+      id: 19,
+      albumId: 'mankhurd',
+      title: 'Mankhurd Bedroom',
+      type: 'Residential',
+      location: 'Mumbai',
+      area: '250 sq.ft',
+      description: 'Comfortable bedroom with ample storage.',
+      image: 'src/assets/Mankhurd/IMG_8856.PNG',
+      features: ['Ample Storage', 'False Ceiling', 'Study Table', 'Lighting'],
+      projectImages: [
+        'src/assets/Mankhurd/IMG_8856.PNG',
+        'src/assets/Mankhurd/IMG_8857.PNG',
+      ],
+    },
+    {
+      id: 20,
+      albumId: 'mankhurd',
+      title: 'Mankhurd Dining',
+      type: 'Residential',
+      location: 'Mumbai',
+      area: '150 sq.ft',
+      description: 'Compact dining area with modern furniture.',
+      image: 'src/assets/Mankhurd/IMG_8858.PNG',
+      features: ['Compact Design', 'Modern Furniture', 'Lighting', 'Wall Decor'],
+      projectImages: [
+        'src/assets/Mankhurd/IMG_8858.PNG',
+        'src/assets/Mankhurd/IMG_9274.PNG',
+      ],
+    },
+
+    // Elina Living - 4 cards
+    {
+      id: 21,
+      albumId: 'elina_living',
+      title: 'Elina Living Kitchen',
       type: 'Residential',
       location: 'Navi Mumbai',
       area: '150 sq.ft',
@@ -194,26 +363,59 @@ const Gallery = () => {
       projectImages: [
         'src/assets/Elina_Living/IMG_8126.JPG',
         'src/assets/Elina_Living/IMG_8127.JPG',
+      ],
+    },
+    {
+      id: 22,
+      albumId: 'elina_living',
+      title: 'Elina Living Living Room',
+      type: 'Residential',
+      location: 'Navi Mumbai',
+      area: '280 sq.ft',
+      description: 'Cozy living room with modern furniture.',
+      image: 'src/assets/Elina_Living/IMG_9983.JPG',
+      features: ['Modern Furniture', 'TV Unit', 'Lighting', 'Storage'],
+      projectImages: [
         'src/assets/Elina_Living/IMG_9983.JPG',
         'src/assets/Elina_Living/IMG_9984.JPG',
+      ],
+    },
+    {
+      id: 23,
+      albumId: 'elina_living',
+      title: 'Elina Living Bedroom',
+      type: 'Residential',
+      location: 'Navi Mumbai',
+      area: '200 sq.ft',
+      description: 'Comfortable bedroom with custom wardrobe.',
+      image: 'src/assets/Elina_Living/IMG_9985.JPG',
+      features: ['Custom Wardrobe', 'False Ceiling', 'Study Corner', 'Lighting'],
+      projectImages: [
         'src/assets/Elina_Living/IMG_9985.JPG',
         'src/assets/Elina_Living/IMG_9986.JPG',
+      ],
+    },
+    {
+      id: 24,
+      albumId: 'elina_living',
+      title: 'Elina Living Bathroom',
+      type: 'Residential',
+      location: 'Navi Mumbai',
+      area: '70 sq.ft',
+      description: 'Compact bathroom with modern fixtures.',
+      image: 'src/assets/Elina_Living/IMG_9990.JPG',
+      features: ['Modern Fixtures', 'Space Efficient', 'Storage', 'Lighting'],
+      projectImages: [
         'src/assets/Elina_Living/IMG_9990.JPG',
         'src/assets/Elina_Living/IMG_9991.JPG',
-        'src/assets/Elina_Living/IMG_9992.JPG',
-        'src/assets/Elina_Living/IMG_9993.JPG',
-        'src/assets/Elina_Living/IMG_9994.JPG',
-        'src/assets/Elina_Living/IMG_9995.JPG',
-        'src/assets/Elina_Living/IMG_9996.JPG',
-        'src/assets/Elina_Living/IMG_9997.JPG',
       ],
     },
 
-    // Bedroom Images
+    // Kharghar - 4 cards
     {
-      id: 7,  
-      category: 'bedroom',
-      title: 'Khargar',
+      id: 25,
+      albumId: 'kharghar',
+      title: 'Kharghar Master Bedroom',
       type: 'Residential',
       location: 'Kharghar',
       area: '300 sq.ft',
@@ -223,156 +425,137 @@ const Gallery = () => {
       projectImages: [
         'src/assets/Kharghar/IMG_2540.JPG',
         'src/assets/Kharghar/IMG_2541.JPG',
-        'src/assets/Kharghar/IMG_2542.JPG',
-        'src/assets/Kharghar/IMG_2543.JPG',
-        'src/assets/Kharghar/IMG_2544.JPG',
-        'src/assets/Kharghar/IMG_2545.JPG',
-        'src/assets/Kharghar/IMG_7900.PNG',
-        'src/assets/Kharghar/IMG_7901.PNG',
-        'src/assets/Kharghar/IMG_7902.PNG',
-        'src/assets/Kharghar/IMG_7903.PNG',
-        'src/assets/Kharghar/IMG_7904.PNG',
-        'src/assets/Kharghar/IMG_7905.PNG',
-        'src/assets/Kharghar/IMG_7906.PNG',
-        'src/assets/Kharghar/IMG_7907.PNG',
-        'src/assets/Kharghar/IMG_7908.PNG',
-        'src/assets/Kharghar/IMG_8011.PNG',
-        'src/assets/Kharghar/IMG_8025.JPG',
-        'src/assets/Kharghar/IMG_8027.JPG',
-        'src/assets/Kharghar/IMG_8028.JPG',
-        'src/assets/Kharghar/IMG_8029.JPG',
-        'src/assets/Kharghar/IMG_8030.JPG',
-        'src/assets/Kharghar/IMG_8031.JPG',
-        'src/assets/Kharghar/IMG_8032.JPG',
-        'src/assets/Kharghar/IMG_8033.JPG',
-        'src/assets/Kharghar/IMG_8035.JPG',
-        'src/assets/Kharghar/IMG_8037.JPG',
-        'src/assets/Kharghar/IMG_8039.JPG',
-        'src/assets/Kharghar/IMG_8041.JPG',
-        'src/assets/Kharghar/IMG_8042.JPG',
-        'src/assets/Kharghar/IMG_8045.JPG',
-        'src/assets/Kharghar/IMG_8046.JPG',
-        'src/assets/Kharghar/IMG_8047.JPG',
-        'src/assets/Kharghar/IMG_8179.JPG',
-        'src/assets/Kharghar/IMG_8180.JPG',
-        'src/assets/Kharghar/IMG_8180.JPG',
       ],
     },
     {
-      id: 8,
-      category: 'office',
-      title: 'Our Office',
+      id: 26,
+      albumId: 'kharghar',
+      title: 'Kharghar Living Room',
       type: 'Residential',
+      location: 'Kharghar',
+      area: '350 sq.ft',
+      description: 'Spacious living area with modern furniture.',
+      image: 'src/assets/Kharghar/IMG_2542.JPG',
+      features: ['Modern Furniture', 'False Ceiling', 'Entertainment Unit', 'Lighting'],
+      projectImages: [
+        'src/assets/Kharghar/IMG_2542.JPG',
+        'src/assets/Kharghar/IMG_2543.JPG',
+      ],
+    },
+    {
+      id: 27,
+      albumId: 'kharghar',
+      title: 'Kharghar Kitchen',
+      type: 'Residential',
+      location: 'Kharghar',
+      area: '180 sq.ft',
+      description: 'Modern kitchen with modular design.',
+      image: 'src/assets/Kharghar/IMG_2544.JPG',
+      features: ['Modular Design', 'Smart Storage', 'Granite Counter', 'Appliances'],
+      projectImages: [
+        'src/assets/Kharghar/IMG_2544.JPG',
+        'src/assets/Kharghar/IMG_2545.JPG',
+      ],
+    },
+    {
+      id: 28,
+      albumId: 'kharghar',
+      title: 'Kharghar Guest Bedroom',
+      type: 'Residential',
+      location: 'Kharghar',
+      area: '220 sq.ft',
+      description: 'Comfortable guest bedroom with storage.',
+      image: 'src/assets/Kharghar/IMG_7900.PNG',
+      features: ['Storage Solutions', 'False Ceiling', 'Lighting', 'Furniture'],
+      projectImages: [
+        'src/assets/Kharghar/IMG_7900.PNG',
+        'src/assets/Kharghar/IMG_7901.PNG',
+      ],
+    },
+
+    // Our Office - 4 cards
+    {
+      id: 29,
+      albumId: 'our_office',
+      title: 'Office Reception',
+      type: 'Commercial',
       location: 'Mumbai',
       area: '200 sq.ft',
-      description: 'Colorful and functional kids bedroom with study area and storage.',
+      description: 'Modern office reception with elegant design.',
       image: 'src/assets/Our_Office/IMG_6928.PNG',
-      features: ['Study Desk', 'Storage Beds', 'Colorful Theme', 'Play Area'],
+      features: ['Modern Design', 'Reception Desk', 'Lighting', 'Branding'],
       projectImages: [
         'src/assets/Our_Office/IMG_6924.PNG',
         'src/assets/Our_Office/IMG_6925.PNG',
+      ],
+    },
+    {
+      id: 30,
+      albumId: 'our_office',
+      title: 'Workstation Area',
+      type: 'Commercial',
+      location: 'Mumbai',
+      area: '400 sq.ft',
+      description: 'Efficient workstation area for team collaboration.',
+      image: 'src/assets/Our_Office/IMG_6926.PNG',
+      features: ['Ergonomic Chairs', 'Workstations', 'Storage', 'Lighting'],
+      projectImages: [
         'src/assets/Our_Office/IMG_6926.PNG',
         'src/assets/Our_Office/IMG_6927.PNG',
+      ],
+    },
+    {
+      id: 31,
+      albumId: 'our_office',
+      title: 'Meeting Room',
+      type: 'Commercial',
+      location: 'Mumbai',
+      area: '180 sq.ft',
+      description: 'Professional meeting room for client discussions.',
+      image: 'src/assets/Our_Office/IMG_6928.PNG',
+      features: ['Conference Table', 'AV System', 'Whiteboard', 'Lighting'],
+      projectImages: [
         'src/assets/Our_Office/IMG_6928.PNG',
         'src/assets/Our_Office/IMG_6929.PNG',
-        'src/assets/Our_Office/IMG_6930.PNG',
-        
       ],
-      
     },
-    // {
-    //   id: 9,
-    //   category: 'bedroom',
-    //   title: 'Contemporary Bedroom',
-    //   type: 'Residential',
-    //   location: 'Navi Mumbai',
-    //   area: '280 sq.ft',
-    //   description: 'Modern bedroom design with minimal aesthetics and smart lighting.',
-    //   image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    //   features: ['Minimal Design', 'Smart Lighting', 'Built-in Wardrobe', 'Balcony Access']
-    // },
-
-    // // Office Images
-    // {
-    //   id: 10,
-    //   category: 'office',
-    //   title: 'Corporate Office Space',
-    //   type: 'Commercial',
-    //   location: 'Pune',
-    //   area: '5000 sq.ft',
-    //   description: 'Modern corporate office with collaborative spaces and premium finishes.',
-    //   image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    //   features: ['Workstations', 'Conference Room', 'Reception', 'Cafeteria']
-    // },
-    // {
-    //   id: 11,
-    //   category: 'office',
-    //   title: 'Startup Office',
-    //   type: 'Commercial',
-    //   location: 'Mumbai',
-    //   area: '2500 sq.ft',
-    //   description: 'Creative office space for startups with flexible work areas.',
-    //   image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    //   features: ['Open Plan', 'Meeting Pods', 'Breakout Area', 'Creative Zone']
-    // },
-
-    // // Bathroom Images
-    // {
-    //   id: 12,
-    //   category: 'bathroom',
-    //   title: 'Luxury Bathroom',
-    //   type: 'Residential',
-    //   location: 'Pune',
-    //   area: '120 sq.ft',
-    //   description: 'Premium bathroom with luxurious fittings and spa-like amenities.',
-    //   image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    //   features: ['Rain Shower', 'Jacuzzi', 'Premium Tiles', 'Vanity Unit']
-    // },
-
-    // // Commercial Images
-    // {
-    //   id: 13,
-    //   category: 'commercial',
-    //   title: 'Restaurant Interiors',
-    //   type: 'Commercial',
-    //   location: 'Mumbai',
-    //   area: '3000 sq.ft',
-    //   description: 'Upscale restaurant with elegant dining area and bar counter.',
-    //   image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    //   features: ['Dining Area', 'Bar Counter', 'Kitchen', 'Private Dining']
-    // },
-    // {
-    //   id: 14,
-    //   category: 'commercial',
-    //   title: 'Showroom Design',
-    //   type: 'Commercial',
-    //   location: 'Navi Mumbai',
-    //   area: '4000 sq.ft',
-    //   description: 'Modern showroom with display areas and customer lounge.',
-    //   image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    //   features: ['Display Units', 'Lighting', 'Customer Lounge', 'Cash Counter']
-    // }
+    {
+      id: 32,
+      albumId: 'our_office',
+      title: 'Manager Cabin',
+      type: 'Commercial',
+      location: 'Mumbai',
+      area: '150 sq.ft',
+      description: 'Private cabin for managerial work.',
+      image: 'src/assets/Our_Office/IMG_6930.PNG',
+      features: ['Private Space', 'Storage', 'Work Desk', 'Lighting'],
+      projectImages: [
+        'src/assets/Our_Office/IMG_6930.PNG',
+        'src/assets/Our_Office/IMG_6924.PNG',
+      ],
+    },
   ];
 
-  const [activeSubImageIndex, setActiveSubImageIndex] = useState(0);
   // Filter images based on active filter
   const filteredImages = activeFilter === 'all'
     ? galleryImages
-    : galleryImages.filter(img => img.category === activeFilter);
+    : galleryImages.filter(img => img.albumId === activeFilter);
 
-  // Open modal with image details
+  // For "All Projects" show only 8 initially, then all when showMoreAll is true
+  const displayedImages = activeFilter === 'all' 
+    ? (showMoreAll ? filteredImages : filteredImages.slice(0, 8))
+    : filteredImages.slice(0, 4); // For other filters, show only 4
+
   const openModal = (image, index) => {
     setSelectedImage(image);
     setCurrentIndex(index);
-    setActiveSubImageIndex(0); // Reset to first sub-image
+    setActiveSubImageIndex(0);
   };
 
-  // Close modal
   const closeModal = () => {
     setSelectedImage(null);
   };
 
-  // Navigate to next sub-image WITHIN the current project
   const nextSubImage = (e) => {
     if (e) e.stopPropagation();
     if (selectedImage.projectImages && selectedImage.projectImages.length > 0) {
@@ -381,7 +564,6 @@ const Gallery = () => {
     }
   };
 
-  // Navigate to previous sub-image WITHIN the current project
   const prevSubImage = (e) => {
     if (e) e.stopPropagation();
     if (selectedImage.projectImages && selectedImage.projectImages.length > 0) {
@@ -389,20 +571,12 @@ const Gallery = () => {
       setActiveSubImageIndex(prevIdx);
     }
   };
-  //   // Navigate to next image
-  //   const nextSubImage = (e) => {
-  //   e.stopPropagation();
-  //   const nextIdx = (activeSubImageIndex + 1) % selectedImage.projectImages.length;
-  //   setActiveSubImageIndex(nextIdx);
-  // };
 
-  //   // Navigate to previous image
-  //   const prevSubImage = (e) => {
-  //   e.stopPropagation();
-  //   const prevIdx = (activeSubImageIndex - 1 + selectedImage.projectImages.length) % selectedImage.projectImages.length;
-  //   setActiveSubImageIndex(prevIdx);
-  // };
-  // Statistics data
+  const handleFilterChange = (filterId) => {
+    setActiveFilter(filterId);
+    setShowMoreAll(false); // Reset showMoreAll when filter changes
+  };
+
   const stats = [
     { number: "500+", label: "Projects Completed", icon: faTrophy },
     { number: "1000+", label: "Happy Customers", icon: faHeart },
@@ -410,7 +584,6 @@ const Gallery = () => {
     { number: "50+", label: "Expert Team Members", icon: faUsers }
   ];
 
-  // Testimonials
   const testimonials = [
     {
       name: "Rajesh Kumar",
@@ -434,14 +607,12 @@ const Gallery = () => {
 
   return (
     <div className="gallery-page">
-      {/* Hero Banner */}
       <section className="gallery-hero">
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img
             src="src/assets/Elina_living/IMG_9984.JPG" 
             alt="Gallery Banner"
-            
           />
         </div>
 
@@ -459,16 +630,15 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Filter Buttons */}
       <section className="filter-section">
         <div className="container">
           <div className="filter-container">
             <div className="filter-buttons">
-              {filters.map((filter) => (
+              {albumFilters.map((filter) => (
                 <button
                   key={filter.id}
                   className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-                  onClick={() => setActiveFilter(filter.id)}
+                  onClick={() => handleFilterChange(filter.id)}
                 >
                   {filter.label}
                 </button>
@@ -477,22 +647,23 @@ const Gallery = () => {
 
             <div className="filter-info">
               <p>
-                Showing <span className="count">{filteredImages.length}</span> projects
-                {activeFilter !== 'all' && ` in ${filters.find(f => f.id === activeFilter)?.label}`}
+                Showing <span className="count">{displayedImages.length}</span> {activeFilter === 'all' ? 'projects' : 'images'}
+                {activeFilter !== 'all' && ` in ${albumFilters.find(f => f.id === activeFilter)?.label}`}
+                {activeFilter === 'all' && !showMoreAll && ' (8 of 32)'}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Gallery Grid */}
       <section className="gallery-grid-section">
         <div className="container">
           <div className="gallery-grid">
-            {filteredImages.map((image, index) => (
+            {displayedImages.map((image, index) => (
               <div
                 key={image.id}
                 className="gallery-item"
+                style={{ '--i': index }}
                 onClick={() => openModal(image, index)}
               >
                 <div className="image-container">
@@ -518,10 +689,34 @@ const Gallery = () => {
               </div>
             ))}
           </div>
+
+          {/* Show Explore More button only for "All Projects" filter */}
+          {activeFilter === 'all' && !showMoreAll && (
+            <div className="explore-more-container">
+              <button 
+                className="explore-more-btn"
+                onClick={() => setShowMoreAll(true)}
+              >
+                <FontAwesomeIcon icon={faPlus} />
+                Explore More Projects
+              </button>
+            </div>
+          )}
+
+          {/* Show Show Less button when all projects are shown */}
+          {activeFilter === 'all' && showMoreAll && (
+            <div className="explore-more-container">
+              <button 
+                className="explore-less-btn"
+                onClick={() => setShowMoreAll(false)}
+              >
+                Show Less Projects
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Statistics Section */}
       <section className="stats-section">
         <div className="container">
           <div className="section-header">
@@ -529,7 +724,7 @@ const Gallery = () => {
               Our Journey
             </div>
             <h2 className="section-title">
-              Years of <span className="text-highlight1">Excellence</span>
+              Years of <span className="text-highlight">Excellence</span>
             </h2>
             <p className="section-subtitle">
               Building beautiful spaces and lasting relationships since 2019
@@ -552,7 +747,6 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Client Testimonials */}
       <section className="client-testimonials">
         <div className="container">
           <div className="section-header">
@@ -593,7 +787,6 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="gallery-cta">
         <div className="container">
           <div className="cta-content">
@@ -615,8 +808,6 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Image Modal */}
-      {/* Image Modal */}
       <Modal
         isOpen={!!selectedImage}
         onRequestClose={closeModal}
@@ -629,7 +820,6 @@ const Gallery = () => {
               <FontAwesomeIcon icon={faTimes} />
             </button>
 
-            {/* Navigation specifically for the project's internal images */}
             {selectedImage.projectImages && selectedImage.projectImages.length > 1 && (
               <div className="modal-nav">
                 <button className="nav-btn prev-btn" onClick={prevSubImage}>
@@ -662,7 +852,7 @@ const Gallery = () => {
               <div className="modal-info">
                 <div className="project-header">
                   <span className="project-category">
-                    {filters.find(f => f.id === selectedImage.category)?.label}
+                    {selectedImage.title}
                   </span>
                   <h2 className="project-title">{selectedImage.title}</h2>
                 </div>
