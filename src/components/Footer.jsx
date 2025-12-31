@@ -6,18 +6,12 @@ import {
   faPhone, 
   faEnvelope, 
   faArrowRight, 
-  faArrowUp,
-  faUtensils,
-  faBed,
-  faCouch,
-  faBuilding,
-  faBath,
-  faHammer
+  faArrowUp
 } from '@fortawesome/free-solid-svg-icons';
 import { 
   faWhatsapp, 
   faInstagram, 
-  faFacebook 
+  faYoutube 
 } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
@@ -40,12 +34,12 @@ const Footer = () => {
   };
 
   const services = [
-    { name: 'Modular Kitchen', icon: faUtensils },
-    { name: 'Bedroom Interiors', icon: faBed },
-    { name: 'Living Room Design', icon: faCouch },
-    { name: 'Office Interiors', icon: faBuilding },
-    { name: 'Bathroom Renovation', icon: faBath },
-    { name: 'Civil Work', icon: faHammer }
+    'Modular Kitchen',
+    'Bedroom Interiors', 
+    'Living Room Design',
+    'Office Interiors',
+    'Bathroom Renovation',
+    'Civil Work'
   ];
 
   return (
@@ -56,12 +50,12 @@ const Footer = () => {
 
             {/* Brand Section */}
             <div className="footer-brand">
-             <a href="/" className="footer-logo">
-  <span className="logo-text">
-    <span className="logo-srv">SRV</span>
-    <span className="logo-interiors"> Interiors</span>
-  </span>
-</a>
+              <a href="/" className="footer-logo">
+                <span className="logo-text">
+                  <span className="logo-srv">SRV</span>
+                  <span className="logo-interiors"> Interiors</span>
+                </span>
+              </a>
               <p className="footer-tagline">
                 Crafting beautiful interiors from generations to generations. Your dream, our creation.
               </p>
@@ -70,14 +64,14 @@ const Footer = () => {
               </p>
 
               <div className="footer-social">
-                <a href="https://wa.me/918796932990" className="social-icon" title="WhatsApp">
+                <a href="https://wa.me/918796932990" className="social-icon" title="WhatsApp" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faWhatsapp} />
                 </a>
-                <a href="#" className="social-icon" title="Instagram">
+                <a href="https://www.instagram.com/srvinteriors?igsh=M29zcDlwN3dsdjFv" className="social-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
-                <a href="#" className="social-icon" title="Facebook">
-                  <FontAwesomeIcon icon={faFacebook} />
+                <a href="https://youtube.com/@sachinvishwakarma-fo4sv?si=dDwhdlwzdajhfObL" className="social-icon" title="YouTube" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faYoutube} />
                 </a>
                 <a href="tel:+918796932990" className="social-icon" title="Call">
                   <FontAwesomeIcon icon={faPhone} />
@@ -103,8 +97,7 @@ const Footer = () => {
               <ul className="services-list">
                 {services.map((service, index) => (
                   <li key={index}>
-                    {/* <FontAwesomeIcon icon={service.icon} className="service-icon" /> */}
-                    {service.name}
+                    {service}
                   </li>
                 ))}
               </ul>
@@ -133,19 +126,6 @@ const Footer = () => {
               <p className="locations-text">
                 Pune • Mumbai • Navi Mumbai
               </p>
-
-              {/* <h4 className="footer-heading">Newsletter</h4>
-              <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="newsletter-input"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-                <button className="newsletter-btn">Subscribe</button>
-              </form> */}
             </div>
 
           </div>
@@ -156,14 +136,6 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-
-      {/* <button
-        className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
-        onClick={scrollToTop}
-        aria-label="Back to top"
-      >
-        <FontAwesomeIcon icon={faArrowUp} />
-      </button> */}
     </>
   );
 };

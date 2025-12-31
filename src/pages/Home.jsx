@@ -285,9 +285,9 @@ const Home = () => {
                                 <button className="btn-about" onClick={scrollToForm}>
                                     <FontAwesomeIcon icon={faArrowRight} /> Get Free Consultation
                                 </button>
-                                <button className="btn-outline" onClick={handleWhatsApp}>
+                                {/* <button className="btn-outline" onClick={handleWhatsApp}>
                                     <FontAwesomeIcon icon={faWhatsapp} /> Chat on WhatsApp
-                                </button>
+                                </button> */}
                             </div>
                         </div>
 
@@ -322,26 +322,41 @@ const Home = () => {
                         </p>
                     </div>
 
-                    <div className="services-grid">
-                        {services.map((service, index) => (
-                            <div
-                                key={index}
-                                className="service-card"
-                            >
-                                <FontAwesomeIcon icon={service.icon} className="service-icon" />
-                                <h3 className="service-title">{service.title}</h3>
-                                <p className="service-description">{service.description}</p>
-                                <div className="service-features">
-                                    {service.features.map((feature, idx) => (
-                                        <div key={idx} className="service-feature">
-                                            <FontAwesomeIcon icon={faCheckCircle} className="feature-icon" />
-                                            <span>{feature}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
+                    <div className="services-container">
+                        <div className="services-grid">
+  {services.slice(0, 4).map((service, index) => (
+    <div key={index} className="service-card-simple">
+      {/* Heading - Left Aligned */}
+      <h3 className="service-heading-left">{service.title}</h3>
+      
+      {/* Description - Center Aligned */}
+      <p className="service-desc-center">{service.description}</p>
+      
+      {/* Icon - Center */}
+      <div className="service-icon-box">
+        <FontAwesomeIcon icon={service.icon} className="service-icon-minimal" />
+      </div>
+      
+      {/* Features - Center Aligned */}
+      <div className="service-features-simple">
+        {service.features.slice(0, 3).map((feature, idx) => (
+          <div key={idx} className="feature-item-center">
+            <FontAwesomeIcon icon={faCheckCircle} className="feature-icon-small" />
+            <span>{feature}</span>
+          </div>
+        ))}
+      </div>
+      
+      {/* Learn More Button - Center */}
+      <button className="learn-more-btn">
+        Learn More
+        <FontAwesomeIcon icon={faArrowRight} className="btn-arrow" />
+      </button>
+    </div>
+  ))}
+</div>
                     </div>
+
 
                     <div className="text-center">
                         <button className="btn-view-all" onClick={scrollToForm}>
@@ -393,66 +408,60 @@ const Home = () => {
 
             {/* Our Projects */}
             {/* Our Projects - Simpler Cards */}
-            <section className="projects-section">
-                <div className="container">
-                    <div className="section-header fade-in">
-                        <div className="hero-badge">
-                            Our Portfolio
+           <section className="projects-section">
+    <div className="container">
+        <div className="section-header fade-in">
+            <div className="hero-badge">
+                Our Portfolio
+            </div>
+            <h2 className="section-title">
+                Featured <span className="text-highlight">Projects</span>
+            </h2>
+            <p className="section-subtitle">
+                Explore our portfolio of stunning interior transformations
+            </p>
+        </div>
+
+        <div className="projects-grid">
+            {projects.slice(0, 4).map((project, index) => (
+                <div
+                    key={project.id}
+                    className="project-card-minimal fade-in"
+                >
+                    <div className="project-image-minimal">
+                        <img
+                            src={project.image}
+                            alt={project.title}
+                        />
+                        <div className="project-badge-minimal">
+                            {project.type}
                         </div>
-                        <h2 className="section-title">
-                            Featured <span className="text-highlight1">Projects</span>
-                        </h2>
-                        <p className="section-subtitle">
-                            Explore our portfolio of stunning interior transformations
+                    </div>
+                    <div className="project-content-minimal">
+                        <h3 className="project-title-minimal">{project.title}</h3>
+                        <div className="project-meta-minimal">
+                            <span className="project-location-minimal">
+                                <FontAwesomeIcon icon={faMapMarkerAlt} /> {project.location}
+                            </span>
+                            <span className="project-area-minimal">
+                                <FontAwesomeIcon icon={faRulerCombined} /> {project.area}
+                            </span>
+                        </div>
+                        <p className="project-description-minimal">
+                            {project.description || "Professional interior design solution with premium finishes"}
                         </p>
                     </div>
-
-                    <div className="projects-grid">
-                        {projects.map((project, index) => (
-                            <div
-                                key={project.id}
-                                className="project-card fade-in"
-                            >
-                                <div className="project-image">
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                    />
-                                    <div className="project-badge">
-                                        {project.type}
-                                    </div>
-                                </div>
-                                <div className="project-content">
-                                    <div className="project-details">
-                                        <h3 className="project-title">{project.title}</h3>
-                                        <div className="project-meta">
-                                            <span className="project-location">
-                                                <FontAwesomeIcon icon={faMapMarkerAlt} /> {project.location}
-                                            </span>
-                                            <span className="project-area">
-                                                {project.area}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className="project-footer">
-                                        <div className="project-tags">
-                                            <span className="project-tag">{project.type}</span>
-                                            <span className="project-tag">Interior Design</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="text-center fade-in">
-                        <button className="btn-view-all" onClick={() => window.location.href = '/projects'}>
-                            View All Projects <FontAwesomeIcon icon={faArrowRight} />
-                        </button>
-                    </div>
                 </div>
-            </section>
+            ))}
+        </div>
 
+        <div className="text-center fade-in">
+            <button className="btn-view-all" onClick={() => window.location.href = '/projects'}>
+                View All Projects <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+        </div>
+    </div>
+</section>
             {/* Client Testimonials */}
             <section className="testimonials-section">
                 <div className="container">
@@ -520,7 +529,7 @@ const Home = () => {
             </section>
 
             {/* Inquiry Form */}
-            <section className="inquiry-section" id="inquiry-form">
+            {/* <section className="inquiry-section" id="inquiry-form">
                 <div className="container">
                     <div className="form-container fade-in">
                         <div className="form-header">
@@ -598,7 +607,7 @@ const Home = () => {
                         </form>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 };

@@ -60,7 +60,7 @@ const Navbar = () => {
             <Link to="/" className="logo-link">
               {/* <FontAwesomeIcon icon={faHome} className="logo-icon" /> */}
               <span className="logo-text">
-                <span className="logo-srv">SRV</span>
+                <span className="logo-srv1">SRV</span>
                 <span className="logo-interiors"> INTERIORS</span>
               </span>
             </Link>
