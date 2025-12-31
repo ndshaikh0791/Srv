@@ -1,4 +1,12 @@
 /* Contact Page Styles */
+body {
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background-color: var(--bg-cream);
+    overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +14,7 @@
 }
 
 .page-container {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
   color: #333;
   width: 100%;
   overflow-x: hidden;
@@ -117,7 +125,7 @@
   border-radius: 10px;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
   background-color: #f9f9f9;
 }
 
@@ -315,7 +323,7 @@
     color: white;
 }
 .card-header h3 {
-    font-family: 'Playfair Display', serif; /* Serif font for city names */
+     /* Serif font for city names */
     font-size: 26px;
     font-weight: 700;
     margin-bottom: 2px;
@@ -756,4 +764,17 @@
     .contact-info-section {
         padding: 20px;
     }
+}
+body,
+.page-container,
+.contact-banner,
+.banner-title,
+.banner-subtitle,
+.contact-content,
+.contact-form-section,
+.contact-info-section,
+.locations-section,
+h1, h2, h3, h4, h5, h6,
+p, span, label, input, textarea, button {
+    font-family: 'Libre Baskerville', serif !important;
 }

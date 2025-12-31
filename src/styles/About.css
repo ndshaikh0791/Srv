@@ -1,4 +1,13 @@
 /* PAGE RESET */
+body {
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background-color: var(--bg-cream);
+    overflow-x: hidden;
+}
+
+
 .about-page {
   width: 100%;
 }
@@ -92,7 +101,7 @@
 
 /* serif-style large numbers to match Image 5 */
 .stat-box h3 {
-  font-family: 'Playfair Display', serif;
+ font-family: 'Libre Baskerville', serif;
   /* Use a serif font for that elegant look */
   font-size: 44px;
   font-weight: 700;
