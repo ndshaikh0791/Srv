@@ -51,7 +51,7 @@ const Gallery = () => {
       image: 'src/assets/Mantra Monarch/IMG_7871.JPG',
       projectImages: [
         'src/assets/Mantra Monarch/IMG_7871.JPG',
-        'src/assets/Mantra Monarch/IMG_7872.JPG',
+        // 'src/assets/Mantra Monarch/IMG_7872.JPG',
       ],
       features: ['Custom TV Unit', 'False Ceiling', 'Modern Lighting', 'Premium Furniture']
     },
@@ -66,7 +66,7 @@ const Gallery = () => {
       image: 'src/assets/Mantra Monarch/IMG_7873.JPG',
       projectImages: [
         'src/assets/Mantra Monarch/IMG_7873.JPG',
-        'src/assets/Mantra Monarch/IMG_7874.JPG',
+        // 'src/assets/Mantra Monarch/IMG_7874.JPG',
       ],
       features: ['Custom Wardrobe', 'False Ceiling', 'Ambient Lighting', 'Premium Finishes']
     },
@@ -81,7 +81,7 @@ const Gallery = () => {
       image: 'src/assets/Mantra Monarch/IMG_7875.JPG',
       projectImages: [
         'src/assets/Mantra Monarch/IMG_7875.JPG',
-        'src/assets/Mantra Monarch/IMG_7876.JPG',
+        // 'src/assets/Mantra Monarch/IMG_7876.JPG',
       ],
       features: ['Modular Kitchen', 'Smart Storage', 'Granite Counter', 'Chimney Hood']
     },
@@ -96,7 +96,7 @@ const Gallery = () => {
       image: 'src/assets/Mantra Monarch/IMG_7877.JPG',
       projectImages: [
         'src/assets/Mantra Monarch/IMG_7877.JPG',
-        'src/assets/Mantra Monarch/IMG_7878.JPG',
+        // 'src/assets/Mantra Monarch/IMG_7878.JPG',
       ],
       features: ['Modern Fixtures', 'Premium Tiles', 'Glass Shower', 'Storage']
     },
@@ -113,8 +113,10 @@ const Gallery = () => {
       image: 'src/assets/Amanora_neo_towers/IMG_4023.jpg',
       features: ['Minimal Design', 'Smart Storage', 'Natural Lighting', 'Neutral Palette'],
       projectImages: [
-        'src/assets/Amanora_neo_towers/IMG_3974.jpg',
-        'src/assets/Amanora_neo_towers/IMG_3975.jpg',
+        // 'src/assets/Amanora_neo_towers/IMG_3974.jpg',
+        // 'src/assets/Amanora_neo_towers/IMG_3975.jpg',
+        'src/assets/Amanora_neo_towers/IMG_4031.jpg',
+       
       ],
     },
     {
@@ -128,8 +130,8 @@ const Gallery = () => {
       image: 'src/assets/Amanora_neo_towers/IMG_3980.jpg',
       features: ['Modern Appliances', 'Ample Storage', 'Granite Counter', 'Task Lighting'],
       projectImages: [
-        'src/assets/Amanora_neo_towers/IMG_3980.jpg',
-        'src/assets/Amanora_neo_towers/IMG_3996.jpg',
+        'src/assets/Amanora_neo_towers/IMG_4003.jpg',
+        // 'src/assets/Amanora_neo_towers/IMG_3996.jpg',
       ],
     },
     {
@@ -144,7 +146,7 @@ const Gallery = () => {
       features: ['Custom Furniture', 'Warm Lighting', 'False Ceiling', 'Storage'],
       projectImages: [
         'src/assets/Amanora_neo_towers/IMG_3999.jpg',
-        'src/assets/Amanora_neo_towers/IMG_4003.jpg',
+        // 'src/assets/Amanora_neo_towers/IMG_4003.jpg',
       ],
     },
     {
@@ -159,7 +161,7 @@ const Gallery = () => {
       features: ['Modern Furniture', 'Elegant Lighting', 'Wall Decor', 'Space Efficient'],
       projectImages: [
         'src/assets/Amanora_neo_towers/IMG_4020.jpg',
-        'src/assets/Amanora_neo_towers/IMG_4030.jpg',
+        // 'src/assets/Amanora_neo_towers/IMG_4030.jpg',
       ],
     },
 
@@ -175,7 +177,7 @@ const Gallery = () => {
       image: 'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
       features: ['Bespoke Furniture', 'Art Display', 'Accent Wall', 'Ambient Lighting'],
       projectImages: [
-        'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
+        // 'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
         'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
       ],
     },
@@ -190,7 +192,7 @@ const Gallery = () => {
       image: 'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
       features: ['Premium Finishes', 'Modular Design', 'Storage Solutions', 'Modern Appliances'],
       projectImages: [
-        'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
+        // 'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
         'src/assets/Majestic_Signature_Towers/IMG_3981.jpg',
       ],
     },
@@ -205,7 +207,7 @@ const Gallery = () => {
       image: 'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
       features: ['Custom Wardrobe', 'False Ceiling', 'Ambient Lighting', 'Premium Bedding'],
       projectImages: [
-        'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
+        // 'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
         'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
       ],
     },
@@ -220,7 +222,7 @@ const Gallery = () => {
       image: 'src/assets/Majestic_Signature_Towers/IMG_3981.jpg',
       features: ['Outdoor Seating', 'Weatherproof Furniture', 'Lighting', 'Greenery'],
       projectImages: [
-        'src/assets/Majestic_Signature_Towers/IMG_3981.jpg',
+        // 'src/assets/Majestic_Signature_Towers/IMG_3981.jpg',
         'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
       ],
     },
@@ -237,7 +239,7 @@ const Gallery = () => {
       image: 'src/assets/lodha_woods_kandivali/IMG_2462.jpg',
       features: ['Modular Cabinets', 'Granite Counter', 'Smart Storage', 'Chimney Hood'],
       projectImages: [
-        'src/assets/lodha_woods_kandivali/IMG_2056.jpg',
+        // 'src/assets/lodha_woods_kandivali/IMG_2056.jpg',
         'src/assets/lodha_woods_kandivali/IMG_2094.jpg',
       ],
     },
@@ -253,7 +255,7 @@ const Gallery = () => {
       features: ['Modern Furniture', 'False Ceiling', 'Entertainment Unit', 'Lighting'],
       projectImages: [
         'src/assets/lodha_woods_kandivali/IMG_2096.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2416.jpg',
+        // 'src/assets/lodha_woods_kandivali/IMG_2416.jpg',
       ],
     },
     {
@@ -268,7 +270,7 @@ const Gallery = () => {
       features: ['Custom Storage', 'False Ceiling', 'Study Corner', 'Lighting'],
       projectImages: [
         'src/assets/lodha_woods_kandivali/IMG_2436.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2446.jpg',
+        // 'src/assets/lodha_woods_kandivali/IMG_2446.jpg',
       ],
     },
     {
@@ -282,7 +284,7 @@ const Gallery = () => {
       image: 'src/assets/lodha_woods_kandivali/IMG_2460.jpg',
       features: ['Premium Fixtures', 'Modern Tiles', 'Storage', 'Lighting'],
       projectImages: [
-        'src/assets/lodha_woods_kandivali/IMG_2460.jpg',
+        // 'src/assets/lodha_woods_kandivali/IMG_2460.jpg',
         'src/assets/lodha_woods_kandivali/IMG_2461.jpg',
       ],
     },
@@ -300,7 +302,7 @@ const Gallery = () => {
       features: ['Island Counter', 'Modern Appliances', 'Pull-out Drawers', 'Task Lighting'],
       projectImages: [
         'src/assets/Mankhurd/IMG_8761.PNG',
-        'src/assets/Mankhurd/IMG_8762.PNG',
+        // 'src/assets/Mankhurd/IMG_8762.PNG',
       ],
     },
     {
@@ -315,7 +317,7 @@ const Gallery = () => {
       features: ['Elegant Furniture', 'False Ceiling', 'TV Unit', 'Lighting'],
       projectImages: [
         'src/assets/Mankhurd/IMG_8851.PNG',
-        'src/assets/Mankhurd/IMG_8853.PNG',
+        // 'src/assets/Mankhurd/IMG_8853.PNG',
       ],
     },
     {
@@ -345,7 +347,7 @@ const Gallery = () => {
       features: ['Compact Design', 'Modern Furniture', 'Lighting', 'Wall Decor'],
       projectImages: [
         'src/assets/Mankhurd/IMG_8858.PNG',
-        'src/assets/Mankhurd/IMG_9274.PNG',
+        // 'src/assets/Mankhurd/IMG_9274.PNG',
       ],
     },
 
@@ -362,7 +364,7 @@ const Gallery = () => {
       features: ['Space Efficient', 'Corner Solutions', 'Wall Cabinets', 'Breakfast Counter'],
       projectImages: [
         'src/assets/Elina_Living/IMG_8126.JPG',
-        'src/assets/Elina_Living/IMG_8127.JPG',
+        // 'src/assets/Elina_Living/IMG_8127.JPG',
       ],
     },
     {
@@ -377,7 +379,7 @@ const Gallery = () => {
       features: ['Modern Furniture', 'TV Unit', 'Lighting', 'Storage'],
       projectImages: [
         'src/assets/Elina_Living/IMG_9983.JPG',
-        'src/assets/Elina_Living/IMG_9984.JPG',
+        // 'src/assets/Elina_Living/IMG_9984.JPG',
       ],
     },
     {
@@ -392,7 +394,7 @@ const Gallery = () => {
       features: ['Custom Wardrobe', 'False Ceiling', 'Study Corner', 'Lighting'],
       projectImages: [
         'src/assets/Elina_Living/IMG_9985.JPG',
-        'src/assets/Elina_Living/IMG_9986.JPG',
+        // 'src/assets/Elina_Living/IMG_9986.JPG',
       ],
     },
     {
@@ -407,7 +409,7 @@ const Gallery = () => {
       features: ['Modern Fixtures', 'Space Efficient', 'Storage', 'Lighting'],
       projectImages: [
         'src/assets/Elina_Living/IMG_9990.JPG',
-        'src/assets/Elina_Living/IMG_9991.JPG',
+        // 'src/assets/Elina_Living/IMG_9991.JPG',
       ],
     },
 
@@ -424,7 +426,7 @@ const Gallery = () => {
       features: ['Walk-in Wardrobe', 'False Ceiling', 'Study Corner', 'Dressing Area'],
       projectImages: [
         'src/assets/Kharghar/IMG_2540.JPG',
-        'src/assets/Kharghar/IMG_2541.JPG',
+        // 'src/assets/Kharghar/IMG_2541.JPG',
       ],
     },
     {
@@ -439,7 +441,7 @@ const Gallery = () => {
       features: ['Modern Furniture', 'False Ceiling', 'Entertainment Unit', 'Lighting'],
       projectImages: [
         'src/assets/Kharghar/IMG_2542.JPG',
-        'src/assets/Kharghar/IMG_2543.JPG',
+        // 'src/assets/Kharghar/IMG_2543.JPG',
       ],
     },
     {
@@ -454,7 +456,7 @@ const Gallery = () => {
       features: ['Modular Design', 'Smart Storage', 'Granite Counter', 'Appliances'],
       projectImages: [
         'src/assets/Kharghar/IMG_2544.JPG',
-        'src/assets/Kharghar/IMG_2545.JPG',
+        // 'src/assets/Kharghar/IMG_2545.JPG',
       ],
     },
     {
@@ -469,7 +471,7 @@ const Gallery = () => {
       features: ['Storage Solutions', 'False Ceiling', 'Lighting', 'Furniture'],
       projectImages: [
         'src/assets/Kharghar/IMG_7900.PNG',
-        'src/assets/Kharghar/IMG_7901.PNG',
+        // 'src/assets/Kharghar/IMG_7901.PNG',
       ],
     },
 
@@ -486,7 +488,7 @@ const Gallery = () => {
       features: ['Modern Design', 'Reception Desk', 'Lighting', 'Branding'],
       projectImages: [
         'src/assets/Our_Office/IMG_6924.PNG',
-        'src/assets/Our_Office/IMG_6925.PNG',
+        // 'src/assets/Our_Office/IMG_6925.PNG',
       ],
     },
     {
@@ -501,7 +503,7 @@ const Gallery = () => {
       features: ['Ergonomic Chairs', 'Workstations', 'Storage', 'Lighting'],
       projectImages: [
         'src/assets/Our_Office/IMG_6926.PNG',
-        'src/assets/Our_Office/IMG_6927.PNG',
+        // 'src/assets/Our_Office/IMG_6927.PNG',
       ],
     },
     {
@@ -516,7 +518,7 @@ const Gallery = () => {
       features: ['Conference Table', 'AV System', 'Whiteboard', 'Lighting'],
       projectImages: [
         'src/assets/Our_Office/IMG_6928.PNG',
-        'src/assets/Our_Office/IMG_6929.PNG',
+        // 'src/assets/Our_Office/IMG_6929.PNG',
       ],
     },
     {
@@ -531,7 +533,7 @@ const Gallery = () => {
       features: ['Private Space', 'Storage', 'Work Desk', 'Lighting'],
       projectImages: [
         'src/assets/Our_Office/IMG_6930.PNG',
-        'src/assets/Our_Office/IMG_6924.PNG',
+        // 'src/assets/Our_Office/IMG_6924.PNG',
       ],
     },
   ];
