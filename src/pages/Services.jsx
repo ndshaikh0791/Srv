@@ -69,7 +69,7 @@ const Services = () => {
         "False Ceiling",
         "Wall Paneling"
       ],
-      image: "src/assets/Kharghar/IMG_7905.PNG  ",
+      image: "src/assets/Mankhurd/IMG_8851.PNG",
       icon: faCouch
     },
     {
@@ -191,7 +191,7 @@ const Services = () => {
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img 
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0" 
+            src="src/assets/Mantra Monarch/IMG_7890.JPG" 
             alt="Services Banner" 
           />
         </div>

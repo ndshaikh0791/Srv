@@ -439,8 +439,9 @@ const Gallery = () => {
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0" 
+            src="src/assets/Elina_living/IMG_9984.JPG" 
             alt="Gallery Banner"
+            
           />
         </div>
 

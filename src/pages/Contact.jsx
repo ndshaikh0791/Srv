@@ -88,7 +88,7 @@ const Contact = () => {
               </div>
               <div className="contact-details">
                 <p className="contact-label">Email</p>
-                <p className="contact-detail">interiorservice@gmail.com</p>
+                <p className="contact-detail">connectsrvinteriors@gmail.com</p>
               </div>
             </div>
 

@@ -121,7 +121,7 @@ const Home = () => {
             type: "Residential",
             location: "Pune",
             area: "2500 sq.ft",
-            image: "https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "src/assets/Mantra Monarch/IMG_7877.JPG"
         },
         {
             id: 2,
@@ -129,7 +129,7 @@ const Home = () => {
             type: "Commercial",
             location: "Mumbai",
             area: "5000 sq.ft",
-            image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "src/assets/Our_Office/IMG_6927.PNG"
         },
         {
             id: 3,
@@ -137,7 +137,7 @@ const Home = () => {
             type: "Residential",
             location: "Navi Mumbai",
             area: "1800 sq.ft",
-            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "src/assets/Mankhurd/IMG_9417.PNG"
         },
         {
             id: 4,
@@ -145,7 +145,7 @@ const Home = () => {
             type: "Commercial",
             location: "Pune",
             area: "3000 sq.ft",
-            image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "src/assets/Majestic_Signature_Towers/IMG_8177.jpg"
         },
         {
             id: 5,
@@ -153,7 +153,7 @@ const Home = () => {
             type: "Residential",
             location: "Mumbai",
             area: "3500 sq.ft",
-            image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "src/assets/lodha_woods_kandivali/IMG_9491.jpg"
         },
         {
             id: 6,
@@ -161,7 +161,7 @@ const Home = () => {
             type: "Commercial",
             location: "Navi Mumbai",
             area: "4000 sq.ft",
-            image: "https://images.unsplash.com/photo-1503387769-00a112127ca0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "src/assets/Kharghar/IMG_8045.JPG"
         }
     ];
 
@@ -294,11 +294,12 @@ const Home = () => {
                         <div className="about-image">
                             <div className="image-wrapper">
                                 <img
-                                    src="http://localhost:5173/src/assets/lodha_woods_kandivali/IMG_2446.jpg"
+                                    src="src/assets/Mantra Monarch/IMG_7871.JPG"
                                     alt="Modern Interior Design"
+                                    className="fit-image"
                                 />
                                 <div className="experience-badge">
-                                    <span>15+</span>
+                                    <span>5+</span>
                                     <p>Years Excellence</p>
                                 </div>
                             </div>

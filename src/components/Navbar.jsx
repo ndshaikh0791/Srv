@@ -61,7 +61,7 @@ const Navbar = () => {
               {/* <FontAwesomeIcon icon={faHome} className="logo-icon" /> */}
               <span className="logo-text">
                 <span className="logo-srv">SRV</span>
-                <span className="logo-interiors"> Interiors</span>
+                <span className="logo-interiors"> INTERIORS</span>
               </span>
             </Link>
           </div>
