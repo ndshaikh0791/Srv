@@ -876,12 +876,12 @@ const Gallery = () => {
                   </div>
                 </div>
 
-                <div className="project-description">
+                {/* <div className="project-description">
                   <h3>Project Description</h3>
                   <p>{selectedImage.description}</p>
-                </div>
+                </div> */}
 
-                <div className="project-features">
+                {/* <div className="project-features">
                   <h3>Key Features</h3>
                   <div className="features-grid">
                     {selectedImage.features.map((feature, idx) => (
@@ -891,15 +891,15 @@ const Gallery = () => {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 <div className="project-actions">
                   <button className="action-btn primary" onClick={() => window.location.href = '/contact'}>
                     Start Similar Project <FontAwesomeIcon icon={faArrowRight} />
                   </button>
-                  <button className="action-btn secondary" onClick={() => window.open('https://wa.me/918796932990', '_blank')}>
+                  {/* <button className="action-btn secondary" onClick={() => window.open('https://wa.me/918796932990', '_blank')}>
                     <FontAwesomeIcon icon={faStar} /> Get Quote
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
