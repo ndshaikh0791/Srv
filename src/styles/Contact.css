@@ -421,6 +421,8 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     animation: pulse 2s infinite;
+    margin-top: -12px;
+   margin-right: -10px;
 }
 
 @keyframes pulse {
@@ -966,6 +968,7 @@
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    margin-left: 35px;
 }
 
 .map-btn:hover {
