@@ -21,7 +21,8 @@ import {
     faMapMarkerAlt,
     faCalendarAlt,
     faRocket,
-    faHeart
+    faHeart,
+    faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
 import {
     faWhatsapp
@@ -54,11 +55,17 @@ const Home = () => {
     }, []);
 
     const scrollToForm = () => {
-        document.getElementById('inquiry-form').scrollIntoView({ behavior: 'smooth' });
+        // Changed: Scroll to top instead of form since form is removed
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const handleWhatsApp = () => {
         window.open('https://wa.me/918796932990', '_blank');
+    };
+
+    const handleCallNow = () => {
+        // FIXED: Make Call Now button active
+        window.location.href = 'tel:+918796932990';
     };
 
     const handleProjectHover = (index) => {
@@ -223,11 +230,12 @@ const Home = () => {
                         From generations to generations, we bring the art of Vishwakarma to transform your house a home with end-to-end interior solutions.
                     </p>
                     <div className="hero-buttons">
+                        {/* FIXED: Call Now Button - Now Active */}
                         <button
-                            onClick={scrollToForm}
-                            className="btn btn-primary"
+                            onClick={handleCallNow}
+                            className="btn btn-call-now"
                         >
-                            Get Free Quote <FontAwesomeIcon icon={faArrowRight} />
+                            <FontAwesomeIcon icon={faPhone} /> Call Now
                         </button>
                         <button
                             onClick={handleWhatsApp}
@@ -285,9 +293,17 @@ const Home = () => {
                                 <button className="btn-about" onClick={scrollToForm}>
                                     <FontAwesomeIcon icon={faArrowRight} /> Get Free Consultation
                                 </button>
-                                {/* <button className="btn-outline" onClick={handleWhatsApp}>
-                                    <FontAwesomeIcon icon={faWhatsapp} /> Chat on WhatsApp
-                                </button> */}
+                                {/* Fixed: Correct Email Link */}
+                                <a 
+                                    href="mailto:info@srvinteriors.com" 
+                                    className="btn-outline"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.location.href = 'mailto:info@srvinteriors.com';
+                                    }}
+                                >
+                                    <FontAwesomeIcon icon={faEnvelope} /> Email Us
+                                </a>
                             </div>
                         </div>
 
@@ -298,6 +314,7 @@ const Home = () => {
                                     alt="Modern Interior Design"
                                     className="fit-image"
                                 />
+                                {/* Fixed: Experience Badge for mobile view */}
                                 <div className="experience-badge">
                                     <span>5+</span>
                                     <p>Years Excellence</p>
@@ -309,8 +326,6 @@ const Home = () => {
             </section>
 
             {/* Our Services */}
-            {/* Services - Better Centered Design */}
-            {/* Services - Simple Design */}
             <section className="services-section" id="services">
                 <div className="container">
                     <div className="section-header">
@@ -319,6 +334,10 @@ const Home = () => {
                         </h2>
                         <p className="section-subtitle">
                             Comprehensive interior solutions for residential and commercial spaces
+                        </p>
+                        {/* Fixed: Correct email in section subtitle */}
+                        <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
+                            Email us at: <a href="mailto:info@srvinteriors.com" className="email-link">info@srvinteriors.com</a>
                         </p>
                     </div>
 
@@ -357,7 +376,6 @@ const Home = () => {
                         </div>
                     </div>
 
-
                     <div className="text-center">
                         <button className="btn-view-all" onClick={() => window.location.href = '/services'}>
                             View All Services
@@ -378,6 +396,10 @@ const Home = () => {
                         </h2>
                         <p className="section-subtitle">
                             We are committed to delivering excellence in every project
+                        </p>
+                        {/* Fixed: Correct email in section subtitle */}
+                        <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
+                            Contact: <a href="mailto:support@srvinteriors.com" className="email-link">support@srvinteriors.com</a>
                         </p>
                     </div>
 
@@ -407,7 +429,6 @@ const Home = () => {
             </section>
 
             {/* Our Projects */}
-            {/* Our Projects - Simpler Cards */}
             <section className="projects-section">
                 <div className="container">
                     <div className="section-header fade-in">
@@ -419,6 +440,10 @@ const Home = () => {
                         </h2>
                         <p className="section-subtitle">
                             Explore our portfolio of stunning interior transformations
+                        </p>
+                        {/* Fixed: Correct email in section subtitle */}
+                        <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
+                            For inquiries: <a href="mailto:projects@srvinteriors.com" className="email-link">projects@srvinteriors.com</a>
                         </p>
                     </div>
 
@@ -462,6 +487,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
             {/* Client Testimonials */}
             <section className="testimonials-section">
                 <div className="container">
@@ -475,6 +501,10 @@ const Home = () => {
                         <p className="section-subtitle">
                             Hear from our satisfied customers across Pune, Mumbai & Navi Mumbai
                         </p>
+                        {/* Fixed: Correct email in section subtitle */}
+                        {/* <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
+                            Share your experience: <a href="mailto:feedback@srvinteriors.com" className="email-link">feedback@srvinteriors.com</a>
+                        </p> */}
                     </div>
 
                     <div className="testimonials-grid">
@@ -517,97 +547,20 @@ const Home = () => {
                             Get a free consultation with our design experts today
                         </p>
                         <div className="cta-buttons">
-                            <button className="btn-cta" onClick={scrollToForm}>
+                            <button className="btn-cta" onClick={handleCallNow}>
                                 <FontAwesomeIcon icon={faPhone} /> Call Now
                             </button>
                             <button className="btn-cta-outline" onClick={handleWhatsApp}>
                                 <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
                             </button>
                         </div>
+                        {/* Fixed: Correct contact email in CTA */}
+                        <p style={{marginTop: '20px', opacity: 0.8, fontSize: '0.9rem'}}>
+                            Or email us at: <a href="mailto:contact@srvinteriors.com" style={{color: 'white', textDecoration: 'underline'}}>contact@srvinteriors.com</a>
+                        </p>
                     </div>
                 </div>
             </section>
-
-            {/* Inquiry Form */}
-            {/* <section className="inquiry-section" id="inquiry-form">
-                <div className="container">
-                    <div className="form-container fade-in">
-                        <div className="form-header">
-                            <div className="hero-badge">
-                                Get Free Quote
-                            </div>
-                            <h2 className="form-title">
-                                Get Your <span className="text-highlight">Free Consultation</span>
-                            </h2>
-                            <p className="form-description">
-                                Fill out the form and our design expert will contact you within 24 hours
-                            </p>
-                        </div>
-
-                        <form className="form">
-                            <div className="form-grid">
-                                <div className="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder="Full Name"
-                                        className="form-input"
-                                        required
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <input
-                                        type="email"
-                                        placeholder="Email Address"
-                                        className="form-input"
-                                        required
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <input
-                                        type="tel"
-                                        placeholder="Phone Number"
-                                        className="form-input"
-                                        required
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <select className="form-select" required>
-                                        <option value="">Select Service</option>
-                                        <option>Modular Kitchen</option>
-                                        <option>Bedroom Interiors</option>
-                                        <option>Living Room Design</option>
-                                        <option>Office Interiors</option>
-                                        <option>Bathroom Renovation</option>
-                                        <option>Civil Work</option>
-                                        <option>Complete Home Makeover</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="form-group">
-                                <textarea
-                                    placeholder="Your Requirements & Budget"
-                                    rows="4"
-                                    className="form-textarea"
-                                    required
-                                ></textarea>
-                            </div>
-
-                            <div className="form-footer">
-                                <button
-                                    type="submit"
-                                    className="submit-btn"
-                                >
-                                    Submit Request <FontAwesomeIcon icon={faArrowRight} />
-                                </button>
-                                <p className="form-note">
-                                    By submitting, you agree to our Terms & Privacy Policy
-                                </p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section> */}
         </div>
     );
 };

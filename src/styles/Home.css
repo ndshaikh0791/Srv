@@ -113,7 +113,8 @@ body {
     font-weight: 500;
     margin-bottom: 24px;
     backdrop-filter: blur(10px);
- margin-left: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-title {
@@ -178,6 +179,33 @@ body {
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/* Call Now Button Styles */
+.btn-call-now {
+    background: var(--primary-burgundy);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    letter-spacing: 0.5px;
+    min-width: 180px;
+}
+
+.btn-call-now:hover {
+    background: var(--dark-burgundy);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(122, 31, 43, 0.2);
 }
 
 /* ========== ABOUT SECTION ========== */
@@ -283,7 +311,6 @@ body {
     overflow: hidden;
 }
 
-
 .about-image .image-wrapper img {
     width: 100%;
     object-fit: cover;
@@ -297,15 +324,19 @@ body {
     object-position: right center;
 }
 
+/* FIXED: Experience Badge for Mobile */
 .experience-badge {
     position: absolute;
     bottom: 24px;
-    right: 24px;
+    margin-bottom: 20px;
+    margin-right: 60px;
+    /* right: 24px; */
     background: var(--primary-burgundy);
     color: var(--white);
     padding: 16px 24px;
     border-radius: 8px;
     text-align: center;
+    z-index: 10;
 }
 
 .experience-badge span {
@@ -319,6 +350,30 @@ body {
     margin-top: 4px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+/* Fix for Mobile View - Experience Badge */
+@media (max-width: 768px) {
+        .experience-badge {
+        position: absolute;
+        top: auto;
+        bottom: 0px;
+        left: 10px;
+        right: auto;
+        padding: 0px 25px;
+        min-width: 0px;
+        text-align: left;
+        margin-top: 0;
+        box-shadow: 0 10px 30px rgba(122, 31, 43, 0.2);
+    }
+    
+    .experience-badge span {
+        font-size: 1.5rem;
+    }
+    
+    .experience-badge p {
+        font-size: 0.75rem;
+    }
 }
 
 /* ========== SERVICES SECTION (SIMPLE VERSION) ========== */
@@ -729,9 +784,9 @@ body {
 }
 
 /* Modern View All Button */
-.projects-section .btn-view-all {
-    background: transparent;
-    color: var(--primary-burgundy);
+.btn-view-all {
+    background: var(--primary-burgundy);
+    color: var(--white);
     border: 2px solid var(--primary-burgundy);
     padding: 12px 36px;
     border-radius: 6px;
@@ -746,7 +801,7 @@ body {
     overflow: hidden;
 }
 
-.projects-section .btn-view-all::before {
+.btn-view-all::before {
     content: '';
     position: absolute;
     top: 0;
@@ -757,19 +812,15 @@ body {
     transition: left 0.7s ease;
 }
 
-.projects-section .btn-view-all:hover {
-    background: var(--primary-burgundy);
+.btn-view-all:hover {
+    background: var(--dark-burgundy);
     color: var(--white);
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(122, 31, 43, 0.2);
 }
 
-.projects-section .btn-view-all:hover::before {
+.btn-view-all:hover::before {
     left: 100%;
-}
-.btn-view-all{
-       color: var(--white);
-    background-color: var(--primary-burgundy);
 }
 
 /* Responsive Grid for Projects */
@@ -959,6 +1010,8 @@ body {
     padding: 12px 24px;
     border-radius: 25px;
     font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn-cta:hover {
@@ -974,115 +1027,14 @@ body {
     padding: 12px 24px;
     border-radius: 5px;
     font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn-cta-outline:hover {
     background: var(--white);
     color: var(--primary-burgundy);
     transform: translateY(-2px);
-}
-
-/* ========== INQUIRY FORM ========== */
-.inquiry-section {
-    padding: 60px 0;
-    background: var(--bg-cream);
-}
-
-.form-container {
-    max-width: 700px;
-    margin: 0 auto;
-    background: var(--white);
-    border-radius: 8px;
-    padding: 35px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-}
-
-.form-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.form-title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--text-dark);
-}
-
-.form-description {
-    color: var(--text-medium);
-    line-height: 1.5;
-    max-width: 500px;
-    margin: 0 auto;
-    font-size: 0.9rem;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.form-input,
-.form-select,
-.form-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    background: var(--white);
-    color: var(--text-dark);
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--primary-burgundy);
-    box-shadow: 0 0 0 2px rgba(122, 31, 43, 0.1);
-}
-
-.form-textarea {
-    resize: vertical;
-    min-height: 120px;
-    grid-column: 1 / -1;
-}
-
-.submit-btn {
-    background: var(--primary-burgundy);
-    color: var(--white);
-    padding: 14px 35px;
-    border-radius: 5px;
-    border: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 25px auto 0;
-    display: block;
-}
-
-.submit-btn:hover {
-    background: var(--dark-burgundy);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(122, 31, 43, 0.2);
-}
-
-.form-note {
-    color: var(--text-medium);
-    font-size: 0.8rem;
-    margin-top: 15px;
-    text-align: center;
-    line-height: 1.5;
 }
 
 /* ========== RESPONSIVE ========== */
@@ -1108,6 +1060,11 @@ body {
         min-width: auto;
     }
     
+    .btn-call-now {
+        width: 100%;
+        max-width: 250px;
+    }
+    
     .form-grid,
     .about-grid,
     .services-grid,
@@ -1116,27 +1073,10 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .form-container {
-        padding: 20px;
-    }
-    
-    .submit-btn {
-        width: 100%;
-        max-width: 250px;
-    }
-    
     .service-card-simple,
     .feature-card,
     .testimonial-card {
         padding: 18px;
-    }
-    
-    .experience-badge {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        margin-top: 15px;
-        display: inline-block;
     }
     
     .services-grid {
@@ -1211,4 +1151,17 @@ body {
     max-width: 500px;
     margin: 0 auto;
     line-height: 1.5;
+}
+
+/* Email link styling */
+.email-link {
+    color: var(--primary-burgundy);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: var(--dark-burgundy);
+    text-decoration: underline;
 }
