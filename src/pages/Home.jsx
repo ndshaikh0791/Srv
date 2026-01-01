@@ -556,7 +556,7 @@ const Home = () => {
                         </div>
                         {/* Fixed: Correct contact email in CTA */}
                         <p style={{marginTop: '20px', opacity: 0.8, fontSize: '0.9rem'}}>
-                            Or email us at: <a href="mailto:contact@srvinteriors.com" style={{color: 'white', textDecoration: 'underline'}}>contact@srvinteriors.com</a>
+                            Or email us at: <a href="mailto:srvinteriorspune@gmail.com" style={{color: 'white', textDecoration: 'underline'}}>srvinteriorspune@gmail.com</a>
                         </p>
                     </div>
                 </div>
