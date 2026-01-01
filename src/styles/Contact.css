@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url("https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+                url("src/assets/Kharghar/IMG_2540.JPG") center/cover no-repeat;
     overflow: hidden;
     /* margin-top: 70px; */
 }
