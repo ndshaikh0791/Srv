@@ -174,40 +174,46 @@ const Home = () => {
 
     const testimonials = [
         {
-            name: "Rahul Sharma",
-            location: "Pune",
+            name: "Shubham Parikh",
+            location: "Majestic signature ",
             rating: 5,
-            comment: "SRV Interiors transformed our 3BHK apartment beautifully. Their attention to detail and professionalism was outstanding!"
+            comment: "SRV Interiors delivers exceptional work quality with elegant, contemporary designs. The team is highly professional, detail-oriented, and extremely cooperative throughout the entire process. It was a seamless and satisfying experience working with them."
         },
         {
-            name: "Priya Patel",
+            name: "Rohit B",
             location: "Mumbai",
             rating: 5,
-            comment: "Our modular kitchen turned out exactly as we imagined. The team was very responsive and delivered on time."
+            comment: "Positive: Professionalism, Punctuality, Quality, Responsiveness, Value A special thanks to I’d Sachin v . I approached srvinteriors towards the end of my own house's interior work. There were many mistakes and mis judgements done by my old contractor. We approached Mr. Sachin and he suggested few corrections. He is a knowledgeable, reliable and authentic person upon whom you can have your trust and faith. Now my interior work is at final stage and it's looking really good.Once again thank you for your support and generosity."
         },
         {
-            name: "Amit Verma",
-            location: "Navi Mumbai",
+            name: "Anisha Mahadik",
+            location: "Bhayandar",
             rating: 5,
-            comment: "Excellent work on our office interiors. The design boosted employee productivity and impressed our clients."
+            comment: "Positive: ProfessionalismMy 2 BHK flat in Bhayandar designed by Srv Interiors lead by Mr. Sachin v . I found Sachin to be a good family experienced designer with expertise in execution of work. He has designs for all kind of budgets, low to high to very high as per clients requirement. He has excellent set of contractors/labours working with him hence has a very high rate of completing work on time. He has finished my flat interior work as per schedule decided at the start. Quality of material being used is of high standard hence it can last for longer period.Sachin himself monitors all the execution work and I found him to be a reasonable person to deal with. He always listen to the client requirement and provide alternatives as per their desire. He has not only carried out the interior work but also helped in attending some leakage issues in my flat. So I highly recommend Sachin as an Excellent Interior Designer and wish him All the Very Best for all his future projects."
         },
         {
-            name: "Sneha Kapoor",
+            name: "Vivek Srivastava",
             location: "Pune",
             rating: 5,
-            comment: "The bedroom interiors are stunning! SRV Interiors understood our requirements perfectly."
+            comment: "Positive: Professionalism, Quality, Responsiveness, Value. My interior designer, Sachin and his team was amazing! I didn't know what to expect from this experience but I can tell you that it was above and beyond what I could have hoped for. Sachin was very collaborative and had great suggestions and questions throughout the process. I have already referred multiple persons to srv Interiors bcz of there sure name and the kind of expertise what they bring is commendable. I wish Srv Interiors all the very best."
         },
         {
-            name: "Vikram Singh",
-            location: "Mumbai",
+            name: "Tarun agrwal ",
+            location: "Kandivali East",
             rating: 5,
-            comment: "Complete home renovation done flawlessly. Quality materials and skilled workers."
+            comment: "We absolutely loved the work done in my home by Mr. Sachin Vishwakarma and his team. They are very professional and made the entire experience amazing. The best part is that they clearly understood our requirements and budget. We are truly overwhelmed by the complete design and execution of our home and same delivered on time.Mr.Sachin V and made entire process hassle free.We highly recommend ‘SRV interiors"
         },
         {
-            name: "Anjali Reddy",
-            location: "Navi Mumbai",
+            name: "Vinay Bhadra",
+            location: "Vidyavihar",
             rating: 5,
-            comment: "Best interior designers in Pune! They completed our project within budget and timeline."
+            comment: "2bhk , Vidyavihar, we have got reference from siddhi maam for interior execution services. Sachin is quite experience in this field. We have given all requirements and he recommended us things and we agreed on that . Has we move further and got finished in 3months as we were part of execution. We seen Sachin checking details for every kind . And got executed site without any struggle. Everyone was happy with work . We have shared his connect to our family and friends . Hope he will shine one day . Our blessings will be with him and his team . Thankyou Mr Sachin Vishwakarma SRV"
+        }, 
+        {
+            name: "Pratiksha kale",
+            location: "Pune",
+            rating: 5,
+            comment: "We find srv interiors on Facebook. Have called him for his services . We got matched what exactly we wanted to do in our dream home . We continued with process and got 3d designs and all contractors were with good expertise. Done our home within give timeline. We were happy to introduce him in our society. Thankyou so much Srv Interiors and team ."
         }
     ];
 

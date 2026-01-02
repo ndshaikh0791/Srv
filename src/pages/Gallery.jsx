@@ -130,7 +130,7 @@ const Gallery = () => {
         'src/assets/Amanora_neo_towers/IMG_8176.jpg',
       ],
     },
-   
+
     {
       id: 6,
       albumId: 'amanora_neo_towers',
@@ -183,7 +183,7 @@ const Gallery = () => {
         'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
       ],
     },
-   
+
     // Lodha Woods - 4 cards
     {
       id: 9,
@@ -238,7 +238,7 @@ const Gallery = () => {
         'src/assets/lodha_woods_kandivali/IMG_2462.jpg',
       ],
     },
-    
+
 
     // Mankhurd - 4 cards
     {
@@ -291,7 +291,7 @@ const Gallery = () => {
         'src/assets/Mankhurd/IMG_9394.PNG',
       ],
     },
-   
+
 
     // Elina Living - 4 cards
     {
@@ -346,7 +346,7 @@ const Gallery = () => {
       ],
     },
     // 
-    
+
     // Kharghar - 4 cards
     {
       id: 18,
@@ -502,7 +502,7 @@ const Gallery = () => {
     : galleryImages.filter(img => img.albumId === activeFilter);
 
   // For "All Projects" show only 8 initially, then all when showMoreAll is true
-  const displayedImages = activeFilter === 'all' 
+  const displayedImages = activeFilter === 'all'
     ? (showMoreAll ? filteredImages : filteredImages.slice(0, 8))
     : filteredImages.slice(0, 4); // For other filters, show only 4
 
@@ -546,22 +546,22 @@ const Gallery = () => {
 
   const testimonials = [
     {
-      name: "Rajesh Kumar",
-      location: "Pune",
-      project: "3BHK Interior",
-      comment: "SRV Interiors transformed our home beautifully. Their attention to detail is remarkable!"
+      name: "Shubham Parikh",
+      location: "Majestic signature ",
+      rating: 5,
+      comment: "SRV Interiors delivers exceptional work quality with elegant, contemporary designs. The team is highly professional, detail-oriented, and extremely cooperative throughout the entire process. It was a seamless and satisfying experience working with them."
     },
     {
-      name: "Priya Sharma",
+      name: "Rohit B",
       location: "Mumbai",
-      project: "Modular Kitchen",
-      comment: "Excellent work on our kitchen. The design is both functional and beautiful."
+      rating: 5,
+      comment: "Positive: Professionalism, Punctuality, Quality, Responsiveness, Value A special thanks to I’d Sachin v . I approached srvinteriors towards the end of my own house's interior work. There were many mistakes and mis judgements done by my old contractor. We approached Mr. Sachin and he suggested few corrections. He is a knowledgeable, reliable and authentic person upon whom you can have your trust and faith. Now my interior work is at final stage and it's looking really good.Once again thank you for your support and generosity."
     },
     {
-      name: "Amit Patel",
-      location: "Navi Mumbai",
-      project: "Office Interior",
-      comment: "Professional team, on-time delivery, and stunning results. Highly recommended!"
+      name: "Pratiksha kale",
+      location: "Pune",
+      rating: 5,
+      comment: "We find srv interiors on Facebook. Have called him for his services . We got matched what exactly we wanted to do in our dream home . We continued with process and got 3d designs and all contractors were with good expertise. Done our home within give timeline. We were happy to introduce him in our society. Thankyou so much Srv Interiors and team ."
     }
   ];
 
@@ -571,7 +571,7 @@ const Gallery = () => {
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img
-            src="src/assets/Elina_living/IMG_9984.JPG" 
+            src="src/assets/Elina_living/IMG_9984.JPG"
             alt="Gallery Banner"
           />
         </div>
@@ -653,7 +653,7 @@ const Gallery = () => {
           {/* Show Explore More button only for "All Projects" filter */}
           {activeFilter === 'all' && !showMoreAll && (
             <div className="explore-more-container">
-              <button 
+              <button
                 className="explore-more-btn"
                 onClick={() => setShowMoreAll(true)}
               >
@@ -666,7 +666,7 @@ const Gallery = () => {
           {/* Show Show Less button when all projects are shown */}
           {activeFilter === 'all' && showMoreAll && (
             <div className="explore-more-container">
-              <button 
+              <button
                 className="explore-less-btn"
                 onClick={() => setShowMoreAll(false)}
               >
