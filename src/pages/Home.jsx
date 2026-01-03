@@ -22,7 +22,9 @@ import {
     faCalendarAlt,
     faRocket,
     faHeart,
-    faEnvelope
+    faEnvelope,
+    faChevronDown,
+    faChevronUp
 } from '@fortawesome/free-solid-svg-icons';
 import {
     faWhatsapp
@@ -31,6 +33,8 @@ import {
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [activeProject, setActiveProject] = useState(null);
+    const [expandedTestimonial, setExpandedTestimonial] = useState(null);
+    const [showAllTestimonials, setShowAllTestimonials] = useState(false);
 
     useEffect(() => {
         setIsVisible(true);
@@ -74,6 +78,14 @@ const Home = () => {
 
     const handleProjectLeave = () => {
         setActiveProject(null);
+    };
+
+    const toggleTestimonial = (index) => {
+        setExpandedTestimonial(expandedTestimonial === index ? null : index);
+    };
+
+    const toggleShowAllTestimonials = () => {
+        setShowAllTestimonials(!showAllTestimonials);
     };
 
     const services = [
@@ -183,7 +195,7 @@ const Home = () => {
             name: "Rohit B",
             location: "Mumbai",
             rating: 5,
-            comment: "Positive: Professionalism, Punctuality, Quality, Responsiveness, Value A special thanks to I’d Sachin v . I approached srvinteriors towards the end of my own house's interior work. There were many mistakes and mis judgements done by my old contractor. We approached Mr. Sachin and he suggested few corrections. He is a knowledgeable, reliable and authentic person upon whom you can have your trust and faith. Now my interior work is at final stage and it's looking really good.Once again thank you for your support and generosity."
+            comment: "Positive: Professionalism, Punctuality, Quality, Responsiveness, Value A special thanks to I'd Sachin v . I approached srvinteriors towards the end of my own house's interior work. There were many mistakes and mis judgements done by my old contractor. We approached Mr. Sachin and he suggested few corrections. He is a knowledgeable, reliable and authentic person upon whom you can have your trust and faith. Now my interior work is at final stage and it's looking really good.Once again thank you for your support and generosity."
         },
         {
             name: "Anisha Mahadik",
@@ -201,7 +213,7 @@ const Home = () => {
             name: "Tarun agrwal ",
             location: "Kandivali East",
             rating: 5,
-            comment: "We absolutely loved the work done in my home by Mr. Sachin Vishwakarma and his team. They are very professional and made the entire experience amazing. The best part is that they clearly understood our requirements and budget. We are truly overwhelmed by the complete design and execution of our home and same delivered on time.Mr.Sachin V and made entire process hassle free.We highly recommend ‘SRV interiors"
+            comment: "We absolutely loved the work done in my home by Mr. Sachin Vishwakarma and his team. They are very professional and made the entire experience amazing. The best part is that they clearly understood our requirements and budget. We are truly overwhelmed by the complete design and execution of our home and same delivered on time.Mr.Sachin V and made entire process hassle free.We highly recommend 'SRV interiors"
         },
         {
             name: "Vinay Bhadra",
@@ -216,6 +228,9 @@ const Home = () => {
             comment: "We find srv interiors on Facebook. Have called him for his services . We got matched what exactly we wanted to do in our dream home . We continued with process and got 3d designs and all contractors were with good expertise. Done our home within give timeline. We were happy to introduce him in our society. Thankyou so much Srv Interiors and team ."
         }
     ];
+
+    // Display only 4 testimonials initially, or all if showAllTestimonials is true
+    const displayedTestimonials = showAllTestimonials ? testimonials : testimonials.slice(0, 4);
 
     return (
         <div className="page-container">
@@ -342,9 +357,9 @@ const Home = () => {
                             Comprehensive interior solutions for residential and commercial spaces
                         </p>
                         {/* Fixed: Correct email in section subtitle */}
-                        <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
+                        {/* <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
                             Email us at: <a href="mailto:info@srvinteriors.com" className="email-link">info@srvinteriors.com</a>
-                        </p>
+                        </p> */}
                     </div>
 
                     <div className="services-container">
@@ -404,9 +419,9 @@ const Home = () => {
                             We are committed to delivering excellence in every project
                         </p>
                         {/* Fixed: Correct email in section subtitle */}
-                        <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
+                        {/* <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
                             Contact: <a href="mailto:support@srvinteriors.com" className="email-link">support@srvinteriors.com</a>
-                        </p>
+                        </p> */}
                     </div>
 
                     <div className="features-grid">
@@ -446,10 +461,6 @@ const Home = () => {
                         </h2>
                         <p className="section-subtitle">
                             Explore our portfolio of stunning interior transformations
-                        </p>
-                        {/* Fixed: Correct email in section subtitle */}
-                        <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
-                            For inquiries: <a href="mailto:projects@srvinteriors.com" className="email-link">projects@srvinteriors.com</a>
                         </p>
                     </div>
 
@@ -507,37 +518,75 @@ const Home = () => {
                         <p className="section-subtitle">
                             Hear from our satisfied customers across Pune, Mumbai & Navi Mumbai
                         </p>
-                        {/* Fixed: Correct email in section subtitle */}
-                        {/* <p className="section-subtitle" style={{marginTop: '10px', fontSize: '0.9rem'}}>
-                            Share your experience: <a href="mailto:feedback@srvinteriors.com" className="email-link">feedback@srvinteriors.com</a>
-                        </p> */}
                     </div>
 
                     <div className="testimonials-grid">
-                        {testimonials.map((testimonial, index) => (
+                        {displayedTestimonials.map((testimonial, index) => (
                             <div
                                 key={index}
-                                className="testimonial-card fade-in"
+                                className={`testimonial-card fade-in ${expandedTestimonial === index ? 'expanded' : ''}`}
                             >
-                                <div className="stars">
-                                    {[...Array(testimonial.rating)].map((_, i) => (
-                                        <FontAwesomeIcon key={i} icon={faStar} />
-                                    ))}
+                                <div className="testimonial-header">
+                                    {/* Client name at top */}
+                                    <div className="client-info-top">
+                                        <div className="client-avatar-top">
+                                            {testimonial.name.charAt(0)}
+                                        </div>
+                                        <div className="client-details-top">
+                                            <h4>{testimonial.name}</h4>
+                                            <p><FontAwesomeIcon icon={faMapMarkerAlt} /> {testimonial.location}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Stars next to name */}
+                                    <div className="stars-top">
+                                        {[...Array(testimonial.rating)].map((_, i) => (
+                                            <FontAwesomeIcon key={i} icon={faStar} />
+                                        ))}
+                                    </div>
                                 </div>
-                                <p className="testimonial-text">
-                                    "{testimonial.comment}"
-                                </p>
-                                <div className="client-info">
-                                    <div className="client-avatar">
-                                        {testimonial.name.charAt(0)}
-                                    </div>
-                                    <div className="client-details">
-                                        <h4>{testimonial.name}</h4>
-                                        <p><FontAwesomeIcon icon={faMapMarkerAlt} /> {testimonial.location}</p>
-                                    </div>
+
+                                <div className="testimonial-content">
+                                    <p className={`testimonial-text ${expandedTestimonial === index ? 'expanded' : ''}`}>
+                                        "{testimonial.comment}"
+                                    </p>
+                                    
+                                    {testimonial.comment.length > 200 && (
+                                        <button 
+                                            className="read-more-btn"
+                                            onClick={() => toggleTestimonial(index)}
+                                        >
+                                            {expandedTestimonial === index ? (
+                                                <>
+                                                    Read Less <FontAwesomeIcon icon={faChevronUp} />
+                                                </>
+                                            ) : (
+                                                <>
+                                                    Read More <FontAwesomeIcon icon={faChevronDown} />
+                                                </>
+                                            )}
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="text-center fade-in" style={{ marginTop: '30px' }}>
+                        <button 
+                            className="btn-view-all" 
+                            onClick={toggleShowAllTestimonials}
+                        >
+                            {showAllTestimonials ? (
+                                <>
+                                    Show Less Testimonials <FontAwesomeIcon icon={faChevronUp} />
+                                </>
+                            ) : (
+                                <>
+                                    More Testimonials <FontAwesomeIcon icon={faChevronDown} />
+                                </>
+                            )}
+                        </button>
                     </div>
                 </div>
             </section>

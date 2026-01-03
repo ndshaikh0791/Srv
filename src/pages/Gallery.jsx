@@ -12,7 +12,10 @@ import {
   faTrophy,
   faStar,
   faCheckCircle,
-  faPlus
+  faPlus,
+  faChevronDown,
+  faChevronUp,
+  faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Gallery.css';
 
@@ -24,6 +27,7 @@ const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeSubImageIndex, setActiveSubImageIndex] = useState(0);
   const [showMoreAll, setShowMoreAll] = useState(false);
+  const [expandedTestimonial, setExpandedTestimonial] = useState(null);
 
   const albumFilters = [
     { id: 'all', label: 'All Projects' },
@@ -537,6 +541,10 @@ const Gallery = () => {
     setShowMoreAll(false); // Reset showMoreAll when filter changes
   };
 
+  const toggleTestimonial = (index) => {
+    setExpandedTestimonial(expandedTestimonial === index ? null : index);
+  };
+
   const stats = [
     { number: "500+", label: "Projects Completed", icon: faTrophy },
     { number: "1000+", label: "Happy Customers", icon: faHeart },
@@ -555,7 +563,7 @@ const Gallery = () => {
       name: "Rohit B",
       location: "Mumbai",
       rating: 5,
-      comment: "Positive: Professionalism, Punctuality, Quality, Responsiveness, Value A special thanks to I’d Sachin v . I approached srvinteriors towards the end of my own house's interior work. There were many mistakes and mis judgements done by my old contractor. We approached Mr. Sachin and he suggested few corrections. He is a knowledgeable, reliable and authentic person upon whom you can have your trust and faith. Now my interior work is at final stage and it's looking really good.Once again thank you for your support and generosity."
+      comment: "Positive: Professionalism, Punctuality, Quality, Responsiveness, Value A special thanks to I'd Sachin v . I approached srvinteriors towards the end of my own house's interior work. There were many mistakes and mis judgements done by my old contractor. We approached Mr. Sachin and he suggested few corrections. He is a knowledgeable, reliable and authentic person upon whom you can have your trust and faith. Now my interior work is at final stage and it's looking really good.Once again thank you for your support and generosity."
     },
     {
       name: "Pratiksha kale",
@@ -707,7 +715,8 @@ const Gallery = () => {
         </div>
       </section>
 
-      <section className="client-testimonials">
+      {/* Updated Testimonials Section */}
+      <section className="client-testimonials-gallery">
         <div className="container">
           <div className="section-header">
             <div className="section-badge">
@@ -716,30 +725,58 @@ const Gallery = () => {
             <h2 className="section-title">
               What Our <span className="text-highlight">Clients Say</span>
             </h2>
-            <p className="section-subtitle">
+            <p className="section-subtitle1">
               Hear from homeowners and businesses who trusted us with their spaces
             </p>
           </div>
 
-          <div className="testimonials-grid">
+          <div className="testimonials-grid-gallery">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
-                <div className="stars">
-                  {[...Array(5)].map((_, i) => (
-                    <FontAwesomeIcon key={i} icon={faStar} />
-                  ))}
+              <div
+                key={index}
+                className={`testimonial-card-gallery ${expandedTestimonial === index ? 'expanded' : ''}`}
+              >
+                <div className="testimonial-header-gallery">
+                  {/* Client name at top */}
+                  <div className="client-info-top">
+                    <div className="client-avatar-top">
+                      {testimonial.name.charAt(0)}
+                    </div>
+                    <div className="client-details-top">
+                      <h4>{testimonial.name}</h4>
+                      <p><FontAwesomeIcon icon={faMapMarkerAlt} /> {testimonial.location}</p>
+                    </div>
+                  </div>
+                  
+                  {/* Stars next to name */}
+                  <div className="stars-top">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <FontAwesomeIcon key={i} icon={faStar} />
+                    ))}
+                  </div>
                 </div>
-                <p className="testimonial-text">
-                  "{testimonial.comment}"
-                </p>
-                <div className="client-info">
-                  <div className="client-avatar">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div className="client-details">
-                    <h4>{testimonial.name}</h4>
-                    <p>{testimonial.location} • {testimonial.project}</p>
-                  </div>
+
+                <div className="testimonial-content-gallery">
+                  <p className={`testimonial-text-gallery ${expandedTestimonial === index ? 'expanded' : ''}`}>
+                    "{testimonial.comment}"
+                  </p>
+                  
+                  {testimonial.comment.length > 200 && (
+                    <button 
+                      className="read-more-btn-gallery"
+                      onClick={() => toggleTestimonial(index)}
+                    >
+                      {expandedTestimonial === index ? (
+                        <>
+                          Read Less <FontAwesomeIcon icon={faChevronUp} />
+                        </>
+                      ) : (
+                        <>
+                          Read More <FontAwesomeIcon icon={faChevronDown} />
+                        </>
+                      )}
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
