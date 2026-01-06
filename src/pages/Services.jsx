@@ -191,7 +191,7 @@ const Services = () => {
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img 
-            src="src/assets/Mantra Monarch/IMG_7890.JPG" 
+            src="src/assets/Mantra Monarch/IMG_7888.JPG" 
             alt="Services Banner" 
           />
         </div>
