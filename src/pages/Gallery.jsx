@@ -58,7 +58,7 @@ const Gallery = () => {
       location: 'Baner, Pune',
       // area: '450 sq.ft',
       description: 'Contemporary living room with custom furniture.',
-      image: 'src/assets/Mantra Monarch/IMG_7871.JPG',
+      image: 'src/assets/Mantra Monarch/IMG_7874.JPG',
       projectImages: [
         'src/assets/Mantra Monarch/IMG_7872.JPG',
         'src/assets/Mantra Monarch/IMG_7873.JPG',
@@ -478,7 +478,7 @@ const Gallery = () => {
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img
-            src="/gallery/banner.jpg"
+            src="src/assets/Designing/IMG_0275.JPG"
             alt="Gallery Banner"
           />
         </div>
