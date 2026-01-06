@@ -156,7 +156,7 @@ const Home = () => {
             type: "Residential",
             location: "Navi Mumbai",
             area: "1800 sq.ft",
-            image: "src/assets/Mankhurd/IMG_9417.PNG"
+            image: "src/assets/Mankhurd/IMG_9985.JPG"
         },
         {
             id: 4,
@@ -164,7 +164,7 @@ const Home = () => {
             type: "Commercial",
             location: "Pune",
             area: "3000 sq.ft",
-            image: "src/assets/Majestic_Signature_Towers/IMG_8177.jpg"
+            image: "src/assets/Majestic_Signature_Towers/IMG_2416.jpg"
         },
         {
             id: 5,

@@ -39,7 +39,7 @@ const Services = () => {
         "Pull-out Systems",
         "Waterproofing"
       ],
-      image: "src/assets/Elina_living/IMG_8126.JPG",
+      image: "src/assets/Elina_living/IMG_8861.PNG",
       icon: faHome
     },
     {
@@ -69,7 +69,7 @@ const Services = () => {
         "False Ceiling",
         "Wall Paneling"
       ],
-      image: "src/assets/Mankhurd/IMG_8851.PNG",
+      image: "src/assets/Mankhurd/IMG_9983.JPG",
       icon: faCouch
     },
     {
