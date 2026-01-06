@@ -31,472 +31,239 @@ const Gallery = () => {
 
   const albumFilters = [
     { id: 'all', label: 'All Projects' },
-    { id: 'amanora_neo_towers', label: 'Amanora Neo Towers' },
-    { id: 'elina_living', label: 'Elina Living' },
-    { id: 'kharghar', label: 'Kharghar' },
-    { id: 'lodha_woods', label: 'Lodha Woods' },
-    { id: 'majestic_signature_towers', label: 'Majestic Signature Towers' },
-    { id: 'mankhurd', label: 'Mankhurd' },
-    { id: 'mantra_monarch', label: 'Mantra Monarch' },
-    { id: 'our_office', label: 'Our Office' }
+    { id: 'mantra_monarch', label: 'Mantra Monarch, Baner' },
+    { id: 'amanora_neo_towers', label: 'Amanora Neo Towers, Hadpsar' },
+    { id: 'majestic_signature', label: 'Majestic Signature, Baner' },
+    { id: 'mankhurd', label: 'Mankhurd, Mumbai' },
+    { id: 'kharghar', label: 'Kharghar, Navi Mumbai' },
+    { id: 'euro_school', label: 'Euro School, Wakad' },
+    { id: 'lodha_woods', label: 'Lodha Woods, Kandivali' },
+    { id: 'elina_living', label: 'Elina Living, NIBM' },
+    { id: 'kothrud', label: 'Kothrud, Pune' },
+    { id: 'karjat_builder', label: 'Builder Sample, Karjat' },
+    { id: 'designing', label: 'Designing' },
+    { id: 'our_office', label: 'Our Office, Vashi' },
+    { id: 'pirangut_bunglow', label: 'Pirangut Bunglow, Pune' }
   ];
 
-  // Gallery Images Data
+  // Gallery Images Data - 更新后的图片路径
   const galleryImages = [
-    // Mantra Monarch - 4 cards
+    // Mantra Monarch, Baner - 示例图片
     {
       id: 1,
       albumId: 'mantra_monarch',
       title: 'Mantra Monarch Living Room',
       type: 'Residential',
-      location: 'Pune',
+      location: 'Baner, Pune',
       area: '450 sq.ft',
-      description: 'A stunning contemporary living room with custom furniture and elegant lighting design.',
-      image: 'src/assets/Mantra Monarch/IMG_7872.JPG',
+      description: 'Contemporary living room with custom furniture.',
+      image: '/gallery/mantra-monarch-1.jpg',
       projectImages: [
-        'src/assets/Mantra Monarch/IMG_7872.JPG',
-        'src/assets/Mantra Monarch/IMG_7874.JPG',
-        'src/assets/Mantra Monarch/IMG_7875.JPG',
-        'src/assets/Mantra Monarch/IMG_7876.JPG',
-        'src/assets/Mantra Monarch/IMG_7877.JPG',
-        'src/assets/Mantra Monarch/IMG_7878.JPG',
+        '/gallery/mantra-monarch-1.jpg',
+        '/gallery/mantra-monarch-2.jpg',
+        '/gallery/mantra-monarch-3.jpg',
       ],
-      features: ['Custom TV Unit', 'False Ceiling', 'Modern Lighting', 'Premium Furniture']
-    },
-    {
-      id: 2,
-      albumId: 'mantra_monarch',
-      title: 'Mantra Monarch Bedroom',
-      type: 'Residential',
-      location: 'Pune',
-      area: '280 sq.ft',
-      description: 'Elegant master bedroom with custom wardrobe and ambient lighting.',
-      image: 'src/assets/Mantra Monarch/IMG_7889.JPG',
-      projectImages: [
-        'src/assets/Mantra Monarch/IMG_7873.JPG',
-        'src/assets/Mantra Monarch/IMG_7880.JPG',
-        'src/assets/Mantra Monarch/IMG_7881.JPG',
-        'src/assets/Mantra Monarch/IMG_7882.JPG',
-        'src/assets/Mantra Monarch/IMG_7882.JPG',
-        // 'src/assets/Mantra Monarch/IMG_7889.JPG',
-      ],
-      features: ['Custom Wardrobe', 'False Ceiling', 'Ambient Lighting', 'Premium Finishes']
-    },
-    {
-      id: 3,
-      albumId: 'mantra_monarch',
-      title: 'Mantra Monarch Kitchen',
-      type: 'Residential',
-      location: 'Pune',
-      area: '120 sq.ft',
-      description: 'Modern modular kitchen with smart storage solutions.',
-      image: 'src/assets/Mantra Monarch/IMG_7879.JPG',
-      projectImages: [
-        'src/assets/Mantra Monarch/IMG_7879.JPG',
-        'src/assets/Mantra Monarch/IMG_7890.JPG',
-        'src/assets/Mantra Monarch/IMG_7891.JPG',
-        'src/assets/Mantra Monarch/IMG_7884.JPG',
-      ],
-      features: ['Modular Kitchen', 'Smart Storage', 'Granite Counter', 'Chimney Hood']
-    },
-    {
-      id: 4,
-      albumId: 'mantra_monarch',
-      title: 'Mantra Monarch Bathroom',
-      type: 'Residential',
-      location: 'Pune',
-      area: '80 sq.ft',
-      description: 'Luxurious bathroom with modern fixtures and elegant tiles.',
-      image: 'src/assets/Mantra Monarch/IMG_7886.JPG',
-      projectImages: [
-        'src/assets/Mantra Monarch/IMG_7886.JPG',
-        'src/assets/Mantra Monarch/IMG_7885.JPG',
-        'src/assets/Mantra Monarch/IMG_7887.JPG',
-      ],
-      features: ['Modern Fixtures', 'Premium Tiles', 'Glass Shower', 'Storage']
+      features: ['Custom TV Unit', 'False Ceiling', 'Modern Lighting']
     },
 
-    // Amanora Neo Towers - 4 cards
+    // Amanora Neo Towers, Hadpsar - 示例图片
     {
-      id: 5,
+      id: 2,
       albumId: 'amanora_neo_towers',
       title: 'Amanora Living Area',
       type: 'Residential',
-      location: 'Mumbai',
+      location: 'Hadpsar, Pune',
       area: '380 sq.ft',
-      description: 'Clean lines and minimal design create a peaceful living environment.',
-      image: 'src/assets/Amanora_neo_towers/IMG_4023.jpg',
-      features: ['Minimal Design', 'Smart Storage', 'Natural Lighting', 'Neutral Palette'],
+      description: 'Minimal design living area.',
+      image: '/gallery/amanora-1.jpg',
       projectImages: [
-        'src/assets/Amanora_neo_towers/IMG_4023.jpg',
-        'src/assets/Amanora_neo_towers/IMG_4030.jpg',
-        'src/assets/Amanora_neo_towers/IMG_4031.jpg',
-        'src/assets/Amanora_neo_towers/IMG_8176.jpg',
+        '/gallery/amanora-1.jpg',
+        '/gallery/amanora-2.jpg',
       ],
+      features: ['Minimal Design', 'Smart Storage']
     },
 
+    // Majestic Signature, Baner - 示例图片
     {
-      id: 6,
-      albumId: 'amanora_neo_towers',
-      title: 'Amanora Bedroom',
-      type: 'Residential',
-      location: 'Mumbai',
-      area: '220 sq.ft',
-      description: 'Cozy bedroom with custom furniture and warm lighting.',
-      image: 'src/assets/Amanora_neo_towers/IMG_3999.jpg',
-      features: ['Custom Furniture', 'Warm Lighting', 'False Ceiling', 'Storage'],
-      projectImages: [
-        'src/assets/Amanora_neo_towers/IMG_3974.jpg',
-        'src/assets/Amanora_neo_towers/IMG_3975.jpg',
-        'src/assets/Amanora_neo_towers/IMG_3999.jpg',
-        // 'src/assets/Amanora_neo_towers/IMG_4003.jpg',
-      ],
-    },
-    {
-      id: 7,
-      albumId: 'amanora_neo_towers',
-      title: 'Amanora Dining Area',
-      type: 'Residential',
-      location: 'Mumbai',
-      area: '180 sq.ft',
-      description: 'Elegant dining space with modern furniture and lighting.',
-      image: 'src/assets/Amanora_neo_towers/IMG_4020.jpg',
-      features: ['Modern Furniture', 'Elegant Lighting', 'Wall Decor', 'Space Efficient'],
-      projectImages: [
-        'src/assets/Amanora_neo_towers/IMG_4020.jpg',
-        'src/assets/Amanora_neo_towers/IMG_4030.jpg',
-        'src/assets/Amanora_neo_towers/IMG_3980.jpg',
-      ],
-    },
-
-    // Majestic Signature Towers - 4 cards
-    {
-      id: 8,
-      albumId: 'majestic_signature_towers',
+      id: 3,
+      albumId: 'majestic_signature',
       title: 'Majestic Living Room',
       type: 'Residential',
-      location: 'Navi Mumbai',
+      location: 'Baner, Pune',
       area: '520 sq.ft',
-      description: 'Elegant living area with bespoke furniture and artistic elements.',
-      image: 'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
-      features: ['Bespoke Furniture', 'Art Display', 'Accent Wall', 'Ambient Lighting'],
+      description: 'Elegant living area.',
+      image: '/gallery/majestic-1.jpg',
       projectImages: [
-        // 'src/assets/Majestic_Signature_Towers/IMG_3979.jpg',
-        'src/assets/Majestic_Signature_Towers/IMG_8175.jpg',
-        'src/assets/Majestic_Signature_Towers/IMG_3981.jpg',
-        'src/assets/Majestic_Signature_Towers/IMG_8177.jpg',
+        '/gallery/majestic-1.jpg',
+        '/gallery/majestic-2.jpg',
       ],
+      features: ['Bespoke Furniture', 'Art Display']
     },
 
-    // Lodha Woods - 4 cards
+    // Mankhurd, Mumbai - 示例图片
     {
-      id: 9,
-      albumId: 'lodha_woods',
-      title: 'Lodha Woods Kitchen',
-      type: 'Residential',
-      location: 'Kandivali',
-      area: '180 sq.ft',
-      description: 'Fully equipped modular kitchen with smart storage solutions and premium finishes.',
-      image: 'src/assets/lodha_woods_kandivali/IMG_9465.jpg',
-      features: ['Modular Cabinets', 'Granite Counter', 'Smart Storage', 'Chimney Hood'],
-      projectImages: [
-        'src/assets/lodha_woods_kandivali/IMG_9465.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9469.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9468.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9466.jpg',
-      ],
-    },
-    {
-      id: 10,
-      albumId: 'lodha_woods',
-      title: 'Lodha Woods Living',
-      type: 'Residential',
-      location: 'Kandivali',
-      area: '350 sq.ft',
-      description: 'Spacious living area with modern furniture.',
-      image: 'src/assets/lodha_woods_kandivali/IMG_2096.jpg',
-      features: ['Modern Furniture', 'False Ceiling', 'Entertainment Unit', 'Lighting'],
-      projectImages: [
-        'src/assets/lodha_woods_kandivali/IMG_2056.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_3562.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2094.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2096.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_9487.jpg',
-      ],
-    },
-    {
-      id: 11,
-      albumId: 'lodha_woods',
-      title: 'Lodha Woods Bedroom',
-      type: 'Residential',
-      location: 'Kandivali',
-      area: '220 sq.ft',
-      description: 'Comfortable bedroom with custom storage.',
-      image: 'src/assets/lodha_woods_kandivali/IMG_2436.jpg',
-      features: ['Custom Storage', 'False Ceiling', 'Study Corner', 'Lighting'],
-      projectImages: [
-        'src/assets/lodha_woods_kandivali/IMG_2436.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2460.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2416.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2461.jpg',
-        'src/assets/lodha_woods_kandivali/IMG_2462.jpg',
-      ],
-    },
-
-
-    // Mankhurd - 4 cards
-    {
-      id: 12,
+      id: 4,
       albumId: 'mankhurd',
       title: 'Mankhurd Kitchen',
       type: 'Residential',
-      location: 'Mumbai',
+      location: 'Mankhurd, Mumbai',
       area: '220 sq.ft',
-      description: 'State-of-the-art kitchen with island counter and modern appliances.',
-      image: 'src/assets/Mankhurd/IMG_9274.PNG',
-      features: ['Island Counter', 'Modern Appliances', 'Pull-out Drawers', 'Task Lighting'],
+      description: 'Modern kitchen design.',
+      image: '/gallery/mankhurd-1.jpg',
       projectImages: [
-        'src/assets/Mankhurd/IMG_9274.PNG',
-        'src/assets/Mankhurd/IMG_9275.PNG',
+        '/gallery/mankhurd-1.jpg',
       ],
-    },
-    {
-      id: 13,
-      albumId: 'mankhurd',
-      title: 'Mankhurd Living',
-      type: 'Residential',
-      location: 'Mumbai',
-      area: '300 sq.ft',
-      description: 'Modern living space with elegant furniture.',
-      image: 'src/assets/Mankhurd/IMG_8851.PNG',
-      features: ['Elegant Furniture', 'False Ceiling', 'TV Unit', 'Lighting'],
-      projectImages: [
-        'src/assets/Mankhurd/IMG_8851.PNG',
-        'src/assets/Mankhurd/IMG_8853.PNG',
-        'src/assets/Mankhurd/IMG_9299.PNG',
-        'src/assets/Mankhurd/IMG_9413.PNG',
-      ],
-    },
-    {
-      id: 14,
-      albumId: 'mankhurd',
-      title: 'Mankhurd Bedroom',
-      type: 'Residential',
-      location: 'Mumbai',
-      area: '250 sq.ft',
-      description: 'Comfortable bedroom with ample storage.',
-      image: 'src/assets/Mankhurd/IMG_8856.PNG',
-      features: ['Ample Storage', 'False Ceiling', 'Study Table', 'Lighting'],
-      projectImages: [
-        'src/assets/Mankhurd/IMG_8762.PNG',
-        'src/assets/Mankhurd/IMG_8763.PNG',
-        'src/assets/Mankhurd/IMG_8856.PNG',
-        'src/assets/Mankhurd/IMG_8858.PNG',
-        'src/assets/Mankhurd/IMG_9394.PNG',
-      ],
+      features: ['Island Counter', 'Modern Appliances']
     },
 
-
-    // Elina Living - 4 cards
+    // Kharghar, Navi Mumbai - 示例图片
     {
-      id: 15,
-      albumId: 'elina_living',
-      title: 'Elina Living Kitchen',
-      type: 'Residential',
-      location: 'Navi Mumbai',
-      area: '150 sq.ft',
-      description: 'Space-efficient kitchen design with maximum storage and functionality.',
-      image: 'src/assets/Elina_living/IMG_8126.JPG',
-      features: ['Space Efficient', 'Corner Solutions', 'Wall Cabinets', 'Breakfast Counter'],
-      projectImages: [
-        'src/assets/Elina_living/IMG_8126.JPG',
-        'src/assets/Elina_living/IMG_8127.JPG',
-        'src/assets/Elina_living/IMG_8126.JPG',
-        'src/assets/Elina_living/IMG_8127.JPG',
-      ],
-    },
-    {
-      id: 16,
-      albumId: 'elina_living',
-      title: 'Elina Living Living Room',
-      type: 'Residential',
-      location: 'Navi Mumbai',
-      area: '280 sq.ft',
-      description: 'Cozy living room with modern furniture.',
-      image: 'src/assets/Elina_Living/IMG_9983.JPG',
-      features: ['Modern Furniture', 'TV Unit', 'Lighting', 'Storage'],
-      projectImages: [
-        'src/assets/Elina_living/IMG_9983.JPG',
-        'src/assets/Elina_living/IMG_9984.JPG',
-        'src/assets/Elina_living/IMG_9985.JPG',
-        'src/assets/Elina_living/IMG_9986.JPG',
-      ],
-    },
-    {
-      id: 17,
-      albumId: 'elina_living',
-      title: 'Elina Living Bedroom',
-      type: 'Residential',
-      location: 'Navi Mumbai',
-      area: '200 sq.ft',
-      description: 'Comfortable bedroom with custom wardrobe.',
-      image: 'src/assets/Elina_living/IMG_9991.JPG',
-      features: ['Custom Wardrobe', 'False Ceiling', 'Study Corner', 'Lighting'],
-      projectImages: [
-        'src/assets/Elina_living/IMG_9994.JPG',
-        'src/assets/Elina_living/IMG_9996.JPG',
-        'src/assets/Elina_living/IMG_9997.JPG',
-        'src/assets/Elina_living/IMG_9993.JPG',
-      ],
-    },
-    // 
-
-    // Kharghar - 4 cards
-    {
-      id: 18,
+      id: 5,
       albumId: 'kharghar',
       title: 'Kharghar Master Bedroom',
       type: 'Residential',
-      location: 'Kharghar',
+      location: 'Kharghar, Navi Mumbai',
       area: '300 sq.ft',
-      description: 'Luxurious master bedroom with walk-in wardrobe and elegant décor.',
-      image: 'src/assets/Kharghar/IMG_2541.JPG',
-      features: ['Walk-in Wardrobe', 'False Ceiling', 'Study Corner', 'Dressing Area'],
+      description: 'Luxurious master bedroom.',
+      image: '/gallery/kharghar-1.jpg',
       projectImages: [
-        'src/assets/Kharghar/IMG_7900.PNG',
-        'src/assets/Kharghar/IMG_7901.PNG',
-        'src/assets/Kharghar/IMG_7902.PNG',
-        'src/assets/Kharghar/IMG_7907.PNG',
-        'src/assets/Kharghar/IMG_7908.PNG',
-        'src/assets/Kharghar/IMG_2541.JPG',
+        '/gallery/kharghar-1.jpg',
+        '/gallery/kharghar-2.jpg',
       ],
-    },
-    {
-      id: 19,
-      albumId: 'kharghar',
-      title: 'Kharghar Living Room',
-      type: 'Residential',
-      location: 'Kharghar',
-      area: '350 sq.ft',
-      description: 'Spacious living area with modern furniture.',
-      image: 'src/assets/Kharghar/IMG_2540.JPG',
-      features: ['Modern Furniture', 'False Ceiling', 'Entertainment Unit', 'Lighting'],
-      projectImages: [
-        'src/assets/Kharghar/IMG_2540.JPG',
-        'src/assets/Kharghar/IMG_2542.JPG',
-        'src/assets/Kharghar/IMG_2543.JPG',
-        'src/assets/Kharghar/IMG_7903.PNG',
-        'src/assets/Kharghar/IMG_7904.PNG',
-        'src/assets/Kharghar/IMG_7905.PNG',
-        'src/assets/Kharghar/IMG_8011.PNG',
-        'src/assets/Kharghar/IMG_8045.JPG',
-      ],
-    },
-    {
-      id: 20,
-      albumId: 'kharghar',
-      title: 'Kharghar Kitchen',
-      type: 'Residential',
-      location: 'Kharghar',
-      area: '180 sq.ft',
-      description: 'Modern kitchen with modular design.',
-      image: 'src/assets/Kharghar/IMG_2544.JPG',
-      features: ['Modular Design', 'Smart Storage', 'Granite Counter', 'Appliances'],
-      projectImages: [
-        'src/assets/Kharghar/IMG_2544.JPG',
-        // 'src/assets/Kharghar/IMG_2545.JPG',
-      ],
-    },
-    {
-      id: 21,
-      albumId: 'kharghar',
-      title: 'Kharghar Guest Bedroom',
-      type: 'Residential',
-      location: 'Kharghar',
-      area: '220 sq.ft',
-      description: 'Comfortable guest bedroom with storage.',
-      image: 'src/assets/Kharghar/IMG_2541.JPG',
-      features: ['Storage Solutions', 'False Ceiling', 'Lighting', 'Furniture'],
-      projectImages: [
-        'src/assets/Kharghar/IMG_2541.JPG',
-        'src/assets/Kharghar/IMG_7900.PNG',
-        'src/assets/Kharghar/IMG_7901.PNG',
-        'src/assets/Kharghar/IMG_7902.PNG',
-        'src/assets/Kharghar/IMG_7906.PNG',
-        'src/assets/Kharghar/IMG_7907.PNG',
-        'src/assets/Kharghar/IMG_7908.PNG',
-        'src/assets/Kharghar/IMG_8025.JPG',
-        'src/assets/Kharghar/IMG_8027.JPG',
-        'src/assets/Kharghar/IMG_8028.JPG',
-        'src/assets/Kharghar/IMG_8029.JPG',
-        'src/assets/Kharghar/IMG_8030.JPG',
-        'src/assets/Kharghar/IMG_8035.JPG',
-        'src/assets/Kharghar/IMG_8037.JPG',
-        'src/assets/Kharghar/IMG_8039.JPG',
-        'src/assets/Kharghar/IMG_8041.JPG',
-      ],
+      features: ['Walk-in Wardrobe', 'False Ceiling']
     },
 
-    // Our Office - 4 cards
+    // Euro School, Wakad - 示例图片
     {
-      id: 22,
+      id: 6,
+      albumId: 'euro_school',
+      title: 'Euro School Classroom',
+      type: 'Commercial',
+      location: 'Wakad, Pune',
+      area: '500 sq.ft',
+      description: 'Educational space design.',
+      image: '/gallery/euro-school-1.jpg',
+      projectImages: [
+        '/gallery/euro-school-1.jpg',
+      ],
+      features: ['Educational Design', 'Safe Materials']
+    },
+
+    // Lodha Woods, Kandivali - 示例图片
+    {
+      id: 7,
+      albumId: 'lodha_woods',
+      title: 'Lodha Woods Kitchen',
+      type: 'Residential',
+      location: 'Kandivali, Mumbai',
+      area: '180 sq.ft',
+      description: 'Modular kitchen design.',
+      image: '/gallery/lodha-1.jpg',
+      projectImages: [
+        '/gallery/lodha-1.jpg',
+        '/gallery/lodha-2.jpg',
+      ],
+      features: ['Modular Cabinets', 'Granite Counter']
+    },
+
+    // Elina Living, NIBM - 示例图片
+    {
+      id: 8,
+      albumId: 'elina_living',
+      title: 'Elina Living Kitchen',
+      type: 'Residential',
+      location: 'NIBM, Pune',
+      area: '150 sq.ft',
+      description: 'Space-efficient kitchen.',
+      image: '/gallery/elina-1.jpg',
+      projectImages: [
+        '/gallery/elina-1.jpg',
+      ],
+      features: ['Space Efficient', 'Corner Solutions']
+    },
+
+    // Kothrud, Pune - 示例图片
+    {
+      id: 9,
+      albumId: 'kothrud',
+      title: 'Kothrud Residence',
+      type: 'Residential',
+      location: 'Kothrud, Pune',
+      area: '600 sq.ft',
+      description: 'Complete home interior.',
+      image: '/gallery/kothrud-1.jpg',
+      projectImages: [
+        '/gallery/kothrud-1.jpg',
+      ],
+      features: ['Complete Interior', 'Custom Furniture']
+    },
+
+    // Builder Sample, Karjat - 示例图片
+    {
+      id: 10,
+      albumId: 'karjat_builder',
+      title: 'Builder Sample Flat',
+      type: 'Residential',
+      location: 'Karjat',
+      area: '800 sq.ft',
+      description: 'Model apartment design.',
+      image: '/gallery/karjat-1.jpg',
+      projectImages: [
+        '/gallery/karjat-1.jpg',
+      ],
+      features: ['Model Apartment', 'Showcase Design']
+    },
+
+    // Designing - 示例图片
+    {
+      id: 11,
+      albumId: 'designing',
+      title: 'Design Concepts',
+      type: 'Design',
+      location: 'Various Locations',
+      area: 'Various',
+      description: 'Creative design concepts.',
+      image: '/gallery/design-1.jpg',
+      projectImages: [
+        '/gallery/design-1.jpg',
+        '/gallery/design-2.jpg',
+      ],
+      features: ['3D Visualization', 'Concept Design']
+    },
+
+    // Our Office, Vashi - 示例图片
+    {
+      id: 12,
       albumId: 'our_office',
       title: 'Office Reception',
       type: 'Commercial',
-      location: 'Mumbai',
+      location: 'Vashi, Navi Mumbai',
       area: '200 sq.ft',
-      description: 'Modern office reception with elegant design.',
-      image: 'src/assets/Our_Office/IMG_6928.PNG',
-      features: ['Modern Design', 'Reception Desk', 'Lighting', 'Branding'],
+      description: 'Professional office space.',
+      image: '/gallery/office-1.jpg',
       projectImages: [
-        'src/assets/Our_Office/IMG_6924.PNG',
-        // 'src/assets/Our_Office/IMG_6925.PNG',
+        '/gallery/office-1.jpg',
       ],
+      features: ['Modern Design', 'Professional Space']
     },
+
+    // Pirangut Bunglow, Pune - 示例图片（精品项目）
     {
-      id: 23,
-      albumId: 'our_office',
-      title: 'Workstation Area',
-      type: 'Commercial',
-      location: 'Mumbai',
-      area: '400 sq.ft',
-      description: 'Efficient workstation area for team collaboration.',
-      image: 'src/assets/Our_Office/IMG_6926.PNG',
-      features: ['Ergonomic Chairs', 'Workstations', 'Storage', 'Lighting'],
+      id: 13,
+      albumId: 'pirangut_bunglow',
+      title: 'Pirangut Luxury Bunglow',
+      type: 'Premium Residential',
+      location: 'Pirangut, Pune',
+      area: '1200 sq.ft',
+      description: 'Premium bunglow with luxury finishes.',
+      image: '/gallery/pirangut-1.jpg',
       projectImages: [
-        'src/assets/Our_Office/IMG_6926.PNG',
-        // 'src/assets/Our_Office/IMG_6927.PNG',
+        '/gallery/pirangut-1.jpg',
+        '/gallery/pirangut-2.jpg',
+        '/gallery/pirangut-3.jpg',
+        '/gallery/pirangut-4.jpg',
       ],
-    },
-    {
-      id: 24,
-      albumId: 'our_office',
-      title: 'Meeting Room',
-      type: 'Commercial',
-      location: 'Mumbai',
-      area: '180 sq.ft',
-      description: 'Professional meeting room for client discussions.',
-      image: 'src/assets/Our_Office/IMG_6928.PNG',
-      features: ['Conference Table', 'AV System', 'Whiteboard', 'Lighting'],
-      projectImages: [
-        'src/assets/Our_Office/IMG_6928.PNG',
-        // 'src/assets/Our_Office/IMG_6929.PNG',
-      ],
-    },
-    {
-      id: 25,
-      albumId: 'our_office',
-      title: 'Manager Cabin',
-      type: 'Commercial',
-      location: 'Mumbai',
-      area: '150 sq.ft',
-      description: 'Private cabin for managerial work.',
-      image: 'src/assets/Our_Office/IMG_6930.PNG',
-      features: ['Private Space', 'Storage', 'Work Desk', 'Lighting'],
-      projectImages: [
-        'src/assets/Our_Office/IMG_6930.PNG',
-        // 'src/assets/Our_Office/IMG_6924.PNG',
-      ],
+      features: ['Premium Finishes', 'Luxury Design', 'Custom Woodwork', 'Smart Home']
     },
   ];
 
@@ -508,7 +275,7 @@ const Gallery = () => {
   // For "All Projects" show only 8 initially, then all when showMoreAll is true
   const displayedImages = activeFilter === 'all'
     ? (showMoreAll ? filteredImages : filteredImages.slice(0, 8))
-    : filteredImages.slice(0, 4); // For other filters, show only 4
+    : filteredImages; // For specific albums, show all images in that album
 
   const openModal = (image, index) => {
     setSelectedImage(image);
@@ -555,7 +322,7 @@ const Gallery = () => {
   const testimonials = [
     {
       name: "Shubham Parikh",
-      location: "Majestic signature ",
+      location: "Majestic Signature",
       rating: 5,
       comment: "SRV Interiors delivers exceptional work quality with elegant, contemporary designs. The team is highly professional, detail-oriented, and extremely cooperative throughout the entire process. It was a seamless and satisfying experience working with them."
     },
@@ -579,7 +346,7 @@ const Gallery = () => {
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img
-            src="src/assets/Elina_living/IMG_9984.JPG"
+            src="/gallery/banner.jpg"
             alt="Gallery Banner"
           />
         </div>
@@ -615,9 +382,17 @@ const Gallery = () => {
 
             <div className="filter-info">
               <p>
-                Showing <span className="count">{displayedImages.length}</span> {activeFilter === 'all' ? 'projects' : 'images'}
-                {activeFilter !== 'all' && ` in ${albumFilters.find(f => f.id === activeFilter)?.label}`}
-                {activeFilter === 'all' && !showMoreAll && ' (8 of 32)'}
+                {activeFilter === 'all' ? (
+                  <>
+                    Showing <span className="count">{displayedImages.length}</span> projects
+                    {!showMoreAll && ' (8 of 13)'}
+                  </>
+                ) : (
+                  <>
+                    Showing <span className="count">{displayedImages.length}</span> images from{' '}
+                    {albumFilters.find(f => f.id === activeFilter)?.label}
+                  </>
+                )}
               </p>
             </div>
           </div>
@@ -715,7 +490,7 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Updated Testimonials Section */}
+      {/* Testimonials Section */}
       <section className="client-testimonials-gallery">
         <div className="container">
           <div className="section-header">
@@ -737,7 +512,6 @@ const Gallery = () => {
                 className={`testimonial-card-gallery ${expandedTestimonial === index ? 'expanded' : ''}`}
               >
                 <div className="testimonial-header-gallery">
-                  {/* Client name at top */}
                   <div className="client-info-top">
                     <div className="client-avatar-top">
                       {testimonial.name.charAt(0)}
@@ -748,7 +522,6 @@ const Gallery = () => {
                     </div>
                   </div>
                   
-                  {/* Stars next to name */}
                   <div className="stars-top">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <FontAwesomeIcon key={i} icon={faStar} />
@@ -873,30 +646,10 @@ const Gallery = () => {
                   </div>
                 </div>
 
-                {/* <div className="project-description">
-                  <h3>Project Description</h3>
-                  <p>{selectedImage.description}</p>
-                </div> */}
-
-                {/* <div className="project-features">
-                  <h3>Key Features</h3>
-                  <div className="features-grid">
-                    {selectedImage.features.map((feature, idx) => (
-                      <div key={idx} className="feature-item">
-                        <FontAwesomeIcon icon={faCheckCircle} />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div> */}
-
                 <div className="project-actions">
                   <button className="action-btn primary" onClick={() => window.location.href = '/contact'}>
                     Start Similar Project <FontAwesomeIcon icon={faArrowRight} />
                   </button>
-                  {/* <button className="action-btn secondary" onClick={() => window.open('https://wa.me/918796932990', '_blank')}>
-                    <FontAwesomeIcon icon={faStar} /> Get Quote
-                  </button> */}
                 </div>
               </div>
             </div>

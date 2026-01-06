@@ -160,6 +160,118 @@
     font-weight: 700;
     font-size: 1.1rem;
 }
+/* 在现有的 Gallery.css 中添加以下更新 */
+
+/* Filter Section 更新 */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.filter-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+}
+
+/* 响应式设计更新 */
+@media (max-width: 1200px) {
+    .filter-buttons {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-buttons {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+    
+    .filter-btn {
+        flex-shrink: 0;
+        padding: 0.6rem 1.2rem;
+        margin-right: 0.5rem;
+    }
+}
+
+/* 当选择特定相册时，显示所有该相册的图片 */
+.gallery-grid-section .container {
+    width: 100%;
+}
+
+/* 相册标题样式 */
+.album-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+/* 精品项目特殊样式 */
+.gallery-item[data-album="pirangut_bunglow"] {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 15px 35px rgba(122, 31, 43, 0.15);
+}
+
+.gallery-item[data-album="pirangut_bunglow"] .project-type {
+    background: linear-gradient(135deg, var(--primary-color), #323233);
+}
+
+/* 当没有图片时的消息 */
+.no-images-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-light);
+}
+
+.no-images-message h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.no-images-message p {
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+/* 加载更多按钮样式 */
+.load-more-album {
+    text-align: center;
+    margin-top: 2rem;
+    grid-column: 1 / -1;
+}
+
+.load-more-album-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.load-more-album-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
 
 /* Gallery Grid - 4 columns */
 .gallery-grid-section {
