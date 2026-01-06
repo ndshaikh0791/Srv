@@ -30,19 +30,19 @@ const Gallery = () => {
 
   const albumFilters = [
     { id: 'all', label: 'All Projects' },
-    { id: 'mantra_monarch', label: 'Mantra Monarch, Baner' },
-    { id: 'amanora_neo_towers', label: 'Amanora Neo Towers, Hadpsar' },
-    { id: 'majestic_signature', label: 'Majestic Signature, Baner' },
-    { id: 'mankhurd', label: 'Mankhurd, Mumbai' },
-    { id: 'kharghar', label: 'Kharghar, Navi Mumbai' },
-    { id: 'euro_school', label: 'Euro School, Wakad' },
-    { id: 'lodha_woods', label: 'Lodha Woods, Kandivali' },
-    { id: 'elina_living', label: 'Elina Living, NIBM' },
+    { id: 'mantra_monarch', label: 'Mantra Monarch' },
+    { id: 'amanora_neo_towers', label: 'Amanora Neo Towers' },
+    { id: 'majestic_signature', label: 'Majestic Signature' },
+    { id: 'mankhurd', label: 'Mankhurd' },
+    { id: 'kharghar', label: 'Kharghar' },
+    { id: 'euro_school', label: 'Euro School' },
+    { id: 'lodha_woods', label: 'Lodha Woods' },
+    { id: 'elina_living', label: 'Elina Living' },
     { id: 'kothrud', label: 'Kothrud, Pune' },
-    { id: 'karjat_builder', label: 'Builder Sample, Karjat' },
+    { id: 'karjat_builder', label: 'Builder Sample' },
     { id: 'designing', label: 'Designing' },
-    { id: 'our_office', label: 'Our Office, Vashi' },
-    { id: 'pirangut_bunglow', label: 'Pirangut Bunglow, Pune' }
+    { id: 'our_office', label: 'Our Office' },
+    { id: 'pirangut_bunglow', label: 'Pirangut Bunglow' }
   ];
 
 
@@ -559,9 +559,9 @@ const Gallery = () => {
                           </span>
                           <span>{image.area}</span>
                         </div>
-                        <button className="view-project-btn">
+                        {/* <button className="view-project-btn">
                           View Project <FontAwesomeIcon icon={faArrowRight} />
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   )}
