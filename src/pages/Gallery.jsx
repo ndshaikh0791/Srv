@@ -56,7 +56,7 @@ const Gallery = () => {
       title: 'Mantra Monarch Living Room',
       type: 'Residential',
       location: 'Baner, Pune',
-      area: '450 sq.ft',
+      // area: '450 sq.ft',
       description: 'Contemporary living room with custom furniture.',
       image: 'src/assets/Mantra Monarch/IMG_7871.JPG',
       projectImages: [
@@ -83,7 +83,7 @@ const Gallery = () => {
       title: 'Amanora Living Area',
       type: 'Residential',
       location: 'Hadpsar, Pune',
-      area: '380 sq.ft',
+      // area: '380 sq.ft',
       description: 'Minimal design living area.',
       image: 'src/assets/Amanora_neo_towers/IMG_3974.jpg',
       projectImages: [
@@ -110,7 +110,7 @@ const Gallery = () => {
       title: 'Majestic Living Room',
       type: 'Residential',
       location: 'Baner, Pune',
-      area: '520 sq.ft',
+      // area: '520 sq.ft',
       description: 'Elegant living area.',
       image: 'src/assets/Majestic_Signature_Towers/IMG_2072.jpg',
       projectImages: [
@@ -137,7 +137,7 @@ const Gallery = () => {
       title: 'Mankhurd Kitchen',
       type: 'Residential',
       location: 'Mankhurd, Mumbai',
-      area: '220 sq.ft',
+      // area: '220 sq.ft',
       description: 'Modern kitchen design.',
       image: 'src/assets/Mankhurd/IMG_0116.JPG',
       projectImages: [
@@ -164,7 +164,7 @@ const Gallery = () => {
       title: 'Kharghar Master Bedroom',
       type: 'Residential',
       location: 'Kharghar, Navi Mumbai',
-      area: '300 sq.ft',
+      // area: '300 sq.ft',
       description: 'Luxurious master bedroom.',
       image: 'src/assets/Kharghar/IMG_7900.PNG',
       projectImages: [
@@ -187,7 +187,7 @@ const Gallery = () => {
       title: 'Euro School Classroom',
       type: 'Commercial',
       location: 'Wakad, Pune',
-      area: '500 sq.ft',
+      // area: '500 sq.ft',
       description: 'Educational space design.',
       image: 'src/assets/Euro_School_Classroom/IMG_8093.JPG',
       projectImages: [
@@ -214,7 +214,7 @@ const Gallery = () => {
       title: 'Lodha Woods Kitchen',
       type: 'Residential',
       location: 'Kandivali, Mumbai',
-      area: '180 sq.ft',
+      // area: '180 sq.ft',
       description: 'Modular kitchen design.',
       image: 'src/assets/lodha_woods_kandivali/IMG_2416.jpg',
       projectImages: [
@@ -241,7 +241,7 @@ const Gallery = () => {
       title: 'Elina Living Kitchen',
       type: 'Residential',
       location: 'NIBM, Pune',
-      area: '150 sq.ft',
+      // area: '150 sq.ft',
       description: 'Space-efficient kitchen.',
       image: 'src/assets/Elina_living/IMG_8759.PNG',
       projectImages: [
@@ -268,7 +268,7 @@ const Gallery = () => {
       title: 'Kothrud Residence',
       type: 'Residential',
       location: 'Kothrud, Pune',
-      area: '600 sq.ft',
+      // area: '600 sq.ft',
       description: 'Complete home interior.',
       image: 'src/assets/Kothrud_pune/Img1.jpeg',
       projectImages: [
@@ -291,7 +291,7 @@ const Gallery = () => {
       title: 'Builder Sample Flat',
       type: 'Residential',
       location: 'Karjat',
-      area: '800 sq.ft',
+      // area: '800 sq.ft',
       description: 'Model apartment design.',
       image: 'src/assets/Builder_Sample_Katraj/IMG_0170.PNG',
       projectImages: [
@@ -313,7 +313,7 @@ const Gallery = () => {
       title: 'Design Concepts',
       type: 'Design',
       location: 'Various Locations',
-      area: 'Various',
+      // area: 'Various',
       description: 'Creative design concepts.',
       image: 'src/assets/Designing/IMG_0271.JPG',
       projectImages: [
@@ -336,7 +336,7 @@ const Gallery = () => {
       title: 'Office Reception',
       type: 'Commercial',
       location: 'Vashi, Navi Mumbai',
-      area: '200 sq.ft',
+      // area: '200 sq.ft',
       description: 'Professional office space.',
       image: 'src/assets/Our_Office/IMG_6924.PNG',
       projectImages: [
@@ -357,7 +357,7 @@ const Gallery = () => {
       title: 'Pirangut Luxury Bunglow',
       type: 'Premium Residential',
       location: 'Pirangut, Pune',
-      area: '1200 sq.ft',
+      // area: '1200 sq.ft',
       description: 'Premium bunglow with luxury finishes.',
       image: 'src/assets/Pirangut_bunglow/IMG_7913.JPG',
       projectImages: [
