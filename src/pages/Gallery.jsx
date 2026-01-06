@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
   faArrowRight,
   faTimes,
@@ -19,15 +19,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Gallery.css';
 
-Modal.setAppElement('#root');
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [activeSubImageIndex, setActiveSubImageIndex] = useState(0);
   const [showMoreAll, setShowMoreAll] = useState(false);
   const [expandedTestimonial, setExpandedTestimonial] = useState(null);
+
+
+
 
   const albumFilters = [
     { id: 'all', label: 'All Projects' },
@@ -46,6 +45,8 @@ const Gallery = () => {
     { id: 'pirangut_bunglow', label: 'Pirangut Bunglow, Pune' }
   ];
 
+
+
   // Gallery Images Data - 更新后的图片路径
   const galleryImages = [
     // Mantra Monarch, Baner - 示例图片
@@ -57,11 +58,20 @@ const Gallery = () => {
       location: 'Baner, Pune',
       area: '450 sq.ft',
       description: 'Contemporary living room with custom furniture.',
-      image: '/gallery/mantra-monarch-1.jpg',
+      image: 'src/assets/Mantra Monarch/IMG_7871.JPG',
       projectImages: [
-        '/gallery/mantra-monarch-1.jpg',
-        '/gallery/mantra-monarch-2.jpg',
-        '/gallery/mantra-monarch-3.jpg',
+        'src/assets/Mantra Monarch/IMG_7872.JPG',
+        'src/assets/Mantra Monarch/IMG_7873.JPG',
+        'src/assets/Mantra Monarch/IMG_7874.JPG',
+        'src/assets/Mantra Monarch/IMG_7875.JPG',
+        'src/assets/Mantra Monarch/IMG_7876.JPG',
+        'src/assets/Mantra Monarch/IMG_7877.JPG',
+        'src/assets/Mantra Monarch/IMG_7878.JPG',
+        'src/assets/Mantra Monarch/IMG_7879.JPG',
+        'src/assets/Mantra Monarch/IMG_7880.JPG',
+        'src/assets/Mantra Monarch/IMG_7882.JPG',
+        'src/assets/Mantra Monarch/IMG_7883.JPG',
+        'src/assets/Mantra Monarch/IMG_7884.JPG',
       ],
       features: ['Custom TV Unit', 'False Ceiling', 'Modern Lighting']
     },
@@ -75,10 +85,20 @@ const Gallery = () => {
       location: 'Hadpsar, Pune',
       area: '380 sq.ft',
       description: 'Minimal design living area.',
-      image: '/gallery/amanora-1.jpg',
+      image: 'src/assets/Amanora_neo_towers/IMG_3974.jpg',
       projectImages: [
-        '/gallery/amanora-1.jpg',
-        '/gallery/amanora-2.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3975.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3978.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3979.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3980.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3981.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3982.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3995.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3997.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3998.jpg',
+        'src/assets/Amanora_neo_towers/IMG_3999.jpg',
+        'src/assets/Amanora_neo_towers/IMG_4002.jpg',
+        'src/assets/Amanora_neo_towers/IMG_4003.jpg',
       ],
       features: ['Minimal Design', 'Smart Storage']
     },
@@ -92,10 +112,20 @@ const Gallery = () => {
       location: 'Baner, Pune',
       area: '520 sq.ft',
       description: 'Elegant living area.',
-      image: '/gallery/majestic-1.jpg',
+      image: 'src/assets/Majestic_Signature_Towers/IMG_2072.jpg',
       projectImages: [
-        '/gallery/majestic-1.jpg',
-        '/gallery/majestic-2.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_2090.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_2093.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_4579.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_9468.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_2416.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_9469.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_9487.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_2454.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_2456.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_2457.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_3562.jpg',
+        'src/assets/Majestic_Signature_Towers/IMG_9465.jpg',
       ],
       features: ['Bespoke Furniture', 'Art Display']
     },
@@ -109,9 +139,20 @@ const Gallery = () => {
       location: 'Mankhurd, Mumbai',
       area: '220 sq.ft',
       description: 'Modern kitchen design.',
-      image: '/gallery/mankhurd-1.jpg',
+      image: 'src/assets/Mankhurd/IMG_0116.JPG',
       projectImages: [
-        '/gallery/mankhurd-1.jpg',
+        'src/assets/Mankhurd/IMG_0117.JPG',
+        'src/assets/Mankhurd/IMG_9996.JPG',
+        'src/assets/Mankhurd/IMG_9983.JPG',
+        'src/assets/Mankhurd/IMG_9984.JPG',
+        'src/assets/Mankhurd/IMG_9985.JPG',
+        'src/assets/Mankhurd/IMG_9986.JPG',
+        'src/assets/Mankhurd/IMG_9990.JPG',
+        'src/assets/Mankhurd/IMG_9991.JPG',
+        'src/assets/Mankhurd/IMG_9992.JPG',
+        'src/assets/Mankhurd/IMG_9994.JPG',
+        'src/assets/Mankhurd/IMG_9995.JPG',
+        'src/assets/Mankhurd/IMG_0118.JPG',
       ],
       features: ['Island Counter', 'Modern Appliances']
     },
@@ -125,10 +166,16 @@ const Gallery = () => {
       location: 'Kharghar, Navi Mumbai',
       area: '300 sq.ft',
       description: 'Luxurious master bedroom.',
-      image: '/gallery/kharghar-1.jpg',
+      image: 'src/assets/Kharghar/IMG_7900.PNG',
       projectImages: [
-        '/gallery/kharghar-1.jpg',
-        '/gallery/kharghar-2.jpg',
+        'src/assets/Kharghar/IMG_7901.PNG',
+        'src/assets/Kharghar/IMG_7902.PNG',
+        'src/assets/Kharghar/IMG_7903.PNG',
+        'src/assets/Kharghar/IMG_7904.PNG',
+        'src/assets/Kharghar/IMG_7905.PNG',
+        'src/assets/Kharghar/IMG_7906.PNG',
+        'src/assets/Kharghar/IMG_7907.PNG',
+        'src/assets/Kharghar/IMG_7908.PNG',
       ],
       features: ['Walk-in Wardrobe', 'False Ceiling']
     },
@@ -142,9 +189,20 @@ const Gallery = () => {
       location: 'Wakad, Pune',
       area: '500 sq.ft',
       description: 'Educational space design.',
-      image: '/gallery/euro-school-1.jpg',
+      image: 'src/assets/Euro_School_Classroom/IMG_8093.JPG',
       projectImages: [
-        '/gallery/euro-school-1.jpg',
+        'src/assets/Euro_School_Classroom/IMG_8094.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8095.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8096.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8097.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8101.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8102.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8103.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8105.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8106.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8109.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8111.JPG',
+        'src/assets/Euro_School_Classroom/IMG_8112.JPG',
       ],
       features: ['Educational Design', 'Safe Materials']
     },
@@ -158,10 +216,20 @@ const Gallery = () => {
       location: 'Kandivali, Mumbai',
       area: '180 sq.ft',
       description: 'Modular kitchen design.',
-      image: '/gallery/lodha-1.jpg',
+      image: 'src/assets/lodha_woods_kandivali/IMG_2416.jpg',
       projectImages: [
-        '/gallery/lodha-1.jpg',
-        '/gallery/lodha-2.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2096.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2056.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2416.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2436.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2446.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2460.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2461.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2462.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_2463.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_4578.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_9465.jpg',
+        'src/assets/lodha_woods_kandivali/IMG_9471.jpg',
       ],
       features: ['Modular Cabinets', 'Granite Counter']
     },
@@ -175,9 +243,20 @@ const Gallery = () => {
       location: 'NIBM, Pune',
       area: '150 sq.ft',
       description: 'Space-efficient kitchen.',
-      image: '/gallery/elina-1.jpg',
+      image: 'src/assets/Elina_living/IMG_8759.PNG',
       projectImages: [
-        '/gallery/elina-1.jpg',
+        'src/assets/Elina_living/IMG_8760.PNG',
+        'src/assets/Elina_living/IMG_8762.PNG',
+        'src/assets/Elina_living/IMG_8763.PNG',
+        'src/assets/Elina_living/IMG_8851.PNG',
+        'src/assets/Elina_living/IMG_8855.PNG',
+        'src/assets/Elina_living/IMG_8857.PNG',
+        'src/assets/Elina_living/IMG_8858.PNG',
+        'src/assets/Elina_living/IMG_8861.PNG',
+        'src/assets/Elina_living/IMG_9275.PNG',
+        'src/assets/Elina_living/IMG_9276.PNG',
+        'src/assets/Elina_living/IMG_9414.PNG',
+        'src/assets/Elina_living/IMG_9417.PNG',
       ],
       features: ['Space Efficient', 'Corner Solutions']
     },
@@ -191,9 +270,16 @@ const Gallery = () => {
       location: 'Kothrud, Pune',
       area: '600 sq.ft',
       description: 'Complete home interior.',
-      image: '/gallery/kothrud-1.jpg',
+      image: 'src/assets/Kothrud_pune/Img1.jpeg',
       projectImages: [
-        '/gallery/kothrud-1.jpg',
+        'src/assets/Kothrud_pune/Img2.jpeg',
+        'src/assets/Kothrud_pune/Img3.jpeg',
+        'src/assets/Kothrud_pune/Img4.jpeg',
+        'src/assets/Kothrud_pune/Img5.jpeg',
+        'src/assets/Kothrud_pune/Img6.jpeg',
+        'src/assets/Kothrud_pune/Img7.jpeg',
+        'src/assets/Kothrud_pune/Img8.jpeg',
+        'src/assets/Kothrud_pune/Img9.jpeg',
       ],
       features: ['Complete Interior', 'Custom Furniture']
     },
@@ -207,9 +293,15 @@ const Gallery = () => {
       location: 'Karjat',
       area: '800 sq.ft',
       description: 'Model apartment design.',
-      image: '/gallery/karjat-1.jpg',
+      image: 'src/assets/Builder_Sample_Katraj/IMG_0170.PNG',
       projectImages: [
-        '/gallery/karjat-1.jpg',
+        'src/assets/Builder_Sample_Katraj/IMG_0171.PNG',
+        'src/assets/Builder_Sample_Katraj/IMG_0172.PNG',
+        'src/assets/Builder_Sample_Katraj/IMG_0173.PNG',
+        'src/assets/Builder_Sample_Katraj/IMG_0174.PNG',
+        'src/assets/Builder_Sample_Katraj/IMG_0175.PNG',
+        'src/assets/Builder_Sample_Katraj/IMG_0176.PNG',
+        'src/assets/Builder_Sample_Katraj/IMG_0170.PNG',
       ],
       features: ['Model Apartment', 'Showcase Design']
     },
@@ -223,10 +315,16 @@ const Gallery = () => {
       location: 'Various Locations',
       area: 'Various',
       description: 'Creative design concepts.',
-      image: '/gallery/design-1.jpg',
+      image: 'src/assets/Designing/IMG_0271.JPG',
       projectImages: [
-        '/gallery/design-1.jpg',
-        '/gallery/design-2.jpg',
+        'src/assets/Designing/IMG_0273.JPG',
+        'src/assets/Designing/IMG_0274.JPG',
+        'src/assets/Designing/IMG_0275.JPG',
+        'src/assets/Designing/IMG_0276.JPG',
+        'src/assets/Designing/IMG_0277.JPG',
+        'src/assets/Designing/IMG_0278.JPG',
+        'src/assets/Designing/IMG_0279.JPG',
+        'src/assets/Designing/IMG_0271.JPG',
       ],
       features: ['3D Visualization', 'Concept Design']
     },
@@ -240,9 +338,14 @@ const Gallery = () => {
       location: 'Vashi, Navi Mumbai',
       area: '200 sq.ft',
       description: 'Professional office space.',
-      image: '/gallery/office-1.jpg',
+      image: 'src/assets/Our_Office/IMG_6924.PNG',
       projectImages: [
-        '/gallery/office-1.jpg',
+        'src/assets/Our_Office/IMG_6925.PNG',
+        'src/assets/Our_Office/IMG_6926.PNG',
+        'src/assets/Our_Office/IMG_6927.PNG',
+        'src/assets/Our_Office/IMG_6928.PNG',
+        'src/assets/Our_Office/IMG_6929.PNG',
+        'src/assets/Our_Office/IMG_6930.PNG',
       ],
       features: ['Modern Design', 'Professional Space']
     },
@@ -256,12 +359,21 @@ const Gallery = () => {
       location: 'Pirangut, Pune',
       area: '1200 sq.ft',
       description: 'Premium bunglow with luxury finishes.',
-      image: '/gallery/pirangut-1.jpg',
+      image: 'src/assets/Pirangut_bunglow/IMG_7913.JPG',
       projectImages: [
-        '/gallery/pirangut-1.jpg',
-        '/gallery/pirangut-2.jpg',
-        '/gallery/pirangut-3.jpg',
-        '/gallery/pirangut-4.jpg',
+        'src/assets/Pirangut_bunglow/IMG_7915.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7931.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7917.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7918.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7919.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7921.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7922.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7923.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7924.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7925.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7929.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7927.JPG',
+        'src/assets/Pirangut_bunglow/IMG_7928.JPG',
       ],
       features: ['Premium Finishes', 'Luxury Design', 'Custom Woodwork', 'Smart Home']
     },
@@ -273,15 +385,27 @@ const Gallery = () => {
     : galleryImages.filter(img => img.albumId === activeFilter);
 
   // For "All Projects" show only 8 initially, then all when showMoreAll is true
-  const displayedImages = activeFilter === 'all'
-    ? (showMoreAll ? filteredImages : filteredImages.slice(0, 8))
-    : filteredImages; // For specific albums, show all images in that album
+  let displayedImages = [];
 
-  const openModal = (image, index) => {
-    setSelectedImage(image);
-    setCurrentIndex(index);
-    setActiveSubImageIndex(0);
-  };
+  if (activeFilter === 'all') {
+    displayedImages = showMoreAll
+      ? galleryImages
+      : galleryImages.slice(0, 8);
+  } else {
+    const project = galleryImages.find(
+      (img) => img.albumId === activeFilter
+    );
+
+    displayedImages = project
+      ? project.projectImages.map((img, index) => ({
+        id: index,
+        image: img,
+      }))
+      : [];
+  }
+
+
+
 
   const closeModal = () => {
     setSelectedImage(null);
@@ -305,8 +429,16 @@ const Gallery = () => {
 
   const handleFilterChange = (filterId) => {
     setActiveFilter(filterId);
-    setShowMoreAll(false); // Reset showMoreAll when filter changes
+    setShowMoreAll(false);
+
+    setTimeout(() => {
+      document
+        .querySelector('.gallery-grid-section')
+        ?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
+
+
 
   const toggleTestimonial = (index) => {
     setExpandedTestimonial(expandedTestimonial === index ? null : index);
@@ -404,31 +536,37 @@ const Gallery = () => {
           <div className="gallery-grid">
             {displayedImages.map((image, index) => (
               <div
-                key={image.id}
+                key={index}
                 className="gallery-item"
-                style={{ '--i': index }}
-                onClick={() => openModal(image, index)}
               >
+
                 <div className="image-container">
                   <img
                     src={image.image}
-                    alt={image.title}
+                    alt={image.title || 'Project Image'}
                     loading="lazy"
                   />
-                  <div className="image-overlay">
-                    <div className="overlay-content">
-                      <span className="project-type">{image.type}</span>
-                      <h3 className="project-title">{image.title}</h3>
-                      <div className="project-meta">
-                        <span><FontAwesomeIcon icon={faCheckCircle} /> {image.location}</span>
-                        <span>{image.area}</span>
+
+                  {/* SHOW OVERLAY ONLY FOR ALL PROJECTS */}
+                  {activeFilter === 'all' && (
+                    <div className="image-overlay">
+                      <div className="overlay-content">
+                        <span className="project-type">{image.type}</span>
+                        <h3 className="project-title">{image.title}</h3>
+                        <div className="project-meta">
+                          <span>
+                            <FontAwesomeIcon icon={faCheckCircle} /> {image.location}
+                          </span>
+                          <span>{image.area}</span>
+                        </div>
+                        <button className="view-project-btn">
+                          View Project <FontAwesomeIcon icon={faArrowRight} />
+                        </button>
                       </div>
-                      <button className="view-project-btn">
-                        View Project <FontAwesomeIcon icon={faArrowRight} />
-                      </button>
                     </div>
-                  </div>
+                  )}
                 </div>
+
               </div>
             ))}
           </div>
@@ -521,7 +659,7 @@ const Gallery = () => {
                       <p><FontAwesomeIcon icon={faMapMarkerAlt} /> {testimonial.location}</p>
                     </div>
                   </div>
-                  
+
                   <div className="stars-top">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <FontAwesomeIcon key={i} icon={faStar} />
@@ -533,9 +671,9 @@ const Gallery = () => {
                   <p className={`testimonial-text-gallery ${expandedTestimonial === index ? 'expanded' : ''}`}>
                     "{testimonial.comment}"
                   </p>
-                  
+
                   {testimonial.comment.length > 200 && (
-                    <button 
+                    <button
                       className="read-more-btn-gallery"
                       onClick={() => toggleTestimonial(index)}
                     >
@@ -578,84 +716,7 @@ const Gallery = () => {
         </div>
       </section>
 
-      <Modal
-        isOpen={!!selectedImage}
-        onRequestClose={closeModal}
-        className="image-modal"
-        overlayClassName="modal-overlay"
-      >
-        {selectedImage && (
-          <div className="modal-content">
-            <button className="close-btn" onClick={closeModal}>
-              <FontAwesomeIcon icon={faTimes} />
-            </button>
 
-            {selectedImage.projectImages && selectedImage.projectImages.length > 1 && (
-              <div className="modal-nav">
-                <button className="nav-btn prev-btn" onClick={prevSubImage}>
-                  <FontAwesomeIcon icon={faChevronLeft} />
-                </button>
-                <button className="nav-btn next-btn" onClick={nextSubImage}>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                </button>
-              </div>
-            )}
-
-            <div className="modal-body">
-              <div className="modal-image">
-                <img
-                  src={
-                    selectedImage.projectImages && selectedImage.projectImages.length > 0
-                      ? selectedImage.projectImages[activeSubImageIndex]
-                      : selectedImage.image
-                  }
-                  alt={`${selectedImage.title} view ${activeSubImageIndex + 1}`}
-                />
-
-                {selectedImage.projectImages && selectedImage.projectImages.length > 1 && (
-                  <div className="image-counter">
-                    {activeSubImageIndex + 1} / {selectedImage.projectImages.length}
-                  </div>
-                )}
-              </div>
-
-              <div className="modal-info">
-                <div className="project-header">
-                  <span className="project-category">
-                    {selectedImage.title}
-                  </span>
-                  <h2 className="project-title">{selectedImage.title}</h2>
-                </div>
-
-                <div className="project-meta-grid">
-                  <div className="meta-item">
-                    <span className="meta-label">Project Type</span>
-                    <span className="meta-value">{selectedImage.type}</span>
-                  </div>
-                  <div className="meta-item">
-                    <span className="meta-label">Location</span>
-                    <span className="meta-value">{selectedImage.location}</span>
-                  </div>
-                  <div className="meta-item">
-                    <span className="meta-label">Area</span>
-                    <span className="meta-value">{selectedImage.area}</span>
-                  </div>
-                  <div className="meta-item">
-                    <span className="meta-label">Status</span>
-                    <span className="meta-value status-completed">Completed</span>
-                  </div>
-                </div>
-
-                <div className="project-actions">
-                  <button className="action-btn primary" onClick={() => window.location.href = '/contact'}>
-                    Start Similar Project <FontAwesomeIcon icon={faArrowRight} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </Modal>
     </div>
   );
 };
