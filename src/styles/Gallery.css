@@ -118,8 +118,14 @@
 .filter-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    /* This allows buttons to drop to the next line */
     justify-content: center;
+    /* Centers the buttons on the page */
+    gap: 12px;
+    /* Adds even spacing between buttons */
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .filter-btn {
@@ -160,6 +166,7 @@
     font-weight: 700;
     font-size: 1.1rem;
 }
+
 /* 在现有的 Gallery.css 中添加以下更新 */
 
 /* Filter Section 更新 */
@@ -182,7 +189,7 @@
     .filter-buttons {
         gap: 0.5rem;
     }
-    
+
     .filter-btn {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
@@ -191,17 +198,24 @@
 
 @media (max-width: 768px) {
     .filter-buttons {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 1rem;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
+        /* Change 'nowrap' to 'wrap' */
+        flex-wrap: wrap;
+
+        /* Change 'auto' to 'visible' to stop the scrollbar */
+        overflow-x: visible;
+
+        /* Center the buttons on the screen */
+        justify-content: center;
+
+        padding-bottom: 0.5rem;
+        gap: 8px;
+        padding: 10px;
     }
-    
+
     .filter-btn {
-        flex-shrink: 0;
-        padding: 0.6rem 1.2rem;
-        margin-right: 0.5rem;
+        font-size: 13px;
+        /* Slightly smaller font */
+        padding: 8px 15px;
     }
 }
 
@@ -359,7 +373,7 @@
     font-weight: 700;
     margin-bottom: 0.75rem;
     line-height: 1.3;
-     color: var(--white);
+    color: var(--white);
 }
 
 .project-meta {
@@ -655,19 +669,19 @@
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .testimonial-card-gallery {
         min-height: 160px;
         max-height: 250px;
         padding: 15px;
     }
-    
+
     .testimonial-header-gallery {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;
     }
-    
+
     .stars-top {
         align-self: flex-start;
     }
@@ -1050,59 +1064,66 @@
     .gallery-page {
         margin-top: 60px;
     }
-    
+
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .filter-buttons {
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        /* Change 'nowrap' to 'wrap' */
+        flex-wrap: wrap;
+
+        /* Change 'auto' to 'visible' to stop the scrollbar */
+        overflow-x: visible;
+
+        /* Center the buttons on the screen */
+        justify-content: center;
+
         padding-bottom: 0.5rem;
-        justify-content: flex-start;
-        -webkit-overflow-scrolling: touch;
+        gap: 8px;
+        padding: 10px;
     }
-    
+
     .filter-btn {
         white-space: nowrap;
         flex-shrink: 0;
     }
-    
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .btn-primary,
     .btn-outline {
         width: 100%;
         max-width: 300px;
     }
-    
+
     .modal-image {
         height: 300px;
     }
-    
+
     .project-meta-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .project-actions {
         flex-direction: column;
     }
-    
+
     .action-btn {
         width: 100%;
     }
@@ -1112,7 +1133,7 @@
     .gallery-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-title {
         font-size: 2.5rem !important;
     }
@@ -1124,6 +1145,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1193,6 +1215,7 @@
 
 /* Responsive for Explore Button */
 @media (max-width: 768px) {
+
     .explore-more-btn,
     .explore-less-btn {
         padding: 0.75rem 1.5rem;
@@ -1203,6 +1226,7 @@
         justify-content: center;
     }
 }
+
 /* Updated Modal Styles for Left Content Right Image */
 .modal-body {
     display: grid;
@@ -1351,7 +1375,9 @@
     background: var(--dark-brown);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(122, 31, 43, 0.2);
-}/* Change .modal-overlay to .project-modal-overlay */
+}
+
+/* Change .modal-overlay to .project-modal-overlay */
 
 
 /* Responsive Design for New Layout */
@@ -1360,16 +1386,16 @@
         grid-template-columns: 1fr;
         max-height: 90vh;
     }
-    
+
     .modal-content-left {
         max-height: 50vh;
         overflow-y: auto;
     }
-    
+
     .modal-image-right {
         padding: 1rem;
     }
-    
+
     .image-container-modal {
         height: 400px;
     }
@@ -1379,24 +1405,24 @@
     .modal-body {
         grid-template-columns: 1fr;
     }
-    
+
     .modal-content-left {
         padding: 2rem;
         max-height: 60vh;
     }
-    
+
     .image-container-modal {
         height: 300px;
     }
-    
+
     .services-list {
         grid-template-columns: 1fr;
     }
-    
+
     .image-thumbnails {
         flex-wrap: wrap;
     }
-    
+
     .thumbnail {
         width: 50px;
         height: 50px;
@@ -1407,23 +1433,23 @@
     .modal-content-left {
         padding: 1.5rem;
     }
-    
+
     .image-container-modal {
         height: 250px;
     }
-    
+
     .project-meta-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .project-actions {
         flex-direction: column;
     }
-    
+
     .action-btn {
         width: 100%;
         justify-content: center;
