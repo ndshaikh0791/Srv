@@ -17,7 +17,7 @@ const Contact = () => {
   };
 
   const handleEmailClick = () => {
-    window.location.href = 'mailto:srvinteriorspune@gmail.com';
+    window.location.href = 'mailto:connectsrvinteriors@gmail.com';
   };
 
   return (
@@ -67,7 +67,7 @@ const Contact = () => {
                 <Mail size={28} />
               </div>
               <h3>Email</h3>
-              <p className="contact-detail-main">srvinteriorspune@gmail.com</p>
+              <p className="contact-detail-main">connectsrvinteriors@gmail.com</p>
               <p className="contact-description">Send detailed project queries</p>
               <button className="contact-action-btn email-btn">
                 Send Email

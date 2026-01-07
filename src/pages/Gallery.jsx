@@ -238,7 +238,7 @@ const Gallery = () => {
     {
       id: 8,
       albumId: 'elina_living',
-      title: 'Elina Living Kitchen',
+      title: 'Elina Living ',
       type: 'Residential',
       location: 'NIBM, Pune',
       // area: '150 sq.ft',
@@ -396,10 +396,13 @@ const Gallery = () => {
       (img) => img.albumId === activeFilter
     );
 
+    // When a specific category is selected, we show individual photos, 
+    // so we don't need the "Project Modal" here.
     displayedImages = project
       ? project.projectImages.map((img, index) => ({
         id: index,
         image: img,
+        // No title or type here because these are sub-images
       }))
       : [];
   }
@@ -407,24 +410,26 @@ const Gallery = () => {
 
 
 
-  const closeModal = () => {
-    setSelectedImage(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [activeSubImageIndex, setActiveSubImageIndex] = useState(0);
+
+  // Close modal handler
+  const closeProjectModal = () => {
+    setSelectedProject(null);
+    setActiveSubImageIndex(0);
   };
 
+  // Navigation for modal images
   const nextSubImage = (e) => {
-    if (e) e.stopPropagation();
-    if (selectedImage.projectImages && selectedImage.projectImages.length > 0) {
-      const nextIdx = (activeSubImageIndex + 1) % selectedImage.projectImages.length;
-      setActiveSubImageIndex(nextIdx);
-    }
+    e.stopPropagation();
+    const images = selectedProject.projectImages;
+    setActiveSubImageIndex((prev) => (prev + 1) % images.length);
   };
 
   const prevSubImage = (e) => {
-    if (e) e.stopPropagation();
-    if (selectedImage.projectImages && selectedImage.projectImages.length > 0) {
-      const prevIdx = (activeSubImageIndex - 1 + selectedImage.projectImages.length) % selectedImage.projectImages.length;
-      setActiveSubImageIndex(prevIdx);
-    }
+    e.stopPropagation();
+    const images = selectedProject.projectImages;
+    setActiveSubImageIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
   const handleFilterChange = (filterId) => {
@@ -538,35 +543,31 @@ const Gallery = () => {
               <div
                 key={index}
                 className="gallery-item"
+                // Change: Ensure we only trigger the modal when in "all" view
+                onClick={() => {
+                  if (activeFilter === 'all') {
+                    setSelectedProject(image);
+                    setActiveSubImageIndex(0); // Reset to first image
+                  }
+                }}
+                style={{ cursor: activeFilter === 'all' ? 'pointer' : 'default' }}
               >
-
                 <div className="image-container">
-                  <img
-                    src={image.image}
-                    alt={image.title || 'Project Image'}
-                    loading="lazy"
-                  />
+                  <img src={image.image} alt={image.title} loading="lazy" />
 
-                  {/* SHOW OVERLAY ONLY FOR ALL PROJECTS */}
                   {activeFilter === 'all' && (
                     <div className="image-overlay">
                       <div className="overlay-content">
                         <span className="project-type">{image.type}</span>
                         <h3 className="project-title">{image.title}</h3>
-                        <div className="project-meta">
-                          <span>
-                            <FontAwesomeIcon icon={faCheckCircle} /> {image.location}
-                          </span>
-                          <span>{image.area}</span>
-                        </div>
-                        {/* <button className="view-project-btn">
-                          View Project <FontAwesomeIcon icon={faArrowRight} />
-                        </button> */}
+                        {/* Change: Added type="button" to prevent any form submission issues */}
+                        <button type="button" className="view-project-btn">
+                          View Gallery <FontAwesomeIcon icon={faPlus} />
+                        </button>
                       </div>
                     </div>
                   )}
                 </div>
-
               </div>
             ))}
           </div>
@@ -715,10 +716,68 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+      {/* Project Image Modal */}
+      {selectedProject && (
+  <div className="project-modal-overlay" onClick={closeProjectModal}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      
+      {/* Close button inside modal-content so it stays on top of the white background */}
+      <button className="close-btn" onClick={closeProjectModal}>
+        <FontAwesomeIcon icon={faTimes} />
+      </button>
+
+      <div className="modal-body">
+        {/* Left Side: Image */}
+        <div className="modal-image">
+          <div className="modal-nav">
+             <button className="nav-btn" onClick={prevSubImage}><FontAwesomeIcon icon={faChevronLeft} /></button>
+             <button className="nav-btn" onClick={nextSubImage}><FontAwesomeIcon icon={faChevronRight} /></button>
+          </div>
+          <img 
+            src={selectedProject.projectImages[activeSubImageIndex]} 
+            alt={selectedProject.title} 
+          />
+        </div>
+
+        {/* Right Side: Details */}
+        <div className="modal-info">
+          <span className="project-badge">{selectedProject.type.toUpperCase()}</span>
+          <h2 className="modal-title" style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+            {selectedProject.title}
+          </h2>
+
+          <div className="project-details-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <p style={{ color: '#888', fontSize: '0.8rem', marginBottom: '5px' }}>Project Type</p>
+              <strong>{selectedProject.type}</strong>
+            </div>
+            <div>
+              <p style={{ color: '#888', fontSize: '0.8rem', marginBottom: '5px' }}>Location</p>
+              <strong>{selectedProject.location}</strong>
+            </div>
+            <div>
+              <p style={{ color: '#888', fontSize: '0.8rem', marginBottom: '5px' }}>Area</p>
+              <strong>{selectedProject.area || 'N/A'}</strong>
+            </div>
+            <div>
+              <p style={{ color: '#888', fontSize: '0.8rem', marginBottom: '5px' }}>Status</p>
+              <strong style={{ color: '#2ecc71' }}>Completed</strong>
+            </div>
+          </div>
+
+          <button className="btn-primary" style={{ marginTop: '2rem', borderRadius: '50px' }}>
+            START SIMILAR PROJECT <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '10px' }} />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
 
     </div>
   );
 };
+
 
 export default Gallery;

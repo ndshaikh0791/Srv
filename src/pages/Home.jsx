@@ -165,7 +165,7 @@ const Home = () => {
             type: "Commercial",
             location: "Pune",
             area: "3000 sq.ft",
-            image: "/assets/Majestic_Signature_Towers/IMG_2416.jpg"
+            image: "/assets/restaurant/Img1.jpeg"
         },
         {
             id: 5,
@@ -612,7 +612,7 @@ const Home = () => {
                         </div>
                         {/* Fixed: Correct contact email in CTA */}
                         <p style={{marginTop: '20px', opacity: 0.8, fontSize: '0.9rem'}}>
-                            Or email us at: <a href="mailto:srvinteriorspune@gmail.com" style={{color: 'white', textDecoration: 'underline'}}>srvinteriorspune@gmail.com</a>
+                            Or email us at: <a href="mailto:connectsrvinteriors@gmail.com" style={{color: 'white', textDecoration: 'underline'}}>connectsrvinteriors@gmail.com</a>
                         </p>
                     </div>
                 </div>

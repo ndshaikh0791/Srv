@@ -117,7 +117,7 @@ const Footer = () => {
                 <li>
                   <FontAwesomeIcon icon={faEnvelope} />
                   <div className="contact-details">
-                    <a href="mailto:srvinteriorspune@gmail.com"> srvinteriorspune@gmail.com</a>
+                    <a href="mailto:connectsrvinteriors@gmail.com"> connectsrvinteriors@gmail.com</a>
                   </div>
                 </li>
               </ul>
