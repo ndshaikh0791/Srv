@@ -30,6 +30,7 @@ const Gallery = () => {
 
   const albumFilters = [
     { id: 'all', label: 'All Projects' },
+    { id: 'parallel_mind', label: 'Parallel Mind IT Company' },
     { id: 'mantra_monarch', label: 'Mantra Monarch' },
     { id: 'amanora_neo_towers', label: 'Amanora Neo Towers' },
     { id: 'majestic_signature', label: 'Majestic Signature' },
@@ -53,6 +54,32 @@ const Gallery = () => {
     // Mantra Monarch, Baner - 示例图片
     {
       id: 1,
+      albumId: 'parallel_mind',
+      title: 'Parallel Mind IT Company',
+      type: 'Commercial',
+      location: 'Bavdhan, Pune',
+      // area: '450 sq.ft',
+      description: 'A high-performance workspace designed for innovation, featuring ergonomic workstations and collaborative zones.',
+      image: '/assets/Parallel_Mind_Bavdhan/IMG_0488.jpg',
+      projectImages: [
+        '/assets/Parallel_Mind_Bavdhan/IMG_0473.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0501.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0479.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0471.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0482.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0483.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0486.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0489.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0490.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0491.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0492.jpg',
+        '/assets/Parallel_Mind_Bavdhan/IMG_0493.jpg',
+      ],
+      features: ['Ergonomic Workstations', 'Smart Conference Room', 'Industrial Chic Aesthetics']
+    },
+
+     {
+      id: 2,
       albumId: 'mantra_monarch',
       title: 'Mantra Monarch Living Room',
       type: 'Residential',
@@ -79,7 +106,7 @@ const Gallery = () => {
 
     // Amanora Neo Towers, Hadpsar - 示例图片
     {
-      id: 2,
+      id: 3,
       albumId: 'amanora_neo_towers',
       title: 'Amanora Living Area',
       type: 'Residential',
@@ -106,7 +133,7 @@ const Gallery = () => {
 
     // Majestic Signature, Baner - 示例图片
     {
-      id: 3,
+      id: 4,
       albumId: 'majestic_signature',
       title: 'Majestic Living Room',
       type: 'Residential',
@@ -133,7 +160,7 @@ const Gallery = () => {
 
     // Mankhurd, Mumbai - 示例图片
     {
-      id: 4,
+      id: 5,
       albumId: 'mankhurd',
       title: 'Mankhurd Kitchen',
       type: 'Residential',
@@ -160,7 +187,7 @@ const Gallery = () => {
 
     // Kharghar, Navi Mumbai - 示例图片
     {
-      id: 5,
+      id: 6,
       albumId: 'kharghar',
       title: 'Kharghar Master Bedroom',
       type: 'Residential',
@@ -183,7 +210,7 @@ const Gallery = () => {
 
     // Euro School, Wakad - 示例图片
     {
-      id: 6,
+      id: 7,
       albumId: 'euro_school',
       title: 'Euro School Classroom',
       type: 'Commercial',
@@ -210,61 +237,61 @@ const Gallery = () => {
 
     // Lodha Woods, Kandivali - 示例图片
     {
-      id: 7,
+      id: 8,
       albumId: 'lodha_woods',
       title: 'Lodha Woods Kitchen',
       type: 'Residential',
       location: 'Kandivali, Mumbai',
       // area: '180 sq.ft',
       description: 'Modular kitchen design.',
-      image: '/assets/lodha_woods_kandivali/IMG_2416.jpg',
+      image: '/assets/lodha_woods_kandivali/IMG_8759.PNG',
       projectImages: [
-        '/assets/lodha_woods_kandivali/IMG_2096.jpg',
-        '/assets/lodha_woods_kandivali/IMG_2056.jpg',
-        '/assets/lodha_woods_kandivali/IMG_2416.jpg',
-        '/assets/lodha_woods_kandivali/IMG_2436.jpg',
-        '/assets/lodha_woods_kandivali/IMG_2446.jpg',
-        '/assets/lodha_woods_kandivali/IMG_2460.jpg',
-        '/assets/lodha_woods_kandivali/IMG_2461.jpg',
-        '/assets/lodha_woods_kandivali/IMG_2462.jpg',
-        '/assets/lodha_woods_kandivali/IMG_2463.jpg',
-        '/assets/lodha_woods_kandivali/IMG_4578.jpg',
-        '/assets/lodha_woods_kandivali/IMG_9465.jpg',
-        '/assets/lodha_woods_kandivali/IMG_9471.jpg',
+        '/assets/lodha_woods_kandivali/IMG_8760.PNG',
+        '/assets/lodha_woods_kandivali/IMG_8762.PNG',
+        '/assets/lodha_woods_kandivali/IMG_8763.PNG',
+        '/assets/lodha_woods_kandivali/IMG_8851.PNG',
+        '/assets/lodha_woods_kandivali/IMG_8855.PNG',
+        '/assets/lodha_woods_kandivali/IMG_8857.PNG',
+        '/assets/lodha_woods_kandivali/IMG_8858.PNG',
+        '/assets/lodha_woods_kandivali/IMG_8861.PNG',
+        '/assets/lodha_woods_kandivali/IMG_9275.PNG',
+        '/assets/lodha_woods_kandivali/IMG_9276.PNG',
+        '/assets/lodha_woods_kandivali/IMG_9299.PNG',
+        '/assets/lodha_woods_kandivali/IMG_9414.PNG',
       ],
       features: ['Modular Cabinets', 'Granite Counter']
     },
 
     // Elina Living, NIBM - 示例图片
     {
-      id: 8,
+      id: 9,
       albumId: 'elina_living',
       title: 'Elina Living ',
       type: 'Residential',
       location: 'NIBM, Pune',
       // area: '150 sq.ft',
       description: 'Space-efficient kitchen.',
-      image: '/assets/Elina_living/IMG_8759.PNG',
+      image: '/assets/Elina_living/IMG_7987.PNG',
       projectImages: [
-        '/assets/Elina_living/IMG_8760.PNG',
-        '/assets/Elina_living/IMG_8762.PNG',
-        '/assets/Elina_living/IMG_8763.PNG',
-        '/assets/Elina_living/IMG_8851.PNG',
-        '/assets/Elina_living/IMG_8855.PNG',
-        '/assets/Elina_living/IMG_8857.PNG',
-        '/assets/Elina_living/IMG_8858.PNG',
-        '/assets/Elina_living/IMG_8861.PNG',
-        '/assets/Elina_living/IMG_9275.PNG',
-        '/assets/Elina_living/IMG_9276.PNG',
-        '/assets/Elina_living/IMG_9414.PNG',
-        '/assets/Elina_living/IMG_9417.PNG',
+        '/assets/Elina_living/IMG_8011.PNG',
+        '/assets/Elina_living/IMG_8026.JPG',
+        '/assets/Elina_living/IMG_8026.JPG',
+        '/assets/Elina_living/IMG_8027.JPG',
+        '/assets/Elina_living/IMG_8029.JPG',
+        '/assets/Elina_living/IMG_8033.JPG',
+        '/assets/Elina_living/IMG_8047.JPG',
+        '/assets/Elina_living/IMG_8046.JPG',
+        '/assets/Elina_living/IMG_8045.JPG',
+        '/assets/Elina_living/IMG_8041.JPG',
+        '/assets/Elina_living/IMG_8040.JPG',
+        '/assets/Elina_living/IMG_8039.JPG',
       ],
       features: ['Space Efficient', 'Corner Solutions']
     },
 
     // Kothrud, Pune - 示例图片
     {
-      id: 9,
+      id: 10,
       albumId: 'kothrud',
       title: 'Kothrud Residence',
       type: 'Residential',
@@ -287,7 +314,7 @@ const Gallery = () => {
 
     // Builder Sample, Karjat - 示例图片
     {
-      id: 10,
+      id: 11,
       albumId: 'karjat_builder',
       title: 'Builder Sample Flat',
       type: 'Residential',
@@ -309,7 +336,7 @@ const Gallery = () => {
 
     // Designing - 示例图片
     {
-      id: 11,
+      id: 12,
       albumId: 'designing',
       title: 'Design Concepts',
       type: 'Design',
@@ -332,7 +359,7 @@ const Gallery = () => {
 
     // Our Office, Vashi - 示例图片
     {
-      id: 12,
+      id: 13,
       albumId: 'our_office',
       title: 'Office Reception',
       type: 'Commercial',
@@ -353,7 +380,7 @@ const Gallery = () => {
 
     // Pirangut Bunglow, Pune - 示例图片（精品项目）
     {
-      id: 13,
+      id: 14,
       albumId: 'pirangut_bunglow',
       title: 'Pirangut Luxury Bunglow',
       type: 'Premium Residential',
@@ -379,7 +406,7 @@ const Gallery = () => {
       features: ['Premium Finishes', 'Luxury Design', 'Custom Woodwork', 'Smart Home']
     },
     {
-      id: 14,
+      id: 15,
       albumId: 'restaurant_design',
       title: 'Restaurant Design ',
       type: 'Commercial',

@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faHome, 
-  faPhone, 
-  faEnvelope, 
-  faArrowRight, 
+import {
+  faHome,
+  faPhone,
+  faEnvelope,
+  faArrowRight,
   faArrowUp
 } from '@fortawesome/free-solid-svg-icons';
-import { 
-  faWhatsapp, 
-  faInstagram, 
-  faYoutube 
+import {
+  faWhatsapp,
+  faInstagram,
+  faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
@@ -26,6 +27,9 @@ const Footer = () => {
 
   const scrollToTop = () =>
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handlePageNavigation = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +39,7 @@ const Footer = () => {
 
   const services = [
     'Modular Kitchen',
-    'Bedroom Interiors', 
+    'Bedroom Interiors',
     'Living Room Design',
     'Office Interiors',
     'Bathroom Renovation',
@@ -79,7 +83,7 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick Links */}
+            {/* Quick Links
             <div>
               <h4 className="footer-heading">Quick Links</h4>
               <ul className="footer-links">
@@ -88,6 +92,18 @@ const Footer = () => {
                 <li><a href="/services"><FontAwesomeIcon icon={faArrowRight} /> Services</a></li>
                 <li><a href="/gallery"><FontAwesomeIcon icon={faArrowRight} /> Gallery</a></li>
                 <li><a href="/contact"><FontAwesomeIcon icon={faArrowRight} /> Contact</a></li>
+              </ul>
+            </div> */}
+            {/* Quick Links */}
+            {/* Quick Links with Scroll to Top */}
+            <div>
+              <h4 className="footer-heading">Quick Links</h4>
+              <ul className="footer-links">
+                <li><Link to="/" onClick={handlePageNavigation}><FontAwesomeIcon icon={faArrowRight} /> Home</Link></li>
+                <li><Link to="/about" onClick={handlePageNavigation}><FontAwesomeIcon icon={faArrowRight} /> About Us</Link></li>
+                <li><Link to="/services" onClick={handlePageNavigation}><FontAwesomeIcon icon={faArrowRight} /> Services</Link></li>
+                <li><Link to="/projects" onClick={handlePageNavigation}><FontAwesomeIcon icon={faArrowRight} /> Gallery</Link></li>
+                <li><Link to="/contact" onClick={handlePageNavigation}><FontAwesomeIcon icon={faArrowRight} /> Contact</Link></li>
               </ul>
             </div>
 
