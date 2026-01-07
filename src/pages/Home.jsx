@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../styles/Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
     faPhone,
     faArrowRight,
@@ -140,7 +141,7 @@ const Home = () => {
             type: "Residential",
             location: "Pune",
             area: "2500 sq.ft",
-            image: "src/assets/Mantra Monarch/IMG_7877.JPG"
+            image: "/assets/Mantra Monarch/IMG_7877.JPG"
         },
         {
             id: 2,
@@ -148,7 +149,7 @@ const Home = () => {
             type: "Commercial",
             location: "Mumbai",
             area: "5000 sq.ft",
-            image: "src/assets/Our_Office/IMG_6927.PNG"
+            image: "/assets/Our_Office/IMG_6927.PNG"
         },
         {
             id: 3,
@@ -156,7 +157,7 @@ const Home = () => {
             type: "Residential",
             location: "Navi Mumbai",
             area: "1800 sq.ft",
-            image: "src/assets/Mankhurd/IMG_9985.JPG"
+            image: "/assets/Mankhurd/IMG_9985.JPG"
         },
         {
             id: 4,
@@ -164,7 +165,7 @@ const Home = () => {
             type: "Commercial",
             location: "Pune",
             area: "3000 sq.ft",
-            image: "src/assets/Majestic_Signature_Towers/IMG_2416.jpg"
+            image: "/assets/Majestic_Signature_Towers/IMG_2416.jpg"
         },
         {
             id: 5,
@@ -172,7 +173,7 @@ const Home = () => {
             type: "Residential",
             location: "Mumbai",
             area: "3500 sq.ft",
-            image: "src/assets/lodha_woods_kandivali/IMG_9491.jpg"
+            image: "/assets/lodha_woods_kandivali/IMG_9491.jpg"
         },
         {
             id: 6,
@@ -180,7 +181,7 @@ const Home = () => {
             type: "Commercial",
             location: "Navi Mumbai",
             area: "4000 sq.ft",
-            image: "src/assets/Kharghar/IMG_8045.JPG"
+            image: "/assets/Kharghar/IMG_8045.JPG"
         }
     ];
 
@@ -331,7 +332,7 @@ const Home = () => {
                         <div className="about-image">
                             <div className="image-wrapper">
                                 <img
-                                    src="src/assets/Mantra Monarch/IMG_7871.JPG"
+                                    src="/assets/Mantra Monarch/IMG_7871.JPG"
                                     alt="Modern Interior Design"
                                     className="fit-image"
                                 />

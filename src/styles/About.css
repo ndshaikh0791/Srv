@@ -16,7 +16,7 @@ body {
 .about-hero {
   min-height: 85vh;
      background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
-    url("src/assets/Our_Office/IMG_6930.PNG") center/cover no-repeat;
+    url("/assets/Our_Office/IMG_6930.PNG") center/cover no-repeat;
 
   display: flex;
   align-items: center;

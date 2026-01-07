@@ -39,7 +39,7 @@ const Services = () => {
         "Pull-out Systems",
         "Waterproofing"
       ],
-      image: "src/assets/Elina_living/IMG_8861.PNG",
+      image: "/assets/Elina_living/IMG_8861.PNG",
       icon: faHome
     },
     {
@@ -54,7 +54,7 @@ const Services = () => {
         "Wall Paneling",
         "Color Schemes"
       ],
-      image: "src/assets/Mantra Monarch/IMG_7880.JPG",
+      image: "/assets/Mantra Monarch/IMG_7880.JPG",
       icon: faBed
     },
     {
@@ -69,7 +69,7 @@ const Services = () => {
         "False Ceiling",
         "Wall Paneling"
       ],
-      image: "src/assets/Mankhurd/IMG_9983.JPG",
+      image: "/assets/Mankhurd/IMG_9983.JPG",
       icon: faCouch
     },
     {
@@ -84,7 +84,7 @@ const Services = () => {
         "Lighting Solutions",
         "Acoustic Treatment"
       ],
-      image: "src/assets/Our_Office/IMG_6925.PNG",
+      image: "/assets/Our_Office/IMG_6925.PNG",
       icon: faBuilding
     }
   ];
@@ -191,7 +191,7 @@ const Services = () => {
         <div className="hero-bg">
           <div className="hero-overlay"></div>
           <img 
-            src="src/assets/Mantra Monarch/IMG_7888.JPG" 
+            src="/assets/Mantra Monarch/IMG_7888.JPG" 
             alt="Services Banner" 
           />
         </div>

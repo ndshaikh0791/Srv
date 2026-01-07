@@ -98,7 +98,7 @@ const About = () => {
             {/* FOUNDER CARD */}
             <div className="founder-card">
               <img
-                src="src/assets/Mantra Monarch/IMG_7871.JPG"
+                src="/assets/Mantra Monarch/IMG_7871.JPG"
                 alt="Founder"
               />
               <div>
@@ -111,7 +111,7 @@ const About = () => {
           {/* RIGHT IMAGE */}
           <div className="heritage-image">
             <img
-              src="src/assets/lodha_woods_kandivali/IMG_2446.jpg"
+              src="/assets/lodha_woods_kandivali/IMG_2446.jpg"
               alt="Founder"
             />
 
