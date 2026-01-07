@@ -42,7 +42,8 @@ const Gallery = () => {
     { id: 'karjat_builder', label: 'Builder Sample' },
     { id: 'designing', label: 'Designing' },
     { id: 'our_office', label: 'Our Office' },
-    { id: 'pirangut_bunglow', label: 'Pirangut Bunglow' }
+    { id: 'pirangut_bunglow', label: 'Pirangut Bunglow' },
+    { id: 'restaurant_design', label: 'Restaurant Design' }
   ];
 
 
@@ -377,6 +378,24 @@ const Gallery = () => {
       ],
       features: ['Premium Finishes', 'Luxury Design', 'Custom Woodwork', 'Smart Home']
     },
+    {
+      id: 14,
+      albumId: 'restaurant_design',
+      title: 'Restaurant Design ',
+      type: 'Commercial',
+      location: 'Restaurant',
+      // area: '1200 sq.ft',
+      description: 'Premium Restaurent with luxury finishes.',
+      image: '/assets/restaurant/Img1.jpeg',
+      projectImages: [
+        '/assets/restaurant/Img2.jpeg',
+        '/assets/restaurant/Img3.jpeg',
+        '/assets/restaurant/Img4.jpeg',
+        '/assets/restaurant/Img5.jpeg',
+        '/assets/restaurant/Img1.jpeg',
+      ],
+      features: ['Premium Finishes', 'Luxury Design', 'Custom Woodwork', 'Smart Home']
+    },
   ];
 
   // Filter images based on active filter
@@ -706,7 +725,7 @@ const Gallery = () => {
               Let's discuss your project and create something beautiful together
             </p>
             <div className="cta-buttons">
-              <button className="btn-primary" onClick={() => window.location.href = '/contact'}>
+              <button className="btn-primary" onClick={() => {window.location.href = '/contact'; window.scrollTo(0, 0);}}>
                 Start Your Project <FontAwesomeIcon icon={faArrowRight} />
               </button>
               <button className="btn-outline" onClick={() => window.open('https://wa.me/918796932990', '_blank')}>
@@ -765,7 +784,7 @@ const Gallery = () => {
             </div>
           </div>
 
-          <button className="btn-primary" style={{ marginTop: '2rem', borderRadius: '50px' }}>
+          <button className="btn-primary" onClick={() => window.location.href = '/contact'} style={{ marginTop: '2rem', borderRadius: '50px' }}>
             START SIMILAR PROJECT <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: '10px' }} />
           </button>
         </div>

@@ -389,7 +389,7 @@ const Home = () => {
                                     </div>
 
                                     {/* Learn More Button - Center */}
-                                    <button className="learn-more-btn">
+                                    <button className="learn-more-btn" onClick={() =>{window.location.href = '/services'; window.scrollTo(0, 0);}}>
                                         Learn More
                                         <FontAwesomeIcon icon={faArrowRight} className="btn-arrow" />
                                     </button>
@@ -399,7 +399,7 @@ const Home = () => {
                     </div>
 
                     <div className="text-center">
-                        <button className="btn-view-all" onClick={() => window.location.href = '/services'}>
+                        <button className="btn-view-all" onClick={() =>{window.location.href = '/services'; window.scrollTo(0, 0);}}>
                             View All Services
                         </button>
                     </div>
