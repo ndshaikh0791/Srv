@@ -39,7 +39,7 @@ const Services = () => {
         "Pull-out Systems",
         "Waterproofing"
       ],
-      image: "/assets/Elina_living/IMG_8861.PNG",
+      image: "/assets/lodha_woods_kandivali/IMG_9276.PNG",
       icon: faHome
     },
     {
